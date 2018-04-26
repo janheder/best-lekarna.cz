@@ -1,0 +1,214 @@
+/*
+.filter-sort{
+    margin-bottom: 4rem;
+
+    & .nav-tabs{
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid $border-grey;
+        @include justify-content(center);
+
+        & .nav-item{
+            border: 0;
+            @include flex-grow(0);
+
+            & .nav-link{
+            	cursor: pointer;
+                border: 0;
+                background: transparent;
+                @include justify-content(center);
+                @include transition(0.3s ease all);
+                font-family: $font-family-alt;
+                font-weight: 600;
+                font-size: 2rem;
+                border-bottom: 2px solid transparent;
+
+                &.active{
+                    background: transparent;
+                    color: $orange-main;
+                    border-bottom: 2px solid $orange-main;
+                }
+                &:hover, &:active, &:focus{
+                	background: transparent;
+                	color: $dark-grey;
+                }
+            }
+        }
+    }
+}
+*/
+.filter-sort{
+    margin-bottom: -1px;
+}
+@media screen and (max-width: 768px){
+    .filter{
+        padding-top: 20px;
+    }
+}
+
+.filter-main{
+	background: $light-grey;
+    border: 1px solid $border-grey;
+    margin-bottom: 2rem;
+    border-radius: $border-radius-primary;
+}
+.filter-main__collapse{
+    display: none;
+}
+.filter-main__heading{
+    display: block;
+    width: 100%;
+}
+.filter-main__heading--tag{
+    padding-left: 5px;
+}
+.filter-main__tag{
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    margin-bottom: 15px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.filter-main__brand{
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.filter-main__single{
+    padding: 5px;
+    margin: 0;
+    @include flex-grow(1);
+}
+.filter-main__label{
+    margin: 0;
+}
+.filter-main__toggle{
+    padding: 5px;
+}
+.filter-main__toggle-text{
+    background: $white;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 1.1rem 2rem 1rem 2rem;
+    border: 1px solid $border-grey;
+    min-height: 4.6rem;
+    margin: 0;
+    color: $orange-main;
+}
+.filter-main__button{
+    width: 100%;
+    margin-top: 0px;
+}
+.filter-main__form{
+    padding: 2rem;
+}
+.filter-main__collapse-toggle{
+    background: $white;
+    border: 1px solid $border-primary;
+    margin: 5px;
+    cursor: pointer;
+    position: relative;
+    padding: 1.1rem 4rem 1.1rem 2rem;
+    height: 4.6rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    border-radius: $border-radius-primary;
+}
+.filter-main__collapse-toggle[aria-expanded="true"] .filter-main__icon::before{
+    display: none;
+}
+.filter-main__brand-collapse{
+    width: 100%;
+    margin: 0 5px;
+}
+.filter-main__brand-collapse-wrap{
+    width: 100%;
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    background: $white;
+    padding: 15px;
+    border: 1px solid $border-grey;
+    margin-bottom: 20px;
+}
+.filter-main__icon{
+    position: absolute;
+    right: 20px;;
+    top: 50%;
+    @include translate(0, -50%);
+    height: 10px;
+    width: 10px;
+}
+.filter-main__searchbox{
+    margin-top: 10px;
+}
+
+@media screen and (max-width:991px){
+    .filter-main__collapse{
+        display: block;
+        background: $brand-primary;
+        padding: 2rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $text-white;
+        border-top-left-radius: $border-radius-primary;
+        border-top-right-radius: $border-radius-primary;
+
+        &:hover, &:active, &:focus{
+            color: $text-white;
+            text-decoration: none;
+        }
+    }
+}
+@media screen and (min-width:992px){
+    .filter-main__collapse-wrap{
+        display: block;
+    }
+}
+
+
+.filter-badges{
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    margin-bottom: 3rem;
+}
+.filter-badges__single{
+    background: $bg-blue-alt;
+    border-radius: $border-primary;
+    border-radius: $border-radius-primary;
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include align-items(center);
+    overflow: hidden;
+    margin: 5px 0;
+}
+.filter-badges__title{
+    font-size: 13px;
+    color: $text-white;
+    margin: 0;
+    padding: 5px 10px;
+}
+.filter-badges__remove-wrap{
+    padding: 5px 10px;
+    cursor: pointer;
+    height: 100%;
+    border-left: 1px solid $white-transparent;
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include align-items(center);
+
+    &:hover, &:active, &:focus{
+        background: $brand-primary;
+    }
+}
+.filter-badges__remove{
+    height: 10px;
+    width: 10px;
+}

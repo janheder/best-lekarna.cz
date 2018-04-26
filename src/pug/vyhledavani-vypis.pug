@@ -1,0 +1,60 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        include _breadcrumb.pug
+
+        section.page-heading.page-heading--category
+            .container
+                h1.page-heading--category__title Výsledky vyhledávání: Lorem ipsum
+                p.page-heading--category__subtitle-excerpt Nalezeno 8 výsledků
+
+        main
+            .container
+
+                include _pagination.pug
+
+                .product-grid
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+
+                include _pagination.pug
+
+        include _news-section.pug
+
+        include _footer.pug
+
+        include _js-include.pug

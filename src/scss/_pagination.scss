@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    PAGINATION
+\*------------------------------------*/
+
+.pagination{
+    @include justify-content(center);
+    margin: 2rem 0 4rem 0;
+    @include flex-wrap(wrap);
+}
+.page-item{
+    padding: 5px;
+}
+.page-item.active .page-link{
+    background: $brand-primary;
+    color: $text-white;
+}
+.page-link{
+    padding: 10px 15px;
+    color: $text-primary;
+    border: 0;
+    background: $bg-light;
+    border-radius: $border-radius-primary;
+
+    &:hover, &:active, &:focus{
+        background: $bg-dark;
+        color: $text-white;
+    }
+}
+.page-dots{
+    height: 100%;
+    position: relative;
+    padding: 0 7px;
+    font-weight: 700;
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include align-items(center);
+}

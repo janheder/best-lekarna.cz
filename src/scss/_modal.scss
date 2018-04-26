@@ -1,0 +1,89 @@
+.modal-dialog {
+    background: transparent;
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    margin: 0 auto;
+    padding: 10px;
+}
+.modal-content{
+    border-radius: $border-radius-primary;
+    border: 0;
+}
+.modal-header{
+    position: relative;
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    padding: 20px;
+
+    .close{
+        margin: 0 0 0 auto;
+        height: 100%;
+        padding: 10px;
+    }
+}
+.modal-header.post__image-container{
+    padding: 20px 20px 200px 20px;
+
+    .close{
+        background: $bg-white;
+        border-radius: $border-radius-round;
+        opacity: 1;
+
+        &:hover, &:active, &:focus{
+            background: $bg-light;
+        }
+    }
+}
+.modal-title{
+    font-size: 3rem;
+    font-family: "Roboto Condensed";
+    font-weight: 600;
+    color: $dark-grey;
+}
+.modal-body{
+    padding: 20px;
+    .cart-item-single{
+        border: 0;
+    }
+}
+.modal-footer{
+    @include justify-content(flex-start);
+    padding: 20px;
+
+    & .btn:last-child{
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 800px;
+    }
+}
+@media (max-width: 575px){
+    .modal-header, .modal-body, .modal-footer{
+        padding:  10px;
+    }
+}
+
+@media (max-height: 575px){
+    .modal-dialog{
+        @include align-items(flex-start);
+    }
+}
+
+.modal-info__body{
+    text-align: center;
+}
+.modal-info__body p{
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+.modal-info__footer .btn:last-child{
+    margin-left: auto;
+    margin-right: auto;
+}

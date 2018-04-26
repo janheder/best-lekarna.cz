@@ -1,0 +1,259 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ") 
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        section.page-heading.page-heading--cart
+            .container.page-heading--cart__container
+                .page-heading--cart__wrap
+                    a.page-heading--cart__single.pass(href="#")
+                        p.page-heading--cart__title 1. Nákupní košík
+                    a.page-heading--cart__single.pass(href="#")
+                        p.page-heading--cart__title 2. Osobní údaje
+                    a.page-heading--cart__single.active(href="#")
+                        p.page-heading--cart__title 3. Souhrn objednávky
+                    a.page-heading--cart__single(href="#")
+                        p.page-heading--cart__title 4. Dokončení objednávky
+
+        section.page-heading.page-heading--cart-responsive
+            a.page-heading--cart__control(href="/kosik.html?krok=2")
+                span.caret-icon.left
+            p.page-heading--cart__title 3/4 Souhrn objednávky
+            a.page-heading--cart__control(onclick="$('#cart_3_submit').click();")
+                span.caret-icon.right
+        .page-heading--cart-responsive-push
+
+        main
+            .container
+                form(method="post" action="" name="cart_form")
+                    .row.cart-item-top
+                        .cart-item-top__col-1
+                            .cart-item-top__img
+                                p.cart-item-top__heading Produkt
+                        .cart-item-top__col-2
+                            .cart-item-top__name
+                            .cart-item-top__inner
+                                .cart-item-top__qty
+                                    p.cart-item-top__heading Počet kusů
+                                .cart-item-top__price
+                                    p.cart-item-top__heading Cena za kus
+                                .cart-item-top__sum
+                                    p.cart-item-top__heading Cena celkem
+
+
+                    .row.cart-item-single
+                        .cart-item-single__col-1  
+                            .cart-item-single__thumb-wrap
+                                .cart-item-single__thumb
+                                    img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
+
+                        .cart-item-single__col-2   
+                            .cart-item-single__name-wrap
+                                p.cart-item-single__name #{ProductName}
+                                p.cart-item-single__stock Dostupné skladem   
+
+                            .cart-item-single__inner    
+                                .cart-item-single__qty-wrap 
+                                    p.cart-item-single__qty-text 1 kus/ů
+                                .cart-item-single__price-wrap
+                                    span.cart-item-single__price-old 14 290 Kč
+                                    p.cart-item-single__price 8 489 Kč
+                                .cart-item-single__sum-wrap.text-right
+                                    p.cart-item-single__sum #[span 8 489] Kč
+
+
+
+                    .row.cart-item-single
+                        .cart-item-single__col-1  
+                            .cart-item-single__thumb-wrap
+                                .cart-item-single__thumb
+                                    img.cart-item-single__img.lazy(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-small.jpg")
+
+                        .cart-item-single__col-2   
+                            .cart-item-single__name-wrap
+                                p.cart-item-single__name #{ProductName}
+                                p.cart-item-single__stock Dostupné skladem   
+
+                            .cart-item-single__inner    
+                                .cart-item-single__qty-wrap 
+                                    p.cart-item-single__qty-text 1 kus/ů
+                                .cart-item-single__price-wrap
+                                    span.cart-item-single__price-old 14 290 Kč
+                                    p.cart-item-single__price 8 489 Kč
+                                .cart-item-single__sum-wrap.text-right
+                                    p.cart-item-single__sum #[span 8 489] Kč
+
+                    .cart-price-overview
+                        .cart-price-overview__wrap
+                            p.cart-price-overview__text-small Celková cena bez DPH:
+                            h5.cart-price-overview__price-small #[span.cart-price-overview__number 16 989] Kč
+                        .cart-price-overview__wrap
+                            p.cart-price-overview__text Celková cena:
+                            h3.cart-price-overview__price #[span.cart-price-overview__number 16 989] Kč
+
+                    .cart-user-info-overview
+                        .row
+                            .cart-user-info-overview__single
+                                h3.cart-user-info-overview__title #[span.cart-user-info-overview__title-number 1.] Osobní údaje
+                                .cart-user-info-overview__single-content
+                                    p.cart-user-info-overview__text Jméno a příjmení: #[span.cart-user-info-overview__strong Petr Novák]
+                                    p.cart-user-info-overview__text Emailová adresa: #[span.cart-user-info-overview__strong petr@novak.cz]
+                                    p.cart-user-info-overview__text Telefonní číslo: #[span.cart-user-info-overview__strong 605 598 989]
+                                    p.cart-user-info-overview__text Ulice: #[span.cart-user-info-overview__strong Petra Bezruče]
+                                    p.cart-user-info-overview__text Číslo ulice: #[span.cart-user-info-overview__strong 18]
+                                    p.cart-user-info-overview__text Město: #[span.cart-user-info-overview__strong Praha]
+                                    p.cart-user-info-overview__text Kraj: #[span.cart-user-info-overview__strong Praha]
+                                    p.cart-user-info-overview__text PSČ: #[span.cart-user-info-overview__strong 898 89]
+                                    p.cart-user-info-overview__text Stát: #[span.cart-user-info-overview__strong Česko]
+
+                            .cart-user-info-overview__single
+                                h3.cart-user-info-overview__title #[span.cart-user-info-overview__title-number 2.] Fakturační adresa
+                                .cart-user-info-overview__single-content
+                                    p.cart-user-info-overview__text Stejná jako u osobních ůdajů
+
+                            .cart-user-info-overview__single
+                                h3.cart-user-info-overview__title #[span.cart-user-info-overview__title-number 3.] Dodací adresa
+                                .cart-user-info-overview__single-content
+                                    p.cart-user-info-overview__text Stejná jako u osobních ůdajů
+
+                    .form-group.cart-shipping-option
+                        h3 Zvolte způsob dopravy
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="osobni" required)
+                                | Česká pošta Balík do ruky
+                                span.form-check__description Doručuje následující pracovní den od odeslání. Max. hmotnost zásilky 30 kg.
+                                span.form-check__price 115 Kč
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label.disabled
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="cp" required disabled)
+                                | Česká pošta Balík na poštu
+                                span.form-check__description Zde je nutné uvést do poznámky v objednávce (bod č. 3) PSČ pošty, na kterou si zásilku přejete zaslat. Doručuje následující pracovní den od odeslání. Max. hmotnost zásilky 30 kg.
+                                span.form-check__price 99 Kč
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl" required)
+                                | PPL do 5 kg na soukromou nebo firemní adresu.
+                                span.form-check__description Nabídne se pouze u drobného zboží jako jsou hudební nosiče a podobně. Doručení do druhého pracovního dne ode dne odeslání.
+                                span.form-check__price 89 Kč
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl2" required)
+                                | PPL Soukromá nebo firemní adresa do 50 kg 
+                                span.form-check__description Doručuje zásilky do druhého pracovního dne ode dne odeslání.
+                                span.form-check__price 115 Kč
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label(onclick="navigateToUrl('https://www.pplbalik.cz/Main3.aspx?cls=KTMMap&CountryCode=CZ&KTMAddress=73801,Podpuklí 288&ReturnUrl=https%3A%2F%2Fwww.gramofony-desky.cz%2Fkosik.html%3Fsessid%3D2t617d17oqqlam0vrup08bone7%26KTMID%3D%7B0%7D%26KTMaddress%3D%7B1%7D%26KTMname%3D%7B2%7D');")
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl3" required)
+                                | PPL partner
+                                span.form-check__description Při výběru tohoto typu dopravy budete přesměrováni na pplbalik.cz, kde vyberte konkretní odběrné místo, následně budete navráceni do našeho nákupního košíku.
+                                span.form-check__price 99 Kč
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl4" required)
+                                | PPL SOBOTNÍ DORUČENÍ ve větších městech
+                                span.form-check__description Zásilka Vám bude doručena v nejbližší sobotu.
+                                span.form-check__price 129 Kč
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl" required)
+                                | Osobní odběr v naší prodejně
+                                span.form-check__description (Podpuklí 288, Frýdek-Místek), platba kartou nebo hotově.
+                                span.form-check__price 0 Kč
+                                span.form-check__box.radio
+
+                    .form-group.cart-payment-option
+                        h3 Zvolte způsob platby
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_payment" id="hotove" required)
+                                | Převodem předem na náš účet
+                                span.form-check__description 115-820780217/0100 vedený u Komerční banky. Var. symbol je ČÍSLO OBJEDNÁVKY.
+                                span.form-check__price 0 Kč
+                                span.form-check__box.radio
+                            
+                        .form-check
+                            label.form-check__label.disabled
+                                input.form-check__input(type="radio" name="cart_form_payment" id="bankovni" required disabled)
+                                | Dobírka
+                                span.form-check__description Celkovou částku za zboží a přepravu uhradíte dovozci nebo na odběrném místě
+                                span.form-check__price 20 Kč
+                                span.form-check__box.radio
+
+                        .form-check
+                            label.form-check__label
+                                input.form-check__input(type="radio" name="cart_form_payment" id="dobirka" required)
+                                | ESSOX
+                                span.form-check__description Splátkování přes společnost ESSOX
+                                span.form-check__price 0 Kč
+                                span.form-check__box.radio
+
+                    .cart-user-note
+                        h3.cart-user-note__title Poznámka k objednávce
+                        .row
+                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
+                                .form-group
+                                    textarea.form-control(name="cart-form-note" rows="5")
+                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
+                                p Chcete nám sdělit ještě nějakou důležitou zprávu k vaší objednávce? Využijte prosím, tohoto formuláře.
+                                p Napsat do něj můžete také upřesňující informace o místě, kam máme Vaše zboží doručit (nejbližší orientační bod apod.)
+
+                    .cart-terms-checkbox
+                        .form-group
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="checkbox" name="cart-form-terms" required) 
+                                    span.form-check__box.checkbox
+                                    span.form-check__inline Souhlasím s #[a.form-check__link(href="#") obchodními podmínkami]
+
+                    .cart-bottom-btns
+                        a.btn.btn-dark(href="#") #[span.btn__icon.arrow-icon.left.white] Krok zpět
+                        button.btn(type="submit" id="cart_3_submit") Dokončit objednávku #[span.btn__icon.arrow-icon.white]
+
+            .cart-price-overview-responsive
+                .cart-price-overview-responsive__price-wrap
+                    p.cart-price-overview-responsive__text Celková cena s DPH
+                    h3.cart-price-overview-responsive__price #[span 16 989] Kč
+                .cart-price-overview-responsive__btn-wrap
+                    a.btn.cart-price-overview-responsive__btn(onclick="$('#cart_3_submit').click();") Dokončit objednávku #[span.btn__icon.arrow-icon.white]
+
+
+        include _footer.pug
+
+        include _js-include.pug

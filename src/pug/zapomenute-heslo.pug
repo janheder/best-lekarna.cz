@@ -1,0 +1,54 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        section.page-heading.post__image-container
+            .container
+                h1.page-heading__title Zapomenuté heslo
+            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-user-thumb-large.jpg" data-src=URLbase+"img/user-thumb-large.jpg" alt="#" title="#")
+                
+        include _breadcrumb.pug
+        main
+            .container
+                .print-area
+                    article.page
+                        .forgotten-password
+                            form(method="post" action="" class="register-form" name="password_form")
+                                p.forgotten-password_text Pokud jste zapomněli své heslo, pošleme Vám nové na email, který jste uvedli při registraci.
+                                .form-group
+                                    label(for="password_form-email") Emailová adresa
+                                    input.form-control(type="email" name="password_form_email" id="password_form_email" required autocomplete="email")
+
+                                .form-group
+                                    button.form-control.btn(type="submit" name="password_form_submit" id="password_form_submit") Poslat nové heslo
+
+
+        include _news-section.pug
+
+        include _footer.pug
+
+        include _js-include.pug

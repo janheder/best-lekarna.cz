@@ -1,0 +1,45 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        main
+            .container
+                .cart-empty.cart-empty--success
+                    .cart-empty__wrap
+                        span.cart-icon-alt.cart-empty__icon
+                        span.fas.fa-check.cart-empty__icon-small
+                    h2.cart-empty__title Objednávka byla úspěšně odeslána
+                    strong.cart-empty__strong Rekapitulace objednávky a platební pokyny byly odeslány na Váš email.
+                    p.cart-empty__text Pokud máte problém s objednávkou, kontaktujte nás na email@email.cz nebo na telefonním čísle 111 222 333
+                    a.btn.cart-empty__btn(href="#") Zpět do obchodu
+
+
+        include _news-section.pug
+
+        include _footer.pug
+
+        include _js-include.pug

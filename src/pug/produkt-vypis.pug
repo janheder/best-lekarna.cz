@@ -1,0 +1,185 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        include _breadcrumb.pug
+
+        section.page-heading.page-heading--category
+            .container
+                h1.page-heading--category__title Lorem ipsum dolor sit amet
+                p.page-heading--category__subtitle-excerpt Sed ut perspiciatis unde omnis iste natus error... #[span.page-heading--category__toggle(data-toggle="collapse" href="#product-category-description" aria-expanded="false" aria-controls="product-category-description") Číst více]
+                .collapse(id="product-category-description")
+                    p.page-heading--category__subtitle sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+
+
+        main
+            .container
+                .subcategories-grid
+                    .row
+                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
+                            a.subcategories-grid__single(href="#") #[span.arrow-icon.subcategories-grid__icon] Předzesilovače
+                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
+                            a.subcategories-grid__single(href="#") #[span.arrow-icon.subcategories-grid__icon] Integrované
+                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
+                            a.subcategories-grid__single(href="#") #[span.arrow-icon.subcategories-grid__icon] Koncové
+                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
+                            a.subcategories-grid__single(href="#") #[span.arrow-icon.subcategories-grid__icon] Sluchátkové
+                        .col-12.col-sm-6.col-md-4.col-lg-3.col-xl-3
+                            a.subcategories-grid__single(href="#") #[span.arrow-icon.subcategories-grid__icon] Profesional
+
+                .top-products
+                    .top-products__title-wrap
+                        h2.top-products__title Nejprodávanější produkty
+                    .swiper-container-5-products-wrap
+                        .swiper-container-5-products 
+                            .swiper-wrapper
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                                .swiper-slide
+                                    include _single-product-cell-top.pug
+                        .swiper-button-prev.swiper-button-prev--5
+                        .swiper-button-next.swiper-button-next--5
+
+                .filter-main
+                    a.filter-main__collapse(data-toggle="collapse" href="#product-filter" aria-expanded="false" aria-controls="product-filter") Filtr produktů
+                    .panel-collapse.collapse.filter-main__collapse-wrap(id="product-filter")   
+                        form.filter-main__form(method="post" action="")
+                            .filter-main__tag
+                                h2.filter-main__heading.filter-main__heading--tag Filtrovat produkty
+                                .form-group.filter-main__single
+                                    label.form-check__label.filter-main__label
+                                        input.form-check__input(type="checkbox" name="filter-novinka") 
+                                        | Novinka
+                                        span.form-check__box.checkbox
+                                .form-group.filter-main__single
+                                    label.form-check__label.filter-main__label
+                                        input.form-check__input(type="checkbox" name="filter-akce") 
+                                        | Akční zboží
+                                        span.form-check__box.checkbox
+                                .form-group.filter-main__single
+                                    label.form-check__label.filter-main__label
+                                        input.form-check__input(type="checkbox" name="filter-doporucene") 
+                                        | Doporučujeme
+                                        span.form-check__box.checkbox
+
+                                h2.form-group.filter-main__single.filter-main__collapse-toggle(data-toggle="collapse" href="#filter-main-brand" aria-expanded="false" aria-controls="filter-main-brand") Filtrovat podle výrobce
+                                    span.plus-icon.filter-main__icon 
+
+
+                            .filter-main__brand
+                                .collapse.filter-main__brand-collapse(id="filter-main-brand")
+                                    .filter-main__brand-collapse-wrap
+                                        .form-group.filter-main__single
+                                            label.form-check__label.filter-main__label
+                                                input.form-check__input(type="checkbox" name="#") 
+                                                | Advance Acoustic
+                                                span.form-check__box.checkbox                         
+                                        .form-group.filter-main__single
+                                            label.form-check__label.filter-main__label
+                                                input.form-check__input(type="checkbox" name="#") 
+                                                | Advance Acoustic
+                                                span.form-check__box.checkbox 
+                                        .form-group.filter-main__single
+                                            label.form-check__label.filter-main__label
+                                                input.form-check__input(type="checkbox" name="#") 
+                                                | Advance Acoustic
+                                                span.form-check__box.checkbox                         
+                                        .form-group.filter-main__single
+                                            label.form-check__label.filter-main__label
+                                                input.form-check__input(type="checkbox" name="#") 
+                                                | Advance Acoustic
+                                                span.form-check__box.checkbox 
+                                        .form-group.filter-main__single
+                                            label.form-check__label.filter-main__label
+                                                input.form-check__input(type="checkbox" name="#") 
+                                                | Advance Acoustic
+                                                span.form-check__box.checkbox 
+                                        .form-group.filter-main__single
+                                            label.form-check__label.filter-main__label
+                                                input.form-check__input(type="checkbox" name="#") 
+                                                | Advance Acoustic
+                                                span.form-check__box.checkbox                         
+                                        .form-group.filter-main__single
+                                            label.form-check__label.filter-main__label
+                                                input.form-check__input(type="checkbox" name="#") 
+                                                | Advance Acoustic
+                                                span.form-check__box.checkbox 
+
+                            button.btn.filter-main__button(type="submit") Filtrovat produkty
+
+                .filter-badges
+                    .filter-badges__single 
+                        p.filter-badges__title Léčba bolesti
+                        .filter-badges__remove-wrap
+                            span.cross-icon.white.filter-badges__remove 
+
+                include _pagination.pug
+
+                .filter-sort
+                    ul.nav.nav-tabs
+                        li.nav-item
+                            a.nav-link.active(onclick="#") Nejoblíbenější
+                        li.nav-item
+                            a.nav-link(onclick="#") Nejlevnější
+                        li.nav-item
+                            a.nav-link(onclick="#") Nejdražší
+                        li.nav-item
+                            a.nav-link(onclick="#") Jméno A-Z
+
+
+                .product-grid
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+                    include _single-product-cell.pug
+
+                include _pagination.pug
+
+        include _news-section.pug
+
+        include _footer.pug
+
+        include _js-include.pug

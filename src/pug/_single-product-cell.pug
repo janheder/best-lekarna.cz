@@ -1,0 +1,52 @@
+.single-product-cell
+    a.single-product-cell__top(href="#")
+        .product-tags
+            .product-tags__single
+                .product-tags__text.new Novinka
+            .product-tags__single
+                .product-tags__text.top Nejprodávanější
+            .product-tags__single
+                .product-tags__text.recommended Doporučené
+
+
+        .product-tags--right
+            .product-tags__single
+                .product-tags__text.sale.circle -30%
+                
+        .single-product-cell__img-container
+            .single-product-cell__img-wrap
+                img.lazy.single-product-cell__img(src=URLbase+"img/placeholder-200x200.png" data-src=URLbase+"img/product-thumb-medium.jpg" alt="#")
+                span.lazy.single-product-cell__preloader
+        h4.single-product-cell__title #{ProductName}
+        span.single-product-cell__tag Léčivý přípravek
+
+    .single-product-cell__bottom
+
+
+        .single-product-cell__price-wrap
+
+            .single-product-cell__price
+                .single-product-cell__price-old 1 099 Kč
+                .single-product-cell__price-main 899 Kč
+
+            .single-product-cell__delivery
+                p.single-product-cell__delivery-text Skladem
+
+
+        .single-product-cell__buy-wrap
+
+            form.single-product-cell__form(method="POST")
+
+                .single-product-cell__qty
+                    .number-stepper.number-stepper--small
+                        input.number-stepper__input(type="number" min="1" max="99" value="1" name="" id="")
+                        .number-stepper__btn-up
+                            span.number-stepper__icon-up
+                        .number-stepper__btn-down
+                            span.number-stepper__icon-down
+
+                .single-product-cell__buy
+                        button.btn.single-product-cell__btn(type="submit" name="buy-button") #[span.cart-icon.single-product-cell__btn-icon] Do košíku
+
+        .single-product-cell__info-hide 
+            p.single-product-cell__info-hide-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.

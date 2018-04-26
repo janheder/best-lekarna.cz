@@ -1,0 +1,63 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        section.page-heading.post__image-container
+            .container
+                h1.page-heading__title Uživatelský účet
+            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-user-thumb-large.jpg" data-src=URLbase+"img/user-thumb-large.jpg" alt="#" title="#")
+                
+        include _breadcrumb.pug
+        main
+            .container
+                .print-area
+                    article.page
+                        .page-message
+                            h3.page-message__title Registrace byla úspěšná
+                            
+
+                            form(method="post" action="" class="login-form page-message__login-form" name="login_form")
+                                .alert.alert-success Na Váš email jméno@adresa.cz, který jste uvedli při registraci, jsem Vám poslali aktivační odkaz. Kliknutím na něj aktivujete svůj účet a budete se moci přihlásit.
+                                .alert.alert-danger Zadali jste špatné údaje
+                                .form-group
+                                    label(for="login_form_username") Uživatelské jméno
+                                    input.form-control(type="text" name="login_form_username" id="login_form_username" required autocomplete="username")
+
+                                .form-group
+                                    label(for="login_form_password") Heslo
+                                    input.form-control(type="password" name="login_form_password" id="login_form_password" required autocomplete="password")
+
+                                .form-group
+                                    button.form-control.btn(type="submit" name="login_form_submit" id="login_form_submit") Přihlásit se
+                                    
+                                a.form-link__forgotten-pass(href="#") Zapomenuté heslo?
+
+        include _news-section.pug
+
+        include _footer.pug
+
+        include _js-include.pug

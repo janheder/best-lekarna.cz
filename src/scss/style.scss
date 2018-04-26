@@ -1,0 +1,325 @@
+@charset 'utf-8';
+
+@import "mixins/_prefixes";
+
+@import "mixins/_position";
+
+@import "variables/_variables";
+
+/*------------------------------------*\
+    IMPORT PLUGINS
+\*------------------------------------*/
+
+@import "plugins/bootstrap-reboot.min";
+
+@import "plugins/easy-autocomplete.min";
+
+@import "plugins/jquery.cookiebar.min";
+
+@import "plugins/photoswipe.min";
+@import "plugins/default-skin.min";
+
+@import "plugins/swiper.min";
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+
+/* rem setup */
+html {
+    font-size: 10px;
+}
+@media screen and (max-width: 1400px) {
+    html {
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 8.5px;
+    }
+}
+
+body {
+    font-size: 1.5rem;
+    color: $text-primary;
+    background: $bg-white;
+    font-family: $font-family-main, $font-family-system;
+    overflow-x: hidden;
+    position: relative;
+    width:100%;
+    margin: 0;
+    @include transition(0.3s margin ease);
+} 
+
+/* global box-sizing */
+*, *:after, *:before {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+}
+
+/* selection */
+::-moz-selection { /* Code for Firefox */
+    color: $text-white;
+    background: $brand-primary;
+}
+
+::selection {
+    color: $text-white;
+    background: $brand-primary;
+}
+
+/* links */
+a {
+    color: $brand-primary;
+    font-weight: 500;
+    font-size: 1.5rem;
+
+    &:hover, &:focus, &:active{
+        color: $text-primary;
+        outline: none;
+    }
+}
+
+
+/* clear */
+.clear {
+    *zoom: 1;
+
+    &::before, &::after {
+        content: ' ';
+        display: table; 
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+/* images */
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    height: auto;
+}
+
+/* images transition */
+img{
+    @include transition(0.3s opacity ease);
+}
+
+/* cover image */
+.post__image-container{
+    position: relative;
+    z-index: 1;
+}
+.post__featured-image{
+    object-fit: cover;
+    @include absolute-position(0px, 0px, 0px, 0px);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.container{
+    max-width: 1260px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.row{
+    margin-right: -10px;
+    margin-left: -10px;
+}
+div[class*=' col-']{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+main{
+    background: $bg-white;
+    padding:4rem 0;
+}
+
+@media screen and (max-width:768px){
+    main{
+        background: $bg-white;
+        padding: 20px 0;
+        /*
+        .container{
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        */
+    }
+}
+@media screen and (max-width:575px){
+    main{
+        padding: 0;
+    }
+}
+
+.pswp__bg{
+    background: rgba(0,0,0,0.9); 
+}
+
+/*------------------------------------*\
+    PRINT 
+\*------------------------------------*/
+
+@import "_print";
+
+/*------------------------------------*\
+    COOIE BAR
+\*------------------------------------*/
+
+@import "_cookie-bar";
+
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+
+@import "_buttons";
+
+/*------------------------------------*\
+    ICONS
+\*------------------------------------*/
+
+@import "_icons";
+
+/*------------------------------------*\
+    FORM & FORM ELEMENTS
+\*------------------------------------*/
+
+@import "_form";
+
+/*------------------------------------*\
+     NAV TABS
+\*------------------------------------*/
+
+@import "_nav-tabs";
+
+/*------------------------------------*\
+     NUMBER STEPPER
+\*------------------------------------*/
+
+@import "_number-stepper";
+
+/*------------------------------------*\
+     DROPDOWNS
+\*------------------------------------*/
+
+@import "_dropdowns";
+
+/*------------------------------------*\
+    BREADCRUMB
+\*------------------------------------*/
+
+@import "_breadcrumb";
+
+/*------------------------------------*\
+    PAGINATION
+\*------------------------------------*/
+
+@import "_pagination";
+
+/*------------------------------------*\
+    ALERTS
+\*------------------------------------*/
+
+@import "_alerts";
+
+/*------------------------------------*\
+    NAVIGATION
+\*------------------------------------*/
+
+@import "_nav";
+
+/*------------------------------------*\
+    SWIPER LAZYLOAD
+\*------------------------------------*/
+
+@import "_swiper-lazyload";
+
+/*------------------------------------*\
+    PRODUCT GRID
+\*------------------------------------*/
+
+@import "_product-grid";
+
+/*------------------------------------*\
+    SINGLE PRODUCT CELL
+\*------------------------------------*/
+
+@import "_single-product-cell";
+
+/*------------------------------------*\
+    SECTIONS (HERO...)
+\*------------------------------------*/
+
+@import "_sections";
+
+
+/*------------------------------------*\
+    RATING STARS
+\*------------------------------------*/
+
+@import "_rating";
+
+/*------------------------------------*\
+    FOOTER & COPYRIGHT
+\*------------------------------------*/
+
+@import "_footer";
+
+/*------------------------------------*\
+    CART
+\*------------------------------------*/
+
+@import "_cart";
+
+/*------------------------------------*\
+    PRODUCT DETAIL
+\*------------------------------------*/
+
+@import "_product-detail";
+
+/*------------------------------------*\
+    PRODUCT CATEGORY
+\*------------------------------------*/
+
+@import "_product-category";
+
+/*------------------------------------*\
+    ARTICLE
+\*------------------------------------*/
+
+@import "_article";
+
+/*------------------------------------*\
+    NEWS SINGLE
+\*------------------------------------*/
+
+@import "_news-single";
+
+/*------------------------------------*\
+    MODALS
+\*------------------------------------*/
+
+@import "_modal";
+
+/*------------------------------------*\
+    FILTER
+\*------------------------------------*/
+
+@import "_filter";
+
+/*------------------------------------*\
+    FORUM
+\*------------------------------------*/
+
+@import "_forum"; 

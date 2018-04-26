@@ -1,0 +1,376 @@
+/*------------------------------------*\
+    FORM ELEMENTS
+\*------------------------------------*/
+
+.form-control{
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding:0.5rem 1.5rem;
+    height: 4.6rem;
+    font-weight: 400;
+    border-radius: $border-radius-primary;
+    border: 1px solid $border-grey;
+    color: $text-primary;
+
+    &.btn{
+        font-weight: 500;  
+        border: 0;
+    }
+    &.error{
+        border-color: $red-main;
+        box-shadow: none;
+    }
+    &.valid{
+        border-color: $green-main;
+        box-shadow: none;
+    }
+    &:focus{
+        color: $text-primary;  
+    }
+}
+textarea.form-control{
+    height: auto;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: 4.6rem;
+}
+.form-group{
+    font-weight: 400;
+    padding-bottom: 2rem;  
+    margin: 0;
+    position: relative;
+
+    button{
+    width: 100%;
+    cursor: pointer;
+    border: 0;
+    }
+    span.error{
+        color: $red-main;
+        font-size: 13px;
+        order: 1;
+        margin: 0;
+    }
+    label{
+        width: 100%;
+    }
+    h3{
+        margin: 2rem 0;
+    }  
+    #show_password_toggler{
+        cursor: pointer;
+        position: absolute;
+        top: 40px;
+        right: 1.5rem;
+        opacity: 0.6;
+        padding: 0px;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+
+.form-check__label .error::after{
+    content: "";
+    @include absolute-position(-1px,-1px,-1px,-1px);
+    border: 1px solid $border-red;
+    border-radius: $border-radius-primary;
+}
+.label__muted{
+    opacity: 0.7;
+}
+.form-check{
+    margin: 10px 0;
+    padding: 0;
+}
+.form-check__label{
+    padding: 1.1rem 6rem 1.1rem 4rem;
+    min-height: 4.6rem;
+    border: 1px solid $border-grey;
+    position: relative;
+    background: $white;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 1;
+    @include flexbox();
+    @include flex-direction(column);
+    margin: 0;
+    border-radius: $border-radius-primary;
+    line-height: 1.5;
+
+    &.disabled{
+        background: $bg-light;
+        color: $black-transparent-50;
+
+        & .form-check__price{
+            color: $text-primary;
+            opacity: 0.8;
+        }
+    }
+}
+.form-check__box{
+    background: transparent;
+    height: 14px;
+    width: 14px;
+    display: block;
+    position: absolute;
+    top: 1.4rem;
+    right: 1rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    opacity: 0.5;
+}
+.form-check__inline{
+    display: inline-block;
+}
+.form-check__link{
+    margin: 0;
+}
+.form-check__input:checked ~ .form-check__box{
+    opacity: 1;
+}
+.form-check__box.checkbox::before{
+    content: "";
+    background: transparent;
+    border: 2px solid $bg-dark;
+    height: 100%;
+    width: 100%;
+    display: block;
+    @include absolute-position(0, 0, 0, 0);
+}
+.form-check__input:checked ~ .form-check__box.checkbox::before{
+    background: $brand-primary;
+    border: 2px solid $brand-primary;
+}
+.form-check__input:checked ~ .form-check__box.checkbox::after{
+    content: "";
+    display: block;
+    @include absolute-position(2px, 0, 0, 5px);
+    width: 4px;
+    height: 8px;
+    border: solid $bg-white;
+    border-width: 0 2px 2px 0;
+    @include rotate(45);
+}
+.form-check__box.radio::before{
+    content: "";
+    background: transparent;
+    border: 2px solid $bg-dark;
+    height: 100%;
+    width: 100%;
+    border-radius: 999px;
+    display: block;
+    @include absolute-position(0, 0, 0, 0);
+}
+.form-check__input:checked ~ .form-check__box.radio::before{
+    background: transparent;
+    border: 2px solid $brand-primary;
+}
+.form-check__input:checked ~ .form-check__box.radio::after{
+    content: "";
+    display: block;
+    @include center(both);
+    width: 6px;
+    height: 6px;
+    background: $brand-primary;
+    border-radius: 999px;
+}
+.form-check__input{
+    margin-left: -2.5rem;
+    margin-top: 0;
+    /*@include center(vertical);*/
+    position: absolute;
+    top: 1.4rem;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+.form-check__price{
+    margin: 0;
+    font-weight: 500;
+    color: $red-main;
+    opacity: 1;
+    position: absolute;
+    right: 2rem;   
+    top: 1rem;
+}
+.form-check__description{
+    display: block;
+    opacity: 0.9;
+    font-size: 13px;
+    margin-top: 0.5rem;
+    font-weight: 400;
+    z-index: -1;
+}
+.form-check__input:checked ~ .form-check__description::after{
+    content: "";
+    @include absolute-position(-2px,-2px,-2px,-2px);
+    background: $bg-white;
+    z-index: -2;
+    border-radius: $border-radius-primary;
+    border: 2px solid $brand-primary;
+}
+
+
+/*
+.form-check + .form-check{
+    border-top: 0;
+}
+*/
+.form-address-wrap{
+    /*display: none;*/
+    padding: 20px;
+    background: $light-grey;
+}
+@media screen and (max-width: 1400px){
+    .form-group #show_password_toggler{
+        top: 34px;
+    }
+}
+@media screen and (max-width: 991px){
+    .form-group{
+        & .form-check-label{
+            padding: 1.1rem 2rem 1.1rem 4rem;
+
+            & .form-check-input{
+            margin-left: -2.5rem;
+            }
+        }
+    }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+/*------------------------------------*\
+     FORMS
+\*------------------------------------*/
+
+.register-form, .login-form{
+    /*& h3{
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid $dark-grey;
+        margin: 0;
+        margin-bottom: 2.5rem;
+        display: none;
+        font-size: 2.25rem;
+    }*/
+    & button{
+        width: 100%;
+    }
+    & .register-form-address-wrap{
+        & .register-form-address-alt{
+            font-size: 13px;
+            margin-top: 1rem;
+            display: block; 
+            color: $dark-grey;
+            cursor: pointer;
+        }
+    }   
+    & .register-form-info-collapse-wrap{
+        padding: 3rem 0;
+    }
+    .register-form-billing__wrap, .register-form-shipping__wrap, .register-form-register__wrap {
+        display: none;
+    }
+}   
+
+@media screen and (max-width: 991px){
+    .register-form-col, .login-form-col{
+        padding-top: 20px;
+    }
+    .register-form-col{
+        order: 1;
+        padding-bottom: 20px;
+    }
+    .login-form-col{
+        order: 0;
+    }
+    .register-form-toggler__icon{
+        @include center(vertical);
+        right: 2rem;
+        background: $bg-dark;
+        height: 2px;
+        width: 10px;
+
+        &::after{
+            content: "";
+            @include center(both);
+            height: 10px;
+            width: 2px;
+            background: $bg-dark;
+        }
+    }  
+    .register-form-toggler, .login-form-toggler{
+        cursor: pointer;
+        background: $bg-light;
+        padding: 2rem;
+        display: block;
+        color: $text-primary;
+        border: 1px solid $border-primary;
+        margin: 0;
+        position: relative;
+        
+        &[aria-expanded="true"]{
+            background: $bg-white;
+        }
+        &[aria-expanded="true"] .register-form-toggler__icon::after{
+            content: none;
+        }
+    }
+    .register-form-collapse, .login-form-collapse{
+        border: 1px solid $border-primary;
+        border-top: 0;
+        padding: 20px;
+    }
+}
+@media screen and (min-width: 992px){
+    .form-row-wide{
+        & .col-12{
+            padding-right: 40px;
+            padding-left: 15px;
+
+            &:last-child{
+                padding-right: 15px;
+                padding-left: 40px;
+            }
+        }
+    }
+    .register-form, .login-form{
+
+        & h3{
+            display: block;
+        }
+        & .collapse{
+            display: block;
+        }
+    }
+    .register-form-toggler, .login-form-toggler{
+        display: none;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 991px){
+    .register-form, .login-form{
+        padding: 0;
+        margin: 0;
+    }
+}
+.tooltip{
+    font-size: 12px;
+}
+.form-responsive-error{
+    display: none;
+    background: $bg-red;
+    padding: 20px;
+    color: $text-white;
+    margin-top: 20px;
+    border-radius: $border-radius-primary;
+}
+@media screen and (min-width: 991px){
+    .form-responsive-error{
+        display: none;
+    }
+}

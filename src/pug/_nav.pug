@@ -1,0 +1,497 @@
+header
+	nav.navbar.navbar-top(id="anchor-navbar-top")
+		.container
+			.navbar-top__left
+				a.navbar-top__link(href="#") O nás
+				a.navbar-top__link(href="#") Obchodní podmínky
+				a.navbar-top__link(href="#") Kontakty
+			.navbar-top__right
+				a.navbar-top__link(href="#") #[span.navbar-top__icon #[span.fas.fa-user]] Přihlášení
+				a.navbar-top__link(href="#") #[span.navbar-top__icon #[span.fas.fa-plus-circle]] Registrace
+
+	nav.navbar.navbar-expand-lg.navbar-main
+		.container.navbar-main__container
+
+			.navbar-toggler(aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarNav" role="button")
+				span.hamburger-icon
+				p Menu
+
+			a.navbar-brand(href="#")
+				img.navbar-brand__img(src=URLbase+"images/logo.svg" title="#" alt="#")
+
+			.navbar-search-responsive-toggler(id="search-toggler-responsive")
+				span.search-icon
+
+			.navbar-search
+				form.navbar-search__form(method="POST" id="search-form")
+					span.search-icon.navbar-search__input-icon
+					.form-group.navbar-search__form-group
+						.navbar-search__responsive-close(id="search-toggler-responsive-close")
+							span.cross-icon.navbar-search__responsive-close-icon
+						input.form-control.navbar-search__input(type="text" name="searchbox" id="searchbox" placeholder="Hledejte název produktu, značku nebo typ...")
+						.navbar-search__submit-wrap
+							.navbar-search__submit-speech
+								span.fa.fa-microphone.microphone-icon(onclick="startDictation()" title="Vyhledávejte hlasem")
+							button.btn.navbar-search__button(class="form-control" type="submit" name="search-button" id="search-button") Hledat
+								span.search-icon.white.navbar-search__button-icon
+					
+				.navbar-search-responsive
+
+					.navbar-search-responsive__section
+						h5.navbar-search-responsive__title Zákazníci často vyhledávají:
+						.navbar-search-responsive__group
+							a.navbar-search-responsive__single(href="#") Lorem ipsum
+							a.navbar-search-responsive__single(href="#") Dolor sit amet
+							a.navbar-search-responsive__single(href="#") Consectetur adipiscing elit
+							a.navbar-search-responsive__single(href="#") Do eiusmod
+
+					.navbar-search-responsive__section
+						h5.navbar-search-responsive__title Akční nabídka:
+						.navbar-search-responsive__group
+							a.navbar-search-responsive__single(href="#") Lorem ipsum
+							a.navbar-search-responsive__single(href="#") Dolor sit amet
+							a.navbar-search-responsive__single(href="#") Consectetur adipiscing elit
+							a.navbar-search-responsive__single(href="#") Do eiusmod
+
+					.navbar-search-responsive__section
+						h5.navbar-search-responsive__title Doporučené kategorie:
+						.navbar-search-responsive__group
+							a.navbar-search-responsive__single(href="#") Lorem ipsum
+							a.navbar-search-responsive__single(href="#") Dolor sit amet
+							a.navbar-search-responsive__single(href="#") Consectetur adipiscing elit
+							a.navbar-search-responsive__single(href="#") Do eiusmod
+
+			
+			.navbar-user
+				.dropdown.navbar-user__dropdown
+					.dropdown-toggle.navbar-user__dropdown-toggle(id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+						span.user-icon.white.navbar-user__icon
+						.navbar-user__text-wrap
+							p.navbar-user__text Petroslav Novakovič
+						span.caret-icon.white.navbar-user__caret
+					.dropdown-menu.dropdown-menu-left.navbar-user__dropdown-menu(aria-labelledby="userDropdown")
+						a.dropdown-item.navbar-user__item(href="#") Detail účtu
+						a.dropdown-item.navbar-user__item(href="#") Historie objednávek
+						a.dropdown-item.navbar-user__item(href="#") Odhlásit
+						
+			// Přihlášený uživatel
+				.navbar-user
+					a.navbar-user__link(href="#")
+						span.user-icon.white.navbar-user__icon
+						.navbar-user__text-wrap
+							p.navbar-user__text Můj účet
+
+			.navbar-contact
+				span.icon-phone.navbar-contact__icon
+				.navbar-contact__text
+					span.navbar-contact__phone +420 844 111 152
+					span.navbar-contact__open PO - PÁ 7:00 - 18:00				
+
+			.navbar-cart
+				span.navbar-cart__toggle
+				a.navbar-cart__link(href="#")
+					span.cart-icon-nav.navbar-cart__cart-icon
+						span.navbar-cart__icon-number 3
+					.navbar-cart__text-wrap
+						p.navbar-cart__text Nákupní košík
+						span.navbar-cart__price 5 899Kč
+
+				.navbar-cart__dropdown
+					.navbar-cart__dropdown-inner
+
+						a.navbar-cart__dropdown-item.navbar-cart-item(href="#")
+							.navbar-cart-item__img-wrap
+								img.navbar-cart-item__img(src=URLbase+"img/placeholder-60x60.png" data-src=URLbase+"img/placeholder-60x60.png" alt="#" title="#")
+							.navbar-cart-item__text-wrap
+								h5.navbar-cart-item__title #{ProductName}
+								p.navbar-cart-item__text 3 kusy
+								.navbar-cart-item__price-wrap
+									.navbar-cart-item__price-old 1099 Kč
+									.navbar-cart-item__price-main 899 Kč
+
+						a.navbar-cart__dropdown-item.navbar-cart-item(href="#")
+							.navbar-cart-item__img-wrap
+								img.navbar-cart-item__img(src=URLbase+"img/placeholder-60x60.png" data-src=URLbase+"img/placeholder-60x60.png" alt="#" title="#")
+							.navbar-cart-item__text-wrap
+								h5.navbar-cart-item__title #{ProductName}
+								p.navbar-cart-item__text 3 kusy
+								.navbar-cart-item__price-wrap
+									.navbar-cart-item__price-old 1099 Kč
+									.navbar-cart-item__price-main 899 Kč
+
+						a.navbar-cart__dropdown-item.navbar-cart-item(href="#")
+							.navbar-cart-item__img-wrap
+								img.navbar-cart-item__img(src=URLbase+"img/placeholder-60x60.png" data-src=URLbase+"img/placeholder-60x60.png" alt="#" title="#")
+							.navbar-cart-item__text-wrap
+								h5.navbar-cart-item__title #{ProductName}
+								p.navbar-cart-item__text 3 kusy
+								.navbar-cart-item__price-wrap
+									.navbar-cart-item__price-old 1099 Kč
+									.navbar-cart-item__price-main 899 Kč
+
+						.navbar-cart__dropdown-price-summary.navbar-cart-price
+							p.navbar-cart-price__text Celková cena
+								span.navbar-cart-price__small Včetně DPH
+							h4.navbar-cart-price__title 2697 Kč
+
+						.navbar-cart__dropdown-delivery.navbar-cart-delivery 
+							.navbar-cart-delivery__text-wrap
+								p.navbar-cart-delivery__text Nakupte ještě za 303 Kč a máte Dopravu zdarma
+
+						.navbar-cart__dropdown-checkout-btn.navbar-cart-checkout-btn
+							a.btn.btn-grey.btn-ghost-grey.navbar-cart-checkout-btn__button(href="#") #[span.cross-icon.navbar-cart-checkout-btn__button-icon] Vyprázdnit
+							a.btn.navbar-cart-checkout-btn__button(href="#") Objednat zboží #[span.arrow-icon.white.navbar-cart-checkout-btn__button-icon]
+								
+				// Prázdný košík
+					.navbar-cart__dropdown
+						.navbar-cart__dropdown-inner
+							.navbar-cart__dropdown-empty
+								h3.navbar-cart__dropdown-empty-title Váš košík je prázdný
+								p.navbar-cart__dropdown-empty-text Před nákupem prosím do svého košíku vložte produkt
+							.navbar-cart__dropdown-checkout-btn.navbar-cart-checkout-btn
+								a.btn.btn-grey.btn-ghost-grey.navbar-cart-checkout-btn__button(href="#") Kontakty
+								a.btn.navbar-cart-checkout-btn__button(href="#") Akční nabídka #[span.arrow-icon.white.navbar-cart-checkout-btn__button-icon]											
+
+
+	nav.navbar.navbar-expand-lg.navbar-menu
+		.container.navbar-menu__container
+			.collapse.navbar-collapse.navbar-menu__collapse(id="navbarNav")
+				ul.navbar-nav.navbar-menu__navbar
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Léčba bolesti
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Volně prodejné léky
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Pohyb
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Vitamíny
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Péče o tělo
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Dermo kosmetika
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Ústní hygiena
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Čaje
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Péče o matku a dítě
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						.dropdown.nav-item__dropdown
+							a.dropdown-toggle.nav-link.nav-item__link(id="navDropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Výživa a dietní připravky
+							.dropdown-menu.nav-item__dropdown-menu(aria-labelledby="navDropdown1")
+								.container.nav-item__container
+									.row.nav-item__row
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.nav-item__column.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+										.col-12.col-sm-12.col-md-12.col-lg-3.col-xl-3.dropdown-column
+											a.dropdown-item.dropdown-column__link(href="#")
+												h5.dropdown-column__title #[span.arrow-icon.white.dropdown-column__icon] Vítr ve studiu
+					li.nav-item.navbar-menu__nav-item
+						a.nav-link.nav-item__link(href="#") Prostředky zdrav. techniky
+					li.nav-item.navbar-menu__nav-item
+						a.nav-link.nav-item__link(href="#") Ostatní
+
+
+	span(id="dark-overlay" aria-label="Toggle navigation" data-target="#navbarNav" data-toggle="collapse")
+	span(id="dark-overlay-cart")

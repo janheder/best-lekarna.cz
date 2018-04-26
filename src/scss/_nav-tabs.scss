@@ -1,0 +1,52 @@
+/*------------------------------------*\
+     NAV TABS
+\*------------------------------------*/
+
+.nav-tabs{ 
+    @include justify-content(center);
+    & .nav-item{
+        margin: 0 5px -1px 0;
+        cursor: pointer;
+
+        & .nav-link{
+            min-height: 56px;
+            @include flexbox();
+            @include align-items(center);
+            @include flex-direction(row);
+            padding: 10px 3rem;
+            color: $dark-grey;
+            background: $light-grey;
+            border: 1px solid $border-grey;
+            border-right: 1px solid $border-grey;
+            border-radius: 0;
+            &.active{
+                background: transparent;
+                border-bottom-color: $white;
+            }
+            &:hover, &:active, &:focus{
+                background: $bg-white;
+            }
+        }
+        &:last-child .nav-link{
+            border-right: 1px solid $border-grey;
+        }
+        &:first-child .nav-link.active{
+            border-right-color: $border-grey;
+        }
+
+        &:last-child .nav-link.active{
+            border-left-color: $border-grey;
+        }
+        &:not(:first-child):not(:last-child) .nav-link.active{
+            border-left-color: $border-grey;
+            border-right-color: $border-grey;
+        }
+    }
+}
+@media screen and (max-width:460px){
+    .nav-tabs{ 
+        & .nav-item{
+            @include flex-grow(1);
+        }
+    }
+}

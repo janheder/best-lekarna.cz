@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    BREADCRUMB
+\*------------------------------------*/
+
+.breadcrumb{
+    margin:0;
+    background: $light-grey;
+    padding: 0;
+    min-height: 46px;
+    z-index: 1;
+    position: relative;
+}
+.breadcrumb__container{
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+}
+.breadcrumb__item{     
+    font-size: 1.3rem;  
+    color: $dark-grey; 
+    font-weight: 400;
+    padding-left: 26px;
+    position: relative;
+    padding: 1.5rem 0 1.5rem 26px;
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(center);
+
+    + .breadcrumb__item::before{
+        content: "";
+        height: 6px;
+        width: 6px;
+        display: block;
+        @include center(vertical);
+        left: 8px;
+        padding: 0;
+        border-top: 1px solid $dark-grey;
+        border-right: 1px solid $dark-grey;
+        @include transform(translate(0, -35%) rotate(45deg));
+        @include transition(0.3s all ease);
+    }
+    &:first-child{
+        padding: 0;
+    }
+    &.active{
+        color: $dark-grey;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .breadcrumb__item{
+        display: none;
+
+        &:nth-last-child(2){
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 700;
+            &::before{
+                @include transform(translate(0, -35%) rotate(225deg));
+            }
+        }
+    }
+}

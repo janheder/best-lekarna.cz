@@ -1,0 +1,335 @@
+doctype html
+include _variables.pug  
+html(lang=lang)
+    head
+        meta(charset="utf-8")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible")
+        meta(content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" name="viewport")
+        title #{title}
+        meta(content="index,follow,snippet,archive" name="robots")
+        meta(content=metaDescription name="description")
+        meta(content=metaKeywords lang="cs" name="keywords")
+        meta(content=metaAuthor name="author")
+
+        link(rel="canonical" href=metaURL)
+        meta(property="og:locale" content="cs_CZ")
+        meta(property="og:type" content="website")
+        meta(property="og:title" content=title)
+        meta(property="og:description" content=metaDescription)
+        meta(property="og:url" content=metaURL)
+        meta(property="og:site_name" content=metaSitename)
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content=metaTwitterName)
+        meta(name="twitter:title" content=title)
+        meta(name="twitter:description" content=metaDescription)
+        meta(name="twitter:image" content=metaTwitterImg)
+        include _css-include.pug  
+    body
+        include _nav.pug
+        section.hero.post__image-container
+            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-bg-hero.jpg" data-src=URLbase+"img/bg-hero.jpg" alt="#" title="#")
+            .container.hero__container
+                .hero__swiper
+                    .hero__swiper-wrap
+                        .swiper-wrapper.hero__swiper-wrapper
+
+                            .swiper-slide.hero__swiper-slide(data-slide="0")
+                                .hero__content
+                                    .hero__title 1 CA Aeromax 6 + Yamaha A-S301
+                                    .hero__text Aeromax6+Yas301
+                                    .hero__price-old 44 980 Kč
+                                    .hero__price 31 780 Kč
+                                    .hero__btn
+                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
+                                .hero__image
+                                    .hero__sale-tag -30%
+                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
+                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+                            .swiper-slide.hero__swiper-slide(data-slide="1")
+                                .hero__content
+                                    .hero__title 2 CA Aeromax 6 + Yamaha A-S301
+                                    .hero__text Aeromax6+Yas301
+                                    .hero__price-old 44 980 Kč
+                                    .hero__price 31 780 Kč
+                                    .hero__btn
+                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
+                                .hero__image
+                                    .hero__sale-tag -30%
+                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
+                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+                            .swiper-slide.hero__swiper-slide(data-slide="2")
+                                .hero__content
+                                    .hero__title 3 CA Aeromax 6 + Yamaha A-S301
+                                    .hero__text Aeromax6+Yas301
+                                    .hero__price-old 44 980 Kč
+                                    .hero__price 31 780 Kč
+                                    .hero__btn
+                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
+                                .hero__image
+                                    .hero__sale-tag -30%
+                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
+                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+                            .swiper-slide.hero__swiper-slide(data-slide="3")
+                                .hero__content
+                                    .hero__title 4 CA Aeromax 6 + Yamaha A-S301
+                                    .hero__text Aeromax6+Yas301
+                                    .hero__price-old 44 980 Kč
+                                    .hero__price 31 780 Kč
+                                    .hero__btn
+                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
+                                .hero__image
+                                    .hero__sale-tag -30%
+                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
+                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+                        .swiper-pagination.swiper-pagination-white.swiper-pagination--hero
+                    .swiper-button-prev.swiper-button-prev--hero
+                    .swiper-button-next.swiper-button-next--hero 
+
+                    .hero__swiper-tabs
+                        .hero__tab-single.active(id="slide1" data-slide-nav="0")
+                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
+                        .hero__tab-single(id="slide2" data-slide-nav="1")
+                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
+                        .hero__tab-single(id="slide3" data-slide-nav="2")
+                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
+                        .hero__tab-single(id="slide4" data-slide-nav="3")
+                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
+
+        section.benefits
+            .container.benefits__container
+                .benefits__wrap
+                    .benefits__single
+                        .benefits__img-wrap
+                            img.benefits__img(src=URLbase+"images/benefits-delivery.svg")
+                        p.benefits__text Doprava zdarma nad 5000 Kč
+
+                    .benefits__single
+                        .benefits__img-wrap
+                            img.benefits__img(src=URLbase+"images/benefits-stock.svg")
+                        p.benefits__text 5727 produktů skladem
+
+                    .benefits__single
+                        .benefits__img-wrap
+                            img.benefits__img(src=URLbase+"images/benefits-gift.svg")
+                        p.benefits__text Dárek k objednávce nad 6000 Kč
+
+                    .benefits__single
+                        .benefits__img-wrap
+                            img.benefits__img(src=URLbase+"images/benefits-marker.svg")
+                        p.benefits__text 1400 výdejních míst po celé ČR
+
+
+        include _index-categories.pug
+
+        section.index-products
+            .container  
+                .filter-sort
+                    ul.nav.nav-tabs
+                        li.nav-item
+                            a.nav-link.active(id="1-index-tab" data-toggle="tab" href="#1-index" role="tab" aria-controls="1-index" aria-selected="true") Akční nabídka
+                        li.nav-item
+                            a.nav-link(id="2-index-tab" data-toggle="tab" href="#2-index" role="tab" aria-controls="2-index" aria-selected="false") Doporučené
+                        li.nav-item
+                            a.nav-link(id="3-index-tab" data-toggle="tab" href="#3-index" role="tab" aria-controls="3-index" aria-selected="false") Novinky
+                        li.nav-item
+                            a.nav-link(id="4-index-tab" data-toggle="tab" href="#4-index" role="tab" aria-controls="4-index" aria-selected="false") Nejprodávanější
+
+                .tab-content
+                    .tab-pane.fade.show.active(id="1-index" role="tabpanel" aria-labelledby="1-index-tab")            
+                        .swiper-container-5-products-wrap     
+                            .swiper-container-5-products
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug         
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                            .swiper-pagination.swiper-pagination-white
+                            .swiper-button-prev.swiper-button-prev--5
+                            .swiper-button-next.swiper-button-next--5
+
+                    .tab-pane.fade(id="2-index" role="tabpanel" aria-labelledby="2-index-tab")    
+                        .swiper-container-5-products-wrap     
+                            .swiper-container-5-products
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug         
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                            .swiper-pagination.swiper-pagination-white
+                            .swiper-button-prev.swiper-button-prev--5
+                            .swiper-button-next.swiper-button-next--5
+
+                    .tab-pane.fade(id="3-index" role="tabpanel" aria-labelledby="3-index-tab")    
+                        .swiper-container-5-products-wrap     
+                            .swiper-container-5-products
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug         
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                            .swiper-pagination.swiper-pagination-white
+                            .swiper-button-prev.swiper-button-prev--5
+                            .swiper-button-next.swiper-button-next--5
+
+                    .tab-pane.fade(id="4-index" role="tabpanel" aria-labelledby="4-index-tab")    
+                        .swiper-container-5-products-wrap     
+                            .swiper-container-5-products
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug         
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                                    .swiper-slide
+                                        include _single-product-cell-small.pug
+                            .swiper-pagination.swiper-pagination-white
+                            .swiper-button-prev.swiper-button-prev--5
+                            .swiper-button-next.swiper-button-next--5
+
+        section.logos
+            .container.logos__container
+                .logos__swiper  
+                    .logos__swiper-wrap
+                        .swiper-wrapper
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cambridge-audio.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/audio-technika.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/advance-acoustic.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cabasse.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/klipsch.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/magnat.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/onkyo.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/pro-ject.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/wharfedale.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+                            .swiper-slide.logos__swiper-slide
+                                img.swiper-lazy(data-src=URLbase+"img/logos/yamaha.jpg")
+                                .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+                    .swiper-button-prev.swiper-button-prev--logos
+                    .swiper-button-next.swiper-button-next--logos
+
+        section.index-cta
+            .container
+                .row
+                    .col-12.col-sm-12.col-md-8.col-lg-8.col-xl-8.index-cta__column
+                        .index-cta__single.post__image-container
+                            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-index-cta-poradna.jpg" data-src=URLbase+"img/index-cta-poradna.jpg" alt="#" title="#")
+                            .index-cta__textfield
+                                h4.index-cta__subtitle Potřebujete poradit s výběrem nového zařízení nebo máte jiné dotazy?
+                                h3.index-cta__title Rádi Vám pomůžeme v naší online poradně.
+                                a.btn.btn-ghost-color.index-cta__btn(href="#") Přejít do poradny
+                    .col-12.col-sm-12.col-md-4.col-lg-4.col-xl-4.index-cta__column
+                        .index-cta__single.index-cta__single--small.post__image-container
+                            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-index-cta-prodejna.jpg" data-src=URLbase+"img/index-cta-prodejna.jpg" alt="#" title="#")
+                            .index-cta__textfield
+                                h3.index-cta__title Kamenná prodejna
+                                .index-cta__text-wrap
+                                    p.index-cta__text Sdružení House Of Music
+                                    p.index-cta__text Podpuklí 288
+                                    p.index-cta__text Frýdek-Místek
+                                    p.index-cta__text 73801
+                                a.btn.btn-ghost-color.index-cta__btn(href="#") Přejít do poradny
+
+
+        include _news-section.pug
+        
+        include _footer.pug
+
+        include _js-include.pug
+
+        script.
+            var carousel_main = new Swiper('.hero__swiper-wrap', {
+            lazy: true,
+            spaceBetween: 0,
+            grabCursor: true,
+            zoom: false,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination--hero',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next--hero',
+                prevEl: '.swiper-button-prev--hero',
+            },
+            });
+
+            $('#slide1').click(carousel_main,function(){
+                carousel_main.slideTo(1);
+            })
+            $('#slide2').click(carousel_main,function(){
+                carousel_main.slideTo(2);
+            })
+            $('#slide3').click(carousel_main,function(){
+                carousel_main.slideTo(3);
+            })
+            $('#slide4').click(carousel_main,function(){
+                carousel_main.slideTo(4);
+            })
+

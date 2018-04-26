@@ -1,0 +1,67 @@
+
+<!-- Popper for Bootstrap support-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script>
+  if(typeof(Popper) === 'undefined') {
+  document.write('<script src="js/popper.min.js">\x3C/script>')}
+  
+</script>
+<!-- Bootstrap core JavaScript-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+  if(typeof($.fn.modal) === 'undefined') {
+  document.write('<script src="js/bootstrap.min.js">\x3C/script>')}
+  
+</script>
+<!-- FontAwesome 5-->
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js" integrity="sha384-0AJY8UERsBUKdWcyF3o2kisLKeIo6G4Tbd8Y6fbyw6qYmn4WBuqcvxokp8m2UzSD" crossorigin="anonymous"></script>
+<script>
+  if(typeof(FontAwesome) === 'undefined') {
+  document.write('<script src="js/fontawesome-all.min.js">\x3C/script>')}
+  
+</script>
+<!-- Custom js plugins and scripts-->
+<script src="undefinedjs/all.min.js"></script>
+<!-- Custom js plugins and scripts-->
+<script>
+  var options = {
+  	data: ["blue", "green", "pink", "red", "yellow"]
+  };
+  $("#searchbox").easyAutocomplete(options);
+  
+</script>
+<!-- Photo swiper HTML setup-->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Zavřít (Esc)"></button>
+        <button class="pswp__button pswp__button--share" title="Sdílet"></button>
+        <button class="pswp__button pswp__button--fs" title="Celá obrazovka"></button>
+        <button class="pswp__button pswp__button--zoom" title="Přiblížit/Oddálit"></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Předchozí"></button>
+      <button class="pswp__button pswp__button--arrow--right" title="Další"></button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,191 @@
+/*------------------------------------*\
+    PRODUCT GRID
+\*------------------------------------*/
+/*
+.product-grid{
+    display: grid;
+    background: $border-grey;
+}
+
+@supports  (display: grid) { */
+    .product-grid{
+        @include flexbox();
+        @include flex-wrap(wrap);
+        border-left: 0;
+        border-right: 0;
+    }
+    .single-product-cell{
+        position: relative;
+        float: left;
+
+        &::before{
+            content: "";
+            @include absolute-position(0,0,0,0);
+            background: $white;
+            z-index: -1;
+        }
+    }
+
+    @media screen and (min-width:992px){
+        .single-product-cell{
+            max-width: 25%;
+            width: 100%;
+
+            &::before{
+                border-top: 0;
+                border-right: 1px solid $border-grey;
+                border-bottom: 1px solid $border-grey;
+                border-left: 0;
+            }
+            &:nth-child(4n+1){
+                &::before{
+                    border-left: 1px solid $border-grey;
+                }
+            }
+            &:nth-child(-n+4){
+                &::before{
+                    border-top: 1px solid $border-grey;
+                }
+            }
+        }
+        .single-product-cell-small{
+            max-width: 20%;
+        } 
+    }
+    @media screen and (max-width:991px){
+        .product-grid{
+            margin: 0 -20px;
+        }
+    }
+
+    @media (min-width:768px) and (max-width:991px){
+        & .single-product-cell{
+            max-width: 33.333%;
+            width: 100%;
+
+            &::before{
+                border-top: 0;
+                border-right: 1px solid $border-grey;
+                border-bottom: 1px solid $border-grey;
+                border-left: 0;
+            }
+            &:nth-child(3n+1){
+                &::before{
+                    border-left: 1px solid $border-grey;
+                }
+            }
+            &:nth-child(-n+3){
+                &::before{
+                    border-top: 1px solid $border-grey;
+                }
+            }
+        }
+        & .single-product-cell-small{
+            max-width: 25%;
+        } 
+    }
+
+    @media screen and (max-width:767px){
+        .single-product-cell{
+            max-width: 50%;
+            width: 100%;
+
+            &::before{
+                border-top: 0;
+                border-right: 1px solid $border-grey;
+                border-bottom: 1px solid $border-grey;
+                border-left: 0;
+            }
+            &:nth-child(2n+1){
+                &::before{
+                    border-left: 1px solid $border-grey;
+                }
+            }
+            &:nth-child(-n+2){
+                &::before{
+                    border-top: 1px solid $border-grey;
+                }
+            }
+        }
+        .single-product-cell-small{
+            max-width: 50%;
+        } 
+    }
+/*} *//*no grid @support*/
+
+/*------------------------------------*\
+    PRODUCT SWIPER
+\*------------------------------------*/
+.swiper-wrapper{
+    padding: 20px 0px;
+
+    & figcaption{
+        display: none;
+    }
+}
+.swiper-container-4-products{
+    width: 100%;
+    height:100%;
+    position:relative;
+    overflow: hidden;
+    border: 1px solid $border-grey;
+    background: $border-grey;
+
+    & .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: $white;
+        /* Center slide text vertically */
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+    }
+}
+@media screen and (max-width:991px){
+    .swiper-container-4-products{
+        border-left: 0;
+        border-right: 0;
+    }   
+}
+
+
+
+.swiper-container-5-products{
+    width: 100%;
+    /*height:100%;*/
+    overflow: hidden;
+    position:relative;
+    border: 0px solid $border-grey;
+    // background: $border-grey;
+    background: transparent;
+
+    & .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: $white;
+        /* Center slide text vertically */
+        @include flexbox();
+        @include justify-content(center);
+        @include align-items(center);
+        height: auto;
+    }
+}
+.swiper-container-5-products-wrap{
+    position: relative;
+
+}
+@media screen and (max-width:991px){
+    .swiper-container-5-products{
+        border-left: 0;
+        border-right: 0;
+        width: auto;
+        padding-bottom: 30px;
+        
+        & .swiper-button-prev, & .swiper-button-next{
+            display: none;
+        }
+        & .swiper-pagination-bullets{
+            bottom: 5px;
+        }
+    }   
+}
