@@ -3,7 +3,16 @@
   <nav class="navbar navbar-top" id="anchor-navbar-top">
     <div class="container">
       <div class="navbar-top__left"><a class="navbar-top__link" href="#">O nás</a><a class="navbar-top__link" href="#">Obchodní podmínky</a><a class="navbar-top__link" href="#">Kontakty</a></div>
-      <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a></div>
+      <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
+        <div class="dropdown navbar-top__dropdown">
+          <div class="dropdown-toggle navbar-top__dropdown-toggle" id="userDropdown_top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="navbar-top__icon"><span class="fas fa-user"></span></span>
+            <div class="navbar-top__text-wrap">
+              <p class="navbar-top__text">Petroslav Novakovič</p>
+            </div><span class="caret-icon navbar-top__caret"></span>
+          </div>
+          <div class="dropdown-menu dropdown-menu-left navbar-top__dropdown-menu" aria-labelledby="userDropdown_top"><a class="dropdown-item navbar-top__item" href="#">Detail účtu</a><a class="dropdown-item navbar-top__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-top__item" href="#">Odhlásit</a></div>
+        </div>
+      </div>
     </div>
   </nav>
   <nav class="navbar navbar-expand-lg navbar-main">
@@ -40,10 +49,10 @@
       </div>
       <div class="navbar-user">
         <div class="dropdown navbar-user__dropdown">
-          <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon white navbar-user__icon"></span>
+          <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon navbar-user__icon"></span>
             <div class="navbar-user__text-wrap">
               <p class="navbar-user__text">Petroslav Novakovič</p>
-            </div><span class="caret-icon white navbar-user__caret"></span>
+            </div><span class="caret-icon navbar-user__caret"></span>
           </div>
           <div class="dropdown-menu dropdown-menu-left navbar-user__dropdown-menu" aria-labelledby="userDropdown"><a class="dropdown-item navbar-user__item" href="#">Detail účtu</a><a class="dropdown-item navbar-user__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-user__item" href="#">Odhlásit</a></div>
         </div>

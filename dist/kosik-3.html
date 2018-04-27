@@ -52,14 +52,50 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Condensed:400,700" rel="stylesheet">
     <!-- jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')
+      
+      
+    </script>
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-login-heading">Přihlášení</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
+          </div>
+          <div class="modal-body">
+            <form class="login-form page-message__login-form" method="post" action="" name="login_form"></form>
+            <div class="form-group">
+              <label for="login_form_username">Uživatelské jméno</label>
+              <input class="form-control" type="text" name="login_form_username" id="login_form_username" required autocomplete="username">
+            </div>
+            <div class="form-group">
+              <label for="login_form_password">Heslo</label>
+              <input class="form-control" type="password" name="login_form_password" id="login_form_password" required autocomplete="password">
+            </div>
+            <div class="form-group">
+              <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
+            </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-top" id="anchor-navbar-top">
         <div class="container">
           <div class="navbar-top__left"><a class="navbar-top__link" href="#">O nás</a><a class="navbar-top__link" href="#">Obchodní podmínky</a><a class="navbar-top__link" href="#">Kontakty</a></div>
-          <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a></div>
+          <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
+            <div class="dropdown navbar-top__dropdown">
+              <div class="dropdown-toggle navbar-top__dropdown-toggle" id="userDropdown_top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="navbar-top__icon"><span class="fas fa-user"></span></span>
+                <div class="navbar-top__text-wrap">
+                  <p class="navbar-top__text">Petroslav Novakovič</p>
+                </div><span class="caret-icon navbar-top__caret"></span>
+              </div>
+              <div class="dropdown-menu dropdown-menu-left navbar-top__dropdown-menu" aria-labelledby="userDropdown_top"><a class="dropdown-item navbar-top__item" href="#">Detail účtu</a><a class="dropdown-item navbar-top__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-top__item" href="#">Odhlásit</a></div>
+            </div>
+          </div>
         </div>
       </nav>
       <nav class="navbar navbar-expand-lg navbar-main">
@@ -96,10 +132,10 @@
           </div>
           <div class="navbar-user">
             <div class="dropdown navbar-user__dropdown">
-              <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon white navbar-user__icon"></span>
+              <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon navbar-user__icon"></span>
                 <div class="navbar-user__text-wrap">
                   <p class="navbar-user__text">Petroslav Novakovič</p>
-                </div><span class="caret-icon white navbar-user__caret"></span>
+                </div><span class="caret-icon navbar-user__caret"></span>
               </div>
               <div class="dropdown-menu dropdown-menu-left navbar-user__dropdown-menu" aria-labelledby="userDropdown"><a class="dropdown-item navbar-user__item" href="#">Detail účtu</a><a class="dropdown-item navbar-user__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-user__item" href="#">Odhlásit</a></div>
             </div>
@@ -551,6 +587,12 @@
               </div>
             </div>
           </div>
+          <div class="cart-shipping-payment-overview">
+            <h4 class="cart-shipping-payment-overview__title">Způsob dopravy a platby</h4>
+            <div class="cart-shipping-payment-overview__single">
+              <p class="cart-shipping-payment-overview__name">ČP, Benefit-plus program, balík do ruky:</p><span class="cart-shipping-payment-overview__price">129 Kč</span>
+            </div>
+          </div>
           <div class="cart-price-overview">
             <div class="cart-price-overview__wrap">
               <p class="cart-price-overview__text-small">Celková cena bez DPH:</p>
@@ -588,76 +630,6 @@
                 <div class="cart-user-info-overview__single-content">
                   <p class="cart-user-info-overview__text">Stejná jako u osobních ůdajů</p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="form-group cart-shipping-option">
-            <h3>Zvolte způsob dopravy</h3>
-            <div class="form-check">
-              <label class="form-check__label">
-                <input class="form-check__input" type="radio" name="cart_form_shipping" id="osobni" required>Česká pošta Balík do ruky<span class="form-check__description">Doručuje následující pracovní den od odeslání. Max. hmotnost zásilky 30 kg.</span><span class="form-check__price">115 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label disabled">
-                <input class="form-check__input" type="radio" name="cart_form_shipping" id="cp" required disabled>Česká pošta Balík na poštu<span class="form-check__description">Zde je nutné uvést do poznámky v objednávce (bod č. 3) PSČ pošty, na kterou si zásilku přejete zaslat. Doručuje následující pracovní den od odeslání. Max. hmotnost zásilky 30 kg.</span><span class="form-check__price">99 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label">
-                <input class="form-check__input" type="radio" name="cart_form_shipping" id="ppl" required>PPL do 5 kg na soukromou nebo firemní adresu.<span class="form-check__description">Nabídne se pouze u drobného zboží jako jsou hudební nosiče a podobně. Doručení do druhého pracovního dne ode dne odeslání.</span><span class="form-check__price">89 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label">
-                <input class="form-check__input" type="radio" name="cart_form_shipping" id="ppl2" required>PPL Soukromá nebo firemní adresa do 50 kg <span class="form-check__description">Doručuje zásilky do druhého pracovního dne ode dne odeslání.</span><span class="form-check__price">115 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label" onclick="navigateToUrl('https://www.pplbalik.cz/Main3.aspx?cls=KTMMap&amp;CountryCode=CZ&amp;KTMAddress=73801,Podpuklí 288&amp;ReturnUrl=https%3A%2F%2Fwww.gramofony-desky.cz%2Fkosik.html%3Fsessid%3D2t617d17oqqlam0vrup08bone7%26KTMID%3D%7B0%7D%26KTMaddress%3D%7B1%7D%26KTMname%3D%7B2%7D');">
-                <input class="form-check__input" type="radio" name="cart_form_shipping" id="ppl3" required>PPL partner<span class="form-check__description">Při výběru tohoto typu dopravy budete přesměrováni na pplbalik.cz, kde vyberte konkretní odběrné místo, následně budete navráceni do našeho nákupního košíku.</span><span class="form-check__price">99 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label">
-                <input class="form-check__input" type="radio" name="cart_form_shipping" id="ppl4" required>PPL SOBOTNÍ DORUČENÍ ve větších městech<span class="form-check__description">Zásilka Vám bude doručena v nejbližší sobotu.</span><span class="form-check__price">129 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label">
-                <input class="form-check__input" type="radio" name="cart_form_shipping" id="ppl" required>Osobní odběr v naší prodejně<span class="form-check__description">(Podpuklí 288, Frýdek-Místek), platba kartou nebo hotově.</span><span class="form-check__price">0 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-          </div>
-          <div class="form-group cart-payment-option">
-            <h3>Zvolte způsob platby</h3>
-            <div class="form-check">
-              <label class="form-check__label">
-                <input class="form-check__input" type="radio" name="cart_form_payment" id="hotove" required>Převodem předem na náš účet<span class="form-check__description">115-820780217/0100 vedený u Komerční banky. Var. symbol je ČÍSLO OBJEDNÁVKY.</span><span class="form-check__price">0 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label disabled">
-                <input class="form-check__input" type="radio" name="cart_form_payment" id="bankovni" required disabled>Dobírka<span class="form-check__description">Celkovou částku za zboží a přepravu uhradíte dovozci nebo na odběrném místě</span><span class="form-check__price">20 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check__label">
-                <input class="form-check__input" type="radio" name="cart_form_payment" id="dobirka" required>ESSOX<span class="form-check__description">Splátkování přes společnost ESSOX</span><span class="form-check__price">0 Kč</span><span class="form-check__box radio"></span>
-              </label>
-            </div>
-          </div>
-          <div class="cart-user-note">
-            <h3 class="cart-user-note__title">Poznámka k objednávce</h3>
-            <div class="row">
-              <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="form-group">
-                  <textarea class="form-control" name="cart-form-note" rows="5"></textarea>
-                </div>
-              </div>
-              <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <p>Chcete nám sdělit ještě nějakou důležitou zprávu k vaší objednávce? Využijte prosím, tohoto formuláře.</p>
-                <p>Napsat do něj můžete také upřesňující informace o místě, kam máme Vaše zboží doručit (nejbližší orientační bod apod.)</p>
               </div>
             </div>
           </div>
@@ -741,6 +713,7 @@
                 <input class="form-control footer-bar__input" type="email" name="email-sub-input" id="email-sub-input" placeholder="Zadejte vaši emailovou adresu..." required>
                 <button class="btn form-control footer-bar__btn" type="submit" name="email-sub-button" id="email-sub-button">Odebírat</button>
               </form>
+              <p class="footer-bar__notice">Přihlášením k odběru souhlasíte se <a href="#">zpracovaním osobních údajů</a></p>
             </div>
           </div>
         </div>
@@ -753,7 +726,7 @@
               <h5 class="footer-main__h5">O nákupu</h5><a class="footer-main__link" href="#">Obchodní podmínky</a><a class="footer-main__link" href="#">Reklamační řád</a><a class="footer-main__link" href="#">Jak nakupovat</a><a class="footer-main__link" href="#">Osobní odběry</a><a class="footer-main__link" href="#">Možnosti platby</a>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-              <h5 class="footer-main__h5">Další odkazy</h5><a class="footer-main__link" href="#">Poradna</a><a class="footer-main__link" href="#">Výhody nákupu</a><a class="footer-main__link" href="#">Doprava zdarma</a>
+              <h5 class="footer-main__h5">Další odkazy</h5><a class="footer-main__link" href="#">Poradna</a><a class="footer-main__link" href="#">Výhody nákupu</a><a class="footer-main__link" href="#">Doprava zdarma</a><a class="footer-main__link" href="#">Ochrana osobních údajů</a><a class="footer-main__link" href="#">Zásady používání souborů cookie</a>
               <h5 class="footer-main__h5">Uživatelský účet</h5><a class="footer-main__link" href="#">Přihlášení</a><a class="footer-main__link" href="#">Vytvořit účet</a><a class="footer-main__link" href="#">Zapomenuté údaje</a>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">

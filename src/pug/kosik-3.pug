@@ -106,6 +106,12 @@ html(lang=lang)
                                 .cart-item-single__sum-wrap.text-right
                                     p.cart-item-single__sum #[span 8 489] Kč
 
+                    .cart-shipping-payment-overview
+                        h4.cart-shipping-payment-overview__title Způsob dopravy a platby
+                        .cart-shipping-payment-overview__single
+                            p.cart-shipping-payment-overview__name ČP, Benefit-plus program, balík do ruky:
+                            span.cart-shipping-payment-overview__price 129 Kč
+
                     .cart-price-overview
                         .cart-price-overview__wrap
                             p.cart-price-overview__text-small Celková cena bez DPH:
@@ -139,100 +145,7 @@ html(lang=lang)
                                 .cart-user-info-overview__single-content
                                     p.cart-user-info-overview__text Stejná jako u osobních ůdajů
 
-                    .form-group.cart-shipping-option
-                        h3 Zvolte způsob dopravy
-                        .form-check
-                            label.form-check__label
-                                input.form-check__input(type="radio" name="cart_form_shipping" id="osobni" required)
-                                | Česká pošta Balík do ruky
-                                span.form-check__description Doručuje následující pracovní den od odeslání. Max. hmotnost zásilky 30 kg.
-                                span.form-check__price 115 Kč
-                                span.form-check__box.radio
-
-                        .form-check
-                            label.form-check__label.disabled
-                                input.form-check__input(type="radio" name="cart_form_shipping" id="cp" required disabled)
-                                | Česká pošta Balík na poštu
-                                span.form-check__description Zde je nutné uvést do poznámky v objednávce (bod č. 3) PSČ pošty, na kterou si zásilku přejete zaslat. Doručuje následující pracovní den od odeslání. Max. hmotnost zásilky 30 kg.
-                                span.form-check__price 99 Kč
-                                span.form-check__box.radio
-
-                        .form-check
-                            label.form-check__label
-                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl" required)
-                                | PPL do 5 kg na soukromou nebo firemní adresu.
-                                span.form-check__description Nabídne se pouze u drobného zboží jako jsou hudební nosiče a podobně. Doručení do druhého pracovního dne ode dne odeslání.
-                                span.form-check__price 89 Kč
-                                span.form-check__box.radio
-
-                        .form-check
-                            label.form-check__label
-                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl2" required)
-                                | PPL Soukromá nebo firemní adresa do 50 kg 
-                                span.form-check__description Doručuje zásilky do druhého pracovního dne ode dne odeslání.
-                                span.form-check__price 115 Kč
-                                span.form-check__box.radio
-
-                        .form-check
-                            label.form-check__label(onclick="navigateToUrl('https://www.pplbalik.cz/Main3.aspx?cls=KTMMap&CountryCode=CZ&KTMAddress=73801,Podpuklí 288&ReturnUrl=https%3A%2F%2Fwww.gramofony-desky.cz%2Fkosik.html%3Fsessid%3D2t617d17oqqlam0vrup08bone7%26KTMID%3D%7B0%7D%26KTMaddress%3D%7B1%7D%26KTMname%3D%7B2%7D');")
-                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl3" required)
-                                | PPL partner
-                                span.form-check__description Při výběru tohoto typu dopravy budete přesměrováni na pplbalik.cz, kde vyberte konkretní odběrné místo, následně budete navráceni do našeho nákupního košíku.
-                                span.form-check__price 99 Kč
-                                span.form-check__box.radio
-
-                        .form-check
-                            label.form-check__label
-                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl4" required)
-                                | PPL SOBOTNÍ DORUČENÍ ve větších městech
-                                span.form-check__description Zásilka Vám bude doručena v nejbližší sobotu.
-                                span.form-check__price 129 Kč
-                                span.form-check__box.radio
-
-                        .form-check
-                            label.form-check__label
-                                input.form-check__input(type="radio" name="cart_form_shipping" id="ppl" required)
-                                | Osobní odběr v naší prodejně
-                                span.form-check__description (Podpuklí 288, Frýdek-Místek), platba kartou nebo hotově.
-                                span.form-check__price 0 Kč
-                                span.form-check__box.radio
-
-                    .form-group.cart-payment-option
-                        h3 Zvolte způsob platby
-
-                        .form-check
-                            label.form-check__label
-                                input.form-check__input(type="radio" name="cart_form_payment" id="hotove" required)
-                                | Převodem předem na náš účet
-                                span.form-check__description 115-820780217/0100 vedený u Komerční banky. Var. symbol je ČÍSLO OBJEDNÁVKY.
-                                span.form-check__price 0 Kč
-                                span.form-check__box.radio
-                            
-                        .form-check
-                            label.form-check__label.disabled
-                                input.form-check__input(type="radio" name="cart_form_payment" id="bankovni" required disabled)
-                                | Dobírka
-                                span.form-check__description Celkovou částku za zboží a přepravu uhradíte dovozci nebo na odběrném místě
-                                span.form-check__price 20 Kč
-                                span.form-check__box.radio
-
-                        .form-check
-                            label.form-check__label
-                                input.form-check__input(type="radio" name="cart_form_payment" id="dobirka" required)
-                                | ESSOX
-                                span.form-check__description Splátkování přes společnost ESSOX
-                                span.form-check__price 0 Kč
-                                span.form-check__box.radio
-
-                    .cart-user-note
-                        h3.cart-user-note__title Poznámka k objednávce
-                        .row
-                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
-                                .form-group
-                                    textarea.form-control(name="cart-form-note" rows="5")
-                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
-                                p Chcete nám sdělit ještě nějakou důležitou zprávu k vaší objednávce? Využijte prosím, tohoto formuláře.
-                                p Napsat do něj můžete také upřesňující informace o místě, kam máme Vaše zboží doručit (nejbližší orientační bod apod.)
+                 
 
                     .cart-terms-checkbox
                         .form-group

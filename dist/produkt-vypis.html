@@ -52,14 +52,50 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Condensed:400,700" rel="stylesheet">
     <!-- jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')
+      
+      
+    </script>
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-login-heading">Přihlášení</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
+          </div>
+          <div class="modal-body">
+            <form class="login-form page-message__login-form" method="post" action="" name="login_form"></form>
+            <div class="form-group">
+              <label for="login_form_username">Uživatelské jméno</label>
+              <input class="form-control" type="text" name="login_form_username" id="login_form_username" required autocomplete="username">
+            </div>
+            <div class="form-group">
+              <label for="login_form_password">Heslo</label>
+              <input class="form-control" type="password" name="login_form_password" id="login_form_password" required autocomplete="password">
+            </div>
+            <div class="form-group">
+              <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
+            </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-top" id="anchor-navbar-top">
         <div class="container">
           <div class="navbar-top__left"><a class="navbar-top__link" href="#">O nás</a><a class="navbar-top__link" href="#">Obchodní podmínky</a><a class="navbar-top__link" href="#">Kontakty</a></div>
-          <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a></div>
+          <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
+            <div class="dropdown navbar-top__dropdown">
+              <div class="dropdown-toggle navbar-top__dropdown-toggle" id="userDropdown_top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="navbar-top__icon"><span class="fas fa-user"></span></span>
+                <div class="navbar-top__text-wrap">
+                  <p class="navbar-top__text">Petroslav Novakovič</p>
+                </div><span class="caret-icon navbar-top__caret"></span>
+              </div>
+              <div class="dropdown-menu dropdown-menu-left navbar-top__dropdown-menu" aria-labelledby="userDropdown_top"><a class="dropdown-item navbar-top__item" href="#">Detail účtu</a><a class="dropdown-item navbar-top__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-top__item" href="#">Odhlásit</a></div>
+            </div>
+          </div>
         </div>
       </nav>
       <nav class="navbar navbar-expand-lg navbar-main">
@@ -96,10 +132,10 @@
           </div>
           <div class="navbar-user">
             <div class="dropdown navbar-user__dropdown">
-              <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon white navbar-user__icon"></span>
+              <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon navbar-user__icon"></span>
                 <div class="navbar-user__text-wrap">
                   <p class="navbar-user__text">Petroslav Novakovič</p>
-                </div><span class="caret-icon white navbar-user__caret"></span>
+                </div><span class="caret-icon navbar-user__caret"></span>
               </div>
               <div class="dropdown-menu dropdown-menu-left navbar-user__dropdown-menu" aria-labelledby="userDropdown"><a class="dropdown-item navbar-user__item" href="#">Detail účtu</a><a class="dropdown-item navbar-user__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-user__item" href="#">Odhlásit</a></div>
             </div>
@@ -472,7 +508,7 @@
     <section class="page-heading page-heading--category">
       <div class="container">
         <h1 class="page-heading--category__title">Lorem ipsum dolor sit amet</h1>
-        <p class="page-heading--category__subtitle-excerpt">Sed ut perspiciatis unde omnis iste natus error... <span class="page-heading--category__toggle" data-toggle="collapse" href="#product-category-description" aria-expanded="false" aria-controls="product-category-description">Číst více</span></p>
+        <p class="page-heading--category__subtitle-excerpt"><span class="page-heading--category__toggle" data-toggle="collapse" href="#product-category-description" aria-expanded="false" aria-controls="product-category-description">Popis kategorie</span></p>
         <div class="collapse" id="product-category-description">
           <p class="page-heading--category__subtitle">sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
         </div>
@@ -482,11 +518,11 @@
       <div class="container">
         <div class="subcategories-grid">
           <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="arrow-icon subcategories-grid__icon"></span> Předzesilovače</a></div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="arrow-icon subcategories-grid__icon"></span> Integrované</a></div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="arrow-icon subcategories-grid__icon"></span> Koncové</a></div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="arrow-icon subcategories-grid__icon"></span> Sluchátkové</a></div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="arrow-icon subcategories-grid__icon"></span> Profesional</a></div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="caret-icon right subcategories-grid__icon"></span> Lorem ipsum</a></div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="caret-icon right subcategories-grid__icon"></span> Dolor sit amet</a></div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="caret-icon right subcategories-grid__icon"></span> Lorem ipsum dolor</a></div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="caret-icon right subcategories-grid__icon"></span> Sit amet</a></div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3"><a class="subcategories-grid__single" href="#"><span class="caret-icon right subcategories-grid__icon"></span> Ipsum dolor</a></div>
           </div>
         </div>
         <div class="top-products">
@@ -505,7 +541,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -535,7 +571,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -565,7 +601,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -595,7 +631,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -625,7 +661,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -655,7 +691,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -685,7 +721,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -715,7 +751,7 @@
                       </div>
                       <div class="product-tags--right">
                         <div class="product-tags__single">
-                          <div class="product-tags__text sale circle">-30%</div>
+                          <div class="product-tags__text sale shape">-30%</div>
                         </div>
                       </div>
                       <div class="single-product-cell__img-container">
@@ -849,7 +885,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -899,7 +935,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -949,7 +985,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -999,7 +1035,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -1049,7 +1085,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -1099,7 +1135,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -1149,7 +1185,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -1199,7 +1235,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -1249,7 +1285,7 @@
               </div>
               <div class="product-tags--right">
                 <div class="product-tags__single">
-                  <div class="product-tags__text sale circle">-30%</div>
+                  <div class="product-tags__text sale shape">-30%</div>
                 </div>
               </div>
               <div class="single-product-cell__img-container">
@@ -1386,6 +1422,7 @@
                 <input class="form-control footer-bar__input" type="email" name="email-sub-input" id="email-sub-input" placeholder="Zadejte vaši emailovou adresu..." required>
                 <button class="btn form-control footer-bar__btn" type="submit" name="email-sub-button" id="email-sub-button">Odebírat</button>
               </form>
+              <p class="footer-bar__notice">Přihlášením k odběru souhlasíte se <a href="#">zpracovaním osobních údajů</a></p>
             </div>
           </div>
         </div>
@@ -1398,7 +1435,7 @@
               <h5 class="footer-main__h5">O nákupu</h5><a class="footer-main__link" href="#">Obchodní podmínky</a><a class="footer-main__link" href="#">Reklamační řád</a><a class="footer-main__link" href="#">Jak nakupovat</a><a class="footer-main__link" href="#">Osobní odběry</a><a class="footer-main__link" href="#">Možnosti platby</a>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-              <h5 class="footer-main__h5">Další odkazy</h5><a class="footer-main__link" href="#">Poradna</a><a class="footer-main__link" href="#">Výhody nákupu</a><a class="footer-main__link" href="#">Doprava zdarma</a>
+              <h5 class="footer-main__h5">Další odkazy</h5><a class="footer-main__link" href="#">Poradna</a><a class="footer-main__link" href="#">Výhody nákupu</a><a class="footer-main__link" href="#">Doprava zdarma</a><a class="footer-main__link" href="#">Ochrana osobních údajů</a><a class="footer-main__link" href="#">Zásady používání souborů cookie</a>
               <h5 class="footer-main__h5">Uživatelský účet</h5><a class="footer-main__link" href="#">Přihlášení</a><a class="footer-main__link" href="#">Vytvořit účet</a><a class="footer-main__link" href="#">Zapomenuté údaje</a>
             </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">

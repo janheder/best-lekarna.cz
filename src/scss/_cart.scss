@@ -375,7 +375,7 @@
 .cart-price-overview{
 	padding: 2rem;
 	border: 1px solid $border-primary;
-	margin: 2rem 0;
+	margin: 2rem 0 4rem 0;
 	border-radius: $border-radius-primary;
 }
 .cart-price-overview__wrap{
@@ -507,7 +507,19 @@
 		}
 	}
 } 
-
+.cart-shipping-option__main-title{
+	color: $brand-primary;
+	font-size: 2.4rem;
+	font-weight: 600;
+}
+.cart-shipping-option__wrap{
+	padding: 2rem;
+	border: 1px solid $border-primary;
+	margin: 2rem 0;
+}
+.cart-shipping-option__title{
+	margin-top: 1rem;
+}
 .cart-sidebar{
 	background: $light-grey;
 	padding: 15px;
@@ -586,8 +598,8 @@
 	@include flex-direction(row);
 	width: 100%;
 
-	&:nth-child(2){
-		margin-bottom: 10px;
+	&:nth-child(1){
+		margin-bottom: 5px;
 	}
 }
 .cart-sidebar__sum-text{
@@ -604,7 +616,7 @@
 }
 .cart-sidebar__sum-title{
 	font-weight: 500;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	color: $red-main;
 	margin: 0;
 	@include flex-grow(1);
@@ -630,10 +642,14 @@
 	margin-top: 2rem;
 	@include flexbox();
 	@include flex-direction(row);
+	border: 1px solid $border-primary;
+	border-radius: $border-radius-primary;
+	padding: 1rem 1.5rem;
 }
 .cart-shipping-payment-overview__title{
 	margin: 0;
 	@include flex-grow(1);
+	line-height: 1.5;
 }
 .cart-shipping-payment-overview__single{
 	@include flexbox();
@@ -762,6 +778,7 @@
     @include justify-content(center);
     @include align-items(center);
 	margin-bottom: 0rem;
+	opacity: 0.6;
 }
 .cart-free-shipping__text{
     color: $text-white;
@@ -777,6 +794,7 @@
 .cart-coupon{
 	border: 1px solid $border-primary;
 	padding: 1.5rem;
+	background: $bg-light;
 }
 .cart-free-shipping, .cart-coupon{
 	@include flex-grow(1);

@@ -47,7 +47,7 @@
         right: 0;
         height: calc(40% - 0px);
         width: 2px;
-        background: $white;
+        background: $bg-dark;
         @include transform-origin(right bottom);
         @include transform(translateX(0px) translateY(-11.111%) rotate(-45deg) );
         @include transition(0.3s all ease);
@@ -60,7 +60,7 @@
         height: 83.333%;
         width: 83.333%;
         background: transparent;
-        border: 2px solid $white;
+        border: 2px solid $bg-dark;
         border-radius: 999px;
         @include transition(0.3s all ease);
     }

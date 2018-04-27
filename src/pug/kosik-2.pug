@@ -54,7 +54,7 @@ html(lang=lang)
                         .row
                             .col-12.col-sm-12.col-md-12.col-lg-6.col-xl-6.register-form-col
                                 form(method="post" action="" class="register-form" name="register_form" id="register_form")
-                                    h3 Objednat bez registrace
+                                    h3.form-title Objednat bez registrace
                                     a.register-form-toggler(data-toggle="collapse" href="#register-collapse" aria-expanded="true" aria-controls="register-collapse") Objednat bez registrace #[span.register-form-toggler__icon]
                                     .collapse.register-form-collapse.show(id="register-collapse")
                                         .form-group
@@ -204,19 +204,15 @@ html(lang=lang)
                                                     | Zasílat novinky a propagační materiály na email
                                                     span.form-check__box.checkbox
 
-                                        .form-group
-                                            .form-check
-                                                label.form-check__label
-                                                    input.form-check__input(type="checkbox" name="register_form_terms")
-                                                    | Souhlasím se zpracováním osobních údajů
-                                                    span.form-check__box.checkbox
+                                        a(href="#") Informace o zpracování osobních údajů
+                             
 
                                         button.d-none(type="submit" id="register_form_submit") Souhrn objednávky
 
 
                             .col-12.col-sm-12.col-md-12.col-lg-6.col-xl-6.login-form-col
                                 form(method="post" action="" class="login-form" name="login_form")
-                                    h3 Přihlásit se k existujícímu účtu
+                                    h3.form-title Přihlásit se k existujícímu účtu
                                     a.login-form-toggler(data-toggle="collapse" href="#login-collapse" aria-expanded="false" aria-controls="login-collapse") Přihlásit se k existujícímu účtu #[span.register-form-toggler__icon]
                                     .collapse.login-form-collapse(id="login-collapse")
                                         .form-group
@@ -442,8 +438,7 @@ html(lang=lang)
                             required: "Prosím zadejte heslo", 
                             minlength: "Prosím zadejte heslo alespoň 5 znaků dlouhé"
                         },
-                        //osobni udaje
-                        register_form_terms: "Musíte souhlasit se zpracováním osobních údajů"
+
                     },
                     submitHandler: function(form) {
                     form.submit();

@@ -28,6 +28,8 @@ html(lang=lang)
     body
         include _nav.pug
         include _modal-add-to-cart.pug
+        include _modal-recommend.pug
+        include _modal-question.pug
         include _breadcrumb.pug
         main
             .product-detail
@@ -193,6 +195,11 @@ html(lang=lang)
 
                         .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6.product-detail__column
                             .product-detail-main
+                                .product-detail-main__type
+                                    p.product-detail-main__type-name Léčivý přípravek
+
+                                .product-detail-main__description
+                                    p.product-detail-main__description-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. #[a(href="#anchor-product-detail-description") Celý popis produktu #[span.fa.fa-angle-down]]
 
                                 .product-detail-main__price-wrap
                                     .product-detail-main__price-old
@@ -220,21 +227,17 @@ html(lang=lang)
                                         .product-detail-main__cta-button-wrap
                                             button.btn.product-detail-main__cta-button(type="submit" name="buy-button") #[span.btn__icon.cart-icon.product-detail-main__btn-icon] Přidat do košíku
 
-
-                                .product-detail-main__description
-                                    p.product-detail-main__description-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. #[a(href="#anchor-product-detail-description") Celý popis produktu #[span.fa.fa-angle-down]]
-
                                 
                                 .product-detail-main__free-delivery
                                     .product-detail-main__free-delivery-wrap
                                         .product-detail-main__free-delivery-img
                                             span.delivery-icon
                                         .product-detail-main__free-delivery-text-wrap
-                                            p.product-detail-main__free-delivery-text Při nákupu nad 5 000 Kč doprava zdarma
+                                            p.product-detail-main__free-delivery-text Při nákupu nad 1 500 Kč doprava zdarma
 
                                 .product-detail-main__btns
-                                    .btn.btn-ghost.product-detail-main__btns-single(data-toggle="modal" data-target="#modal-recommend") Doporučit známému
-                                    .btn.btn-ghost.product-detail-main__btns-single(data-toggle="modal" data-target="#modal-question") Dotaz k produktu
+                                    .product-detail-main__btns-single(data-toggle="modal" data-target="#modal-recommend") #[span.product-detail-main__btns-icon #[span.fas.fa-envelope]] Doporučit známému
+                                    .product-detail-main__btns-single(data-toggle="modal" data-target="#modal-question") #[span.product-detail-main__btns-icon #[span.fas.fa-question]] Dotaz k produktu
 
                     .product-description(id="anchor-product-detail-description")
                         ul.nav.nav-tabs.product-description__nav(role="tablist")
@@ -253,37 +256,15 @@ html(lang=lang)
                                 .panel-collapse.collapse.show.product-description__collapse-wrap(id="product-description-c-1")
                                     .product-description__content
                                         .product-description__text
-                                            p Špičkový japonský výrobce elektroniky Onkyo, se více než půl století zabývá produkcí precizních audio komponentů. Během posledního desetiletí si Onkyo získalo zvučné jméno také mezi výrobci systémů domácího kina. Jak naznačují dvě japonská slova (ON - zvuk a KYO - harmonie), ze kterých je název společnosti složen, je to hlavně prvotřídní zvuk, který všechny produkty Onkyo charakterizuje. Šíře sortimentu a design produktů osloví téměř každého. Nabídka obsahuje kromě tradičně velmi úspěšných AV receiverů také mikrosystémy, Blu-Ray přehrávače, sluchátka, systémy pro ozvučení TV a v neposlední řadě vysoce kvalitní Hi-Fi komponenty.
+                                            strong Popis
+                                            p Hydrance Optimale Riche je výživný hydratační krém, který je určen pro suchou až velmi suchou dehydratovanou citlivou pleť. Přináší okamžitou a intenzivní hydrataci pleti, která má dlouhotrvající účinek. Krém má vláčnou texturu, která dodává pleti pocit pohodlí. Díky unikátnímu složení se snižuje možnost vzniku alergií. Krém je vhodný jako podklad pod make-up.
 
-                                            p Zaměřte se na muzikálnost s Onkyo TX-8270, krásným síťovým stereo receiverem, který je připraven přehrát všechno, co na něj hodíte. Společně s linkovými a phono vstupy, je zde k dispozici koaxiální a optický digitální, čtyři vstupy HDMI, USB a dual-band Wi-Fi, pro podporu bezdrátových audio technologií. Mezi ně patří DTS Play-Fi, vestavěný Chromecast, AirPlay, Spotify, audio připojené k síti a streamovací služby. Vychutnejte si všestrannost se snadným vylepšením každodenní televizní zábavy, rádiem DAB+ a FM/RDS a dalšími.
+                                            strong Dávkování a způsob užití
+                                            p Aplikujte krém ráno, anebo večer na dokonale čistou a osušenou pleť.
 
-                                            strong Řízení velkých reproduktorů s vitalitou a dynamikou. 
-                                            p Tento zesilovač generuje vysoký proud s masivním transformátorem a zvukovými kondenzátory. Obvod je vybaven diskrétními výstupními tranzistory pro nízké zkreslení a snadnou hnací sílu. Vysoký proud zajišťuje přesné ovládání, obnovuje energii a vitalitu vaší hudby.
+                                            strong Složení
+                                            p Přípravek obsahuje termální vodu Avene, bambucké máslo, meiboserin, lipomucin.
 
-                                            strong Stereo receiver, který připojí vše.
-                                            p Krásný stereofonní receiver vytvořený pro milovníky hi-fi, TX-8270 je také exkluzivně vybaven připojením, které mu umožní sloužit jako moderní zesilovač pro televizní zábavu. Spojením analogových, digitálních, phono a USB vstupů jsou HDMI terminály (připojte Apple TV nebo podobně) společně s platformou Next Generation Network Audio.
-
-                                            strong Prémiové digitál/analog zpracování.
-                                            p Digitální/analogový převodník AK4438 384 kHz/32 bit z AKM nabízí unikátní technologie s nízkým zkreslením, ideální pro DSD 5,6 MHz a PCM signály až do 192 kHz/24 bitů. Společně s jedinečným VLSC obvodem, který eliminuje vysokofrekvenční pulsní šum, je přehrávání křišťálově čisté.
-
-                                            strong Snadná hudba s vestavěným Chromecast. 
-                                            p Streamujte hudbu jednoduše z vašeho smartphonu, notebooku nebo počítače do vašich reproduktorů. Ovládejte přehrávání pomocí Chromecast podporujících aplikací, které znáte a milujete z vašeho iPhonu, iPadu, Android telefonu nebo tabletu, Mac nebo Windows laptopu nebo Chromebooku.
-
-                                            strong Streamujte vše s DTS Play-Fi.
-                                            p DTS Play-Fi je bezdrátový protokol, který pracuje s jakoukoli aplikací a inteligentním zařízením. Přesuňte vše, co přehráváte, do receiveru, dokonce různé zdroje do různých komponentů najednou.
-
-                                            strong Dual-band Wi-Fi, AirPlay, Spotify.
-                                            p Volitelný kanál Wi-Fi o frekvenci 5 GHz zajišťuje stabilní konektivitu v oblastech s provozním přetížením v pásmu 2,4 GHz. Vychutnejte si plynulé přehrávání přes AirPlay, aplikaci Spotify Connect a další síťové audio služby.
-
-                                            strong Internetové rádio, streaming služby, FM/RDS a DAB/DAB+.
-                                            p TIDAL, Deezer a TuneIn jsou vypáleny do grafického uživatelského rozhraní, což usnadňuje výběr z masivního spektra hudebních a rozhlasových programů. Rádiové tunery jsou také součástí se 40 předvolenými stanicemi. Získejte okamžitý přístup ke čtyřem vašim oblíbeným stanicím pomocí přednastavených tlačítek na předním panelu.
-
-                                            strong Onkyo Controller podporuje síťové audio příští generace.
-                                            p Aplikace Onkyo Controller shromažďuje streaming služby a audio připojené k síti do intuitivního rozhraní. Ovládejte hudbu a distribujte ji po celém domě z jedné snadno použitelné aplikace.
-
-                                            strong Bezdrátové multi-pokojové audio FireConnect.
-                                            p FireConnect zrcadlí síťový zvuk a externí analogové zdroje připojené k hlavnímu komponentu - od streamingových služeb až po vinylové záznamy - na FireConnect kompatibilní reproduktory v jiných místnostech. Výběr hudby, seskupování reproduktorů a správa přehrávání v domácím prostředí jsou zabudovány do aplikace Onkyo Controller pro iOS a Android.
-                            
                             .tab-pane.product-description__tab-content(id="product-description-2" role="tabpanel" aria-expanded="false")
                                 a.product-description__collapse.collapsed(data-toggle="collapse" href="#product-description-c-2" aria-controls="product-description-c-2" aria-expanded="false") Technické parametry
                                 .panel-collapse.collapse.product-description__collapse-wrap(id="product-description-c-2")
@@ -315,6 +296,14 @@ html(lang=lang)
                                         a.product-description__file(href="#") #[span.fas.fa-download] [PDF] Příloha pro produkt (23KB)
                                         a.product-description__file(href="#") #[span.fas.fa-download] [PDF] Příloha pro produkt (23KB)
                                         a.product-description__file(href="#") #[span.fas.fa-download] [PDF] Příloha pro produkt (23KB)
+
+                    .product-similar
+                        h2.product-accessories__heading Příslušenství
+                        .product-grid
+                            include _single-product-cell.pug
+                            include _single-product-cell.pug
+                            include _single-product-cell.pug
+                            include _single-product-cell.pug
 
                     .product-similar
                         h2.product-accessories__heading Obdobné produkty

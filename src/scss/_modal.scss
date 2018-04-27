@@ -1,15 +1,17 @@
 .modal-dialog {
     background: transparent;
-    height: 100%;
     @include flexbox();
     @include flex-direction(row);
     @include align-items(center);
     margin: 0 auto;
     padding: 10px;
+
 }
 .modal-content{
     border-radius: $border-radius-primary;
     border: 0;
+    top: 20vh;
+    margin-bottom: 20px;
 }
 .modal-header{
     position: relative;
@@ -39,9 +41,8 @@
 }
 .modal-title{
     font-size: 3rem;
-    font-family: "Roboto Condensed";
     font-weight: 600;
-    color: $dark-grey;
+    color: $text-primary;
 }
 .modal-body{
     padding: 20px;
@@ -70,11 +71,13 @@
     }
 }
 
+
 @media (max-height: 575px){
     .modal-dialog{
         @include align-items(flex-start);
     }
 }
+
 
 .modal-info__body{
     text-align: center;

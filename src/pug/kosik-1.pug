@@ -146,6 +146,189 @@ html(lang=lang)
                             h3.cart-price-overview__price #[span.cart-price-overview__number 16 989] Kč
 
 
+                    .cart-shipping-option
+                        h3.cart-shipping-option__main-title Zvolte způsob dopravy a platby
+
+                        .cart-shipping-option__wrap
+                            img(src=URLbase+"img/gp.gif" alt="Geis Point")
+                            h3.cart-shipping-option__title Geis Point
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="geis-1" required)
+                                    | Geis Point výdejní místo platba převodem předem
+                                    span.form-check__price 59 Kč 
+                                    span.form-check__box.radio
+
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="geis-2" required)
+                                    | Geis Point výdejní místo dobírka
+                                    span.form-check__price 79 Kč
+                                    span.form-check__box.radio
+
+
+                        .cart-shipping-option__wrap
+                            img(src=URLbase+"img/ppl.gif" alt="Doprava PPL")
+                            h3.cart-shipping-option__title Doprava PPL
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="ppl-1" required)
+                                    | PPL platba převodem předem
+                                    span.form-check__price 99 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="ppl-2" required)
+                                    | PPL dobírka
+                                    span.form-check__price 99 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="ppl-3" required)
+                                    | PPL Benefit-Plus program
+                                    span.form-check__price 99 Kč
+                                    span.form-check__box.radio
+
+
+                        .cart-shipping-option__wrap
+                            img(src=URLbase+"img/cp-balik-do-ruky.png" alt="Česká pošta - balík do ruky")
+                            h3.cart-shipping-option__title Česká pošta - balík do ruky
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-1" required)
+                                    | ČP balík do ruky dobírka
+                                    span.form-check__price 129 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-2" required)
+                                    | ČP, balík do ruky převodem předem 
+                                    span.form-check__price 129 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-3" required)
+                                    | ČP, Benefit-plus program, balík do ruky
+                                    span.form-check__price 129 Kč
+                                    span.form-check__box.radio
+
+
+                        .cart-shipping-option__wrap
+                            img(src=URLbase+"img/cp-balik-na-postu.png" alt="Česká pošta - balík na poštu")
+                            h3.cart-shipping-option__title Česká pošta - balík na poštu
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-1-alt" required)
+                                    | ČP balík na poštu dobírka 
+                                    span.form-check__price 119 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-2-alt" required)
+                                    | ČP, balík na poštu převodem předem
+                                    span.form-check__price 119 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-3-alt" required)
+                                    | ČP, Benefit-Plus program, balík na poštu
+                                    span.form-check__price 109 Kč
+                                    span.form-check__box.radio
+
+
+                        .cart-shipping-option__wrap
+                            h3.cart-shipping-option__title Osobní odběr - kamenné lékárny
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="osobni-1" required)
+                                    | Lékárna Rovniny Hlučín. Pouze v hotovosti
+                                    span.form-check__price 30 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="osobni-2" required)
+                                    | Lékárna Rovniny Hlučín. Platba kartou na prodejně.
+                                    span.form-check__price 60 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="osobni-3" required)
+                                    | Lékárna u Hradeb Hlučín. Pouze v hotovosti
+                                    span.form-check__price 30 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="osobni-4" required)
+                                    | Lékárna u Hradeb Hlučín. Platba kartou na prodejně
+                                    span.form-check__price 60 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="osobni-5" required)
+                                    | Lékárna Magnus Vrbno pod Pradědem. Nelze platit kartou.
+                                    span.form-check__price 30 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="osobni-6" required)
+                                    | Lékárna Avion Rýmařov. Nelze platit kartou.
+                                    span.form-check__price 30 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="osobni-7" required)
+                                    | Lékárna Silesia Český Těšín. Nelze platit kartou.
+                                    span.form-check__price 30 Kč
+                                    span.form-check__box.radio
+
+
+                        .cart-shipping-option__wrap
+                            img(src=URLbase+"img/dpd.jpg" alt="Doprava DPD")
+                            h3.cart-shipping-option__title Doprava DPD
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-1-alt" required)
+                                    | DPD dobírka
+                                    span.form-check__price 79 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-2-alt" required)
+                                    | DPD platba předem převodem
+                                    span.form-check__price 79 Kč
+                                    span.form-check__box.radio
+                                    
+                            .form-check
+                                label.form-check__label
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-3-alt" required)
+                                    | DPD Benefit-plus program 
+                                    span.form-check__price 79 Kč
+                                    span.form-check__box.radio
+
+
+                    .cart-user-note
+                        h3.cart-user-note__title Poznámka k objednávce
+                        .row
+                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
+                                .form-group
+                                    textarea.form-control(name="cart-form-note" rows="5")
+                            .col-12.col-xs-12.col-sm-6.col-md-6.col-lg-6
+                                p Chcete nám sdělit ještě nějakou důležitou zprávu k vaší objednávce? Využijte prosím, tohoto formuláře.
+                                p Napsat do něj můžete také upřesňující informace o místě, kam máme Vaše zboží doručit (nejbližší orientační bod apod.)
+
                     .cart-bottom-btns
                         a.btn.btn-ghost(href="#") #[span.btn__icon.arrow-icon.left] Zpět do obchodu
                         a.btn.btn-dark(href="#") #[span.btn__icon.cross-icon.white] Vyprázdnit košík

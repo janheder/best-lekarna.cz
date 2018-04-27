@@ -47,6 +47,9 @@ footer{
     margin-top: 0;
     width: 500px;
 }
+.footer-bar__email-form form{
+    position: relative;
+}
 .footer-bar__input{
     border: 0;
     padding: 1rem 2rem;
@@ -67,8 +70,16 @@ footer{
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+.footer-bar__notice, .footer-bar__notice a{
+    margin: 0;
+    margin-top: 5px;
+    font-size: 1.4rem;
+}
 
-/***** FOOTER CONTACTS *****/
+/* ========================================================================== */
+/* FOOTER CONTACTS */
+/* ========================================================================== */
+
 .footer-contacts{
     position: relative;
     z-index: 2;

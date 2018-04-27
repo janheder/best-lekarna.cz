@@ -9,6 +9,18 @@ header
 				a.navbar-top__link(href="#") #[span.navbar-top__icon #[span.fas.fa-user]] Přihlášení
 				a.navbar-top__link(href="#") #[span.navbar-top__icon #[span.fas.fa-plus-circle]] Registrace
 
+				.dropdown.navbar-top__dropdown
+					.dropdown-toggle.navbar-top__dropdown-toggle(id="userDropdown_top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+						span.navbar-top__icon #[span.fas.fa-user]
+						.navbar-top__text-wrap
+							p.navbar-top__text Petroslav Novakovič
+						span.caret-icon.navbar-top__caret
+					.dropdown-menu.dropdown-menu-left.navbar-top__dropdown-menu(aria-labelledby="userDropdown_top")
+						a.dropdown-item.navbar-top__item(href="#") Detail účtu
+						a.dropdown-item.navbar-top__item(href="#") Historie objednávek
+						a.dropdown-item.navbar-top__item(href="#") Odhlásit
+
+
 	nav.navbar.navbar-expand-lg.navbar-main
 		.container.navbar-main__container
 
@@ -65,10 +77,10 @@ header
 			.navbar-user
 				.dropdown.navbar-user__dropdown
 					.dropdown-toggle.navbar-user__dropdown-toggle(id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-						span.user-icon.white.navbar-user__icon
+						span.user-icon.navbar-user__icon
 						.navbar-user__text-wrap
 							p.navbar-user__text Petroslav Novakovič
-						span.caret-icon.white.navbar-user__caret
+						span.caret-icon.navbar-user__caret
 					.dropdown-menu.dropdown-menu-left.navbar-user__dropdown-menu(aria-labelledby="userDropdown")
 						a.dropdown-item.navbar-user__item(href="#") Detail účtu
 						a.dropdown-item.navbar-user__item(href="#") Historie objednávek
