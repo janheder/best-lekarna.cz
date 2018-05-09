@@ -35,6 +35,9 @@ textarea.form-control{
 select.form-control:not([size]):not([multiple]) {
     height: 4.6rem;
 }
+.form-control:focus{
+    background: $bg-light;
+}
 .form-group{
     font-weight: 400;
     padding-bottom: 2rem;  

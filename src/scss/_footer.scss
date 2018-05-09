@@ -141,6 +141,12 @@ footer{
     color: $white;
     margin: 0;
 }
+@media screen and (max-width:991px){
+    .footer-contacts__icon{
+        height: 42px;
+        width: 42px;
+    }  
+}
 
 /* ========================================================================== */
 /* FOOTER LOGOS */
@@ -249,38 +255,27 @@ footer{
     border-radius: $border-radius-primary;
 }
 
-/*------------------------------------*\
-    FOOTER RESPONSIVE
-\*------------------------------------*/
-
+/* ========================================================================== */
+/* FOOTER RESPONSIVE */
+/* ========================================================================== */
 
 @media screen and (max-width:768px){
     .footer-bar{
-        background: $darkest-grey;
         padding: 5rem 0;
-    }
-    .footer-bar__listen, .footer-bar__email{
-        text-align: center;
-    }
-}
-
-@media screen and (max-width:768px){
-    .footer-bar{
-        padding: 0;
     }
     .footer-bar__container{
-        @include flexbox();
+        display: block;
+    }
+    .footer-bar__email{
+        padding: 0;
+        @include flex-wrap(wrap);
         @include flex-direction(column);
-        @include align-items(center);
     }
-    .footer-bar__img1{
-        @include absolute-position(0, 0, 50%, 0);
+    .footer-bar__notice{
+        text-align: center;
     }
-    .footer-bar__img2{
-        @include absolute-position(50%, 0, 0, 0);
-    }
-    .footer-bar__listen, .footer-bar__email{
-        padding: 5rem 0;
+    .footer-bar__p{
+        margin-bottom: 20px;
     }
     .footer-contacts{
         @include transform(none);

@@ -169,24 +169,28 @@
         display: block;
     }
 }
-
+@media screen and (max-width:400px){
+    .filter-sort{
+        margin: 0 -20px;
+    }
+}
 
 .filter-badges{
     @include flexbox();
     @include flex-direction(row);
     @include flex-wrap(wrap);
+    margin: 0 -5px;
     margin-bottom: 3rem;
 }
 .filter-badges__single{
     background: $bg-blue-alt;
-    border-radius: $border-primary;
     border-radius: $border-radius-primary;
     @include flexbox();
     @include flex-direction(row);
     @include justify-content(center);
     @include align-items(center);
     overflow: hidden;
-    margin: 5px 0;
+    margin: 5px;
 }
 .filter-badges__title{
     font-size: 13px;

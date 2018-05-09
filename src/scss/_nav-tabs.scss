@@ -4,11 +4,12 @@
 
 .nav-tabs{ 
     @include justify-content(center);
-    & .nav-item{
+
+    .nav-item{
         margin: 0 5px -1px 0;
         cursor: pointer;
 
-        & .nav-link{
+        .nav-link{
             min-height: 56px;
             @include flexbox();
             @include align-items(center);
@@ -43,10 +44,26 @@
         }
     }
 }
-@media screen and (max-width:460px){
+@media screen and (max-width:600px){
     .nav-tabs{ 
-        & .nav-item{
-            @include flex-grow(1);
+        .nav-item{
+
+            .nav-link{
+                padding: 10px 1rem;
+            }
+        }
+    }
+}
+@media screen and (max-width:400px){
+    .nav-tabs{ 
+        .nav-item{
+            width: 50%;
+            margin: 0;
+            .nav-link{
+                padding: 5px 1rem;
+                min-height: 40px;
+                border-bottom: 0;
+            }
         }
     }
 }

@@ -78,6 +78,8 @@
     @include flex-direction(row);
     @include flexbox(); 
     @include align-items(flex-end);
+    @include flex-wrap(wrap);
+    padding-right: 10px;
 }
 .single-product-cell__price-old{
     text-decoration: line-through;
@@ -131,7 +133,8 @@
     width: 100%; 
 }
 .single-product-cell__delivery{
-    @include flex-grow(1); 
+    @include flex-grow(1);
+    line-height: 1.2;
 }   
 .single-product-cell__delivery-text{
     margin: 0;
