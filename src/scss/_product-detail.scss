@@ -72,26 +72,6 @@
     opacity: 0.8;
     font-size: 1.4rem;
 }
-@media screen and (max-width: 991px){
-    .product-detail__title{
-        margin-bottom: 1.5rem;
-        font-size: 2.4rem;
-        font-family: $font-family-alt;
-        font-weight: 600;
-    }
-    .product-detail-main__price-wrap {
-        text-align: center;
-    }
-    .product-detail-main__price-old{
-        @include justify-content(center);
-    }
-    .product-detail-main__stock-text {
-        text-align: center;
-    }
-    .product-detail-main__btns{
-        margin-bottom: 20px;
-    }
-}
 
 /* ========================================================================== */
 /* PRODUCT DETAIL IMAGE GALLERY */
@@ -419,7 +399,7 @@
 }
 .product-detail-main__free-delivery-wrap{
     border: 0px solid $green-main;
-    padding: 0.5rem 1.5rem;
+    padding: 1.5rem;
     @include flexbox();
     @include flex-direction(row);
     @include justify-content(center);
@@ -428,11 +408,11 @@
     background: $bg-green;
     opacity: 0.6;
 }
-/*
-.product-detail-main__free-delivery-img{
-    @include flex-grow(1);
+
+.product-detail-main__free-delivery-img span{
+    height: 30px;
+    width: 30px;
 }
-*/
 .product-detail-main__free-delivery-text-wrap{
     /*@include flex-grow(1);*/
     padding-left: 15px;                
@@ -472,6 +452,37 @@
 .product-detail-main__btns-icon{
     color: $brand-primary;
     margin-right: 5px;
+}
+
+@media screen and (max-width: 991px){
+    .product-detail__title{
+        margin-bottom: 1.5rem;
+        font-size: 2.4rem;
+        font-family: $font-family-alt;
+        font-weight: 600;
+    }
+    .product-detail-main__price-wrap {
+        text-align: center;
+    }
+    .product-detail-main__price-old{
+        @include justify-content(center);
+    }
+    .product-detail-main__stock-text {
+        text-align: center;
+    }
+    .product-detail-main__btns{
+        margin-bottom: 20px;
+    }
+    .product-detail-main__cta{
+        padding: 0;
+        background: transparent;
+    }
+    .product-detail-main__cta-button-wrap{
+        padding-left: 10px;
+    }
+    .product-detail-main__btns-single{
+        padding: 10px;
+    }
 }
 
 

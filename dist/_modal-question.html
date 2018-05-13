@@ -1,24 +1,29 @@
 
-<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+<div class="modal fade" id="modal-question" tabindex="-1" role="dialog" aria-labelledby="modal-question" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modal-login-heading">Přihlášení</h5>
+        <h5 class="modal-title" id="modal-question-heading">Dotaz na produkt</h5>
         <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
       </div>
       <div class="modal-body">
-        <form class="login-form page-message__login-form" method="post" action="" name="login_form"></form>
-        <div class="form-group">
-          <label for="login_form_username">Uživatelské jméno</label>
-          <input class="form-control" type="text" name="login_form_username" id="login_form_username" required="required" autocomplete="username"/>
-        </div>
-        <div class="form-group">
-          <label for="login_form_password">Heslo</label>
-          <input class="form-control" type="password" name="login_form_password" id="login_form_password" required="required" autocomplete="password"/>
-        </div>
-        <div class="form-group">
-          <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
-        </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+        <form method="post" action="" name="question_form">
+          <div class="form-group">
+            <label for="question_form_name">Vaše jméno</label>
+            <input class="form-control" type="text" name="question_form_name" id="question_form_name" required="required" autocomplete="given-name"/>
+          </div>
+          <div class="form-group">
+            <label for="question_form_email">Váš email</label>
+            <input class="form-control" type="email" name="question_form_email" id="question_form_email" required="required" autocomplete="email"/>
+          </div>
+          <div class="form-group">
+            <label for="question_form_email">Váš dotaz</label>
+            <textarea class="form-control" rows="4" name="question_form_text" id="question_form_text" required="required"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="form-control btn" type="submit" name="question_form_submit" id="question_form_submit">Odeslat dotaz</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

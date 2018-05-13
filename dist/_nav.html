@@ -3,7 +3,7 @@
   <nav class="navbar navbar-top" id="anchor-navbar-top">
     <div class="container">
       <div class="navbar-top__left"><a class="navbar-top__link" href="#">O nás</a><a class="navbar-top__link" href="#">Obchodní podmínky</a><a class="navbar-top__link" href="#">Kontakty</a></div>
-      <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
+      <div class="navbar-top__right"><a class="navbar-top__link" data-toggle="modal" data-target="#modal-login"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
         <div class="dropdown navbar-top__dropdown">
           <div class="dropdown-toggle navbar-top__dropdown-toggle" id="userDropdown_top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="navbar-top__icon"><span class="fas fa-user"></span></span>
             <div class="navbar-top__text-wrap">
@@ -47,24 +47,25 @@
           </div>
         </div>
       </div>
-      <div class="navbar-user">
-        <div class="dropdown navbar-user__dropdown">
-          <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon navbar-user__icon"></span>
-            <div class="navbar-user__text-wrap">
-              <p class="navbar-user__text">Petroslav Novakovič</p>
-            </div><span class="caret-icon navbar-user__caret"></span>
-          </div>
-          <div class="dropdown-menu dropdown-menu-left navbar-user__dropdown-menu" aria-labelledby="userDropdown"><a class="dropdown-item navbar-user__item" href="#">Detail účtu</a><a class="dropdown-item navbar-user__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-user__item" href="#">Odhlásit</a></div>
-        </div>
-      </div>
-      <!-- Přihlášený uživatel
+      <!--
       .navbar-user
-      	a.navbar-user__link(href="#")
-      		span.user-icon.white.navbar-user__icon
-      		.navbar-user__text-wrap
-      			p.navbar-user__text Můj účet
+      	.dropdown.navbar-user__dropdown
+      		.dropdown-toggle.navbar-user__dropdown-toggle(id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+      			span.user-icon.navbar-user__icon
+      			.navbar-user__text-wrap
+      				p.navbar-user__text Petroslav Novakovič
+      			span.caret-icon.navbar-user__caret
+      		.dropdown-menu.dropdown-menu-left.navbar-user__dropdown-menu(aria-labelledby="userDropdown")
+      			a.dropdown-item.navbar-user__item(href="#") Detail účtu
+      			a.dropdown-item.navbar-user__item(href="#") Historie objednávek
+      			a.dropdown-item.navbar-user__item(href="#") Odhlásit
+      			
       
       -->
+      <div class="navbar-user"><a class="navbar-user__link" data-toggle="modal" data-target="#modal-login"><span class="user-icon navbar-user__icon"></span>
+          <div class="navbar-user__text-wrap">
+            <p class="navbar-user__text">Můj účet</p>
+          </div></a></div>
       <div class="navbar-contact"><span class="icon-phone navbar-contact__icon"></span>
         <div class="navbar-contact__text"><span class="navbar-contact__phone">+420 844 111 152</span><span class="navbar-contact__open">PO - PÁ 7:00 - 18:00				</span></div>
       </div>

@@ -86,7 +86,7 @@
       <nav class="navbar navbar-top" id="anchor-navbar-top">
         <div class="container">
           <div class="navbar-top__left"><a class="navbar-top__link" href="#">O nás</a><a class="navbar-top__link" href="#">Obchodní podmínky</a><a class="navbar-top__link" href="#">Kontakty</a></div>
-          <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
+          <div class="navbar-top__right"><a class="navbar-top__link" data-toggle="modal" data-target="#modal-login"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
             <div class="dropdown navbar-top__dropdown">
               <div class="dropdown-toggle navbar-top__dropdown-toggle" id="userDropdown_top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="navbar-top__icon"><span class="fas fa-user"></span></span>
                 <div class="navbar-top__text-wrap">
@@ -130,24 +130,25 @@
               </div>
             </div>
           </div>
-          <div class="navbar-user">
-            <div class="dropdown navbar-user__dropdown">
-              <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon navbar-user__icon"></span>
-                <div class="navbar-user__text-wrap">
-                  <p class="navbar-user__text">Petroslav Novakovič</p>
-                </div><span class="caret-icon navbar-user__caret"></span>
-              </div>
-              <div class="dropdown-menu dropdown-menu-left navbar-user__dropdown-menu" aria-labelledby="userDropdown"><a class="dropdown-item navbar-user__item" href="#">Detail účtu</a><a class="dropdown-item navbar-user__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-user__item" href="#">Odhlásit</a></div>
-            </div>
-          </div>
-          <!-- Přihlášený uživatel
+          <!--
           .navbar-user
-          	a.navbar-user__link(href="#")
-          		span.user-icon.white.navbar-user__icon
-          		.navbar-user__text-wrap
-          			p.navbar-user__text Můj účet
+          	.dropdown.navbar-user__dropdown
+          		.dropdown-toggle.navbar-user__dropdown-toggle(id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+          			span.user-icon.navbar-user__icon
+          			.navbar-user__text-wrap
+          				p.navbar-user__text Petroslav Novakovič
+          			span.caret-icon.navbar-user__caret
+          		.dropdown-menu.dropdown-menu-left.navbar-user__dropdown-menu(aria-labelledby="userDropdown")
+          			a.dropdown-item.navbar-user__item(href="#") Detail účtu
+          			a.dropdown-item.navbar-user__item(href="#") Historie objednávek
+          			a.dropdown-item.navbar-user__item(href="#") Odhlásit
+          			
           
           -->
+          <div class="navbar-user"><a class="navbar-user__link" data-toggle="modal" data-target="#modal-login"><span class="user-icon navbar-user__icon"></span>
+              <div class="navbar-user__text-wrap">
+                <p class="navbar-user__text">Můj účet</p>
+              </div></a></div>
           <div class="navbar-contact"><span class="icon-phone navbar-contact__icon"></span>
             <div class="navbar-contact__text"><span class="navbar-contact__phone">+420 844 111 152</span><span class="navbar-contact__open">PO - PÁ 7:00 - 18:00				</span></div>
           </div>
@@ -502,21 +503,17 @@
         </div>
       </nav><span id="dark-overlay" aria-label="Toggle navigation" data-target="#navbarNav" data-toggle="collapse"></span><span id="dark-overlay-cart"></span>
     </header>
-    <section class="hero post__image-container"><img class="lazy post__featured-image" src="img/lazy/lazy-bg-hero.jpg" data-src="img/bg-hero.jpg" alt="#" title="#">
+    <section class="hero">
       <div class="container hero__container">
         <div class="hero__swiper">
           <div class="hero__swiper-wrap">
             <div class="swiper-wrapper hero__swiper-wrapper">
-              <div class="swiper-slide hero__swiper-slide" data-slide="0">
+              <div class="swiper-slide hero__swiper-slide post__image-container" data-slide="0">
                 <div class="hero__content">
-                  <div class="hero__title">1 CA Aeromax 6 + Yamaha A-S301</div>
-                  <div class="hero__text">Aeromax6+Yas301</div>
-                  <div class="hero__price-old">44 980 Kč</div>
-                  <div class="hero__price">31 780 Kč</div>
-                  <div class="hero__btn"><a class="btn" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right white"></span></a></div>
+                  <div class="hero__title">Lorem ipsum dolor sit amet dolor sit amet</div>
+                  <div class="hero__btn"><a class="btn btn-white" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right white"></span></a></div>
                 </div>
-                <div class="hero__image">
-                  <div class="hero__sale-tag">-30%</div><img class="swiper-lazy hero__img" src="img/product-thumb-medium.jpg">
+                <div class="hero__image"><img class="swiper-lazy hero__img post__featured-image" src="img/product-thumb-medium.jpg">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                 </div>
               </div>
@@ -564,20 +561,6 @@
           </div>
           <div class="swiper-button-prev swiper-button-prev--hero"></div>
           <div class="swiper-button-next swiper-button-next--hero"> </div>
-          <div class="hero__swiper-tabs">
-            <div class="hero__tab-single active" id="slide1" data-slide-nav="0">
-              <p class="hero__tab-single-text">CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor</p>
-            </div>
-            <div class="hero__tab-single" id="slide2" data-slide-nav="1">
-              <p class="hero__tab-single-text">CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor</p>
-            </div>
-            <div class="hero__tab-single" id="slide3" data-slide-nav="2">
-              <p class="hero__tab-single-text">CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor</p>
-            </div>
-            <div class="hero__tab-single" id="slide4" data-slide-nav="3">
-              <p class="hero__tab-single-text">CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -586,49 +569,48 @@
         <div class="benefits__wrap">
           <div class="benefits__single">
             <div class="benefits__img-wrap"><img class="benefits__img" src="images/benefits-delivery.svg"></div>
-            <p class="benefits__text">Doprava zdarma nad 5000 Kč</p>
+            <p class="benefits__text">Široký sortiment léků</p>
           </div>
           <div class="benefits__single">
             <div class="benefits__img-wrap"><img class="benefits__img" src="images/benefits-stock.svg"></div>
-            <p class="benefits__text">5727 produktů skladem</p>
+            <p class="benefits__text">Zákaznícka karta</p>
           </div>
           <div class="benefits__single">
             <div class="benefits__img-wrap"><img class="benefits__img" src="images/benefits-gift.svg"></div>
-            <p class="benefits__text">Dárek k objednávce nad 6000 Kč</p>
+            <p class="benefits__text">Odborné poradenství</p>
           </div>
           <div class="benefits__single">
             <div class="benefits__img-wrap"><img class="benefits__img" src="images/benefits-marker.svg"></div>
-            <p class="benefits__text">1400 výdejních míst po celé ČR</p>
+            <p class="benefits__text">Garance spokojenosti</p>
           </div>
         </div>
       </div>
     </section>
     <section class="index-categories">
       <div class="container">
-        <h2 class="index-categories__title">Vybrané kategorie</h2>
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 index-categories__single-wrap">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 index-categories__single-wrap">
             <div class="index-categories__single"><img class="lazy index-categories__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#" title="#">
-              <h3 class="index-categories__single-title">Hudební nosiče</h3>
-              <div class="index-categories__wrap"><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Lorem ipsumm</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Sed ut perspiciatis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Unde omnis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Iste natus error</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Consectetur adipiscing elit</a></div>
+              <h3 class="index-categories__single-title">Léčba bolesti</h3>
+              <div class="index-categories__wrap"><a class="index-categories__link" href="#">Lorem ipsumm</a><a class="index-categories__link" href="#">Sed ut perspiciatis</a><a class="index-categories__link" href="#">Unde omnis</a><a class="index-categories__link" href="#">Iste natus error</a><a class="index-categories__link" href="#">Consectetur adipiscing elit</a></div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 index-categories__single-wrap">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 index-categories__single-wrap">
             <div class="index-categories__single"><img class="lazy index-categories__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#" title="#">
-              <h3 class="index-categories__single-title">Hudební nosiče</h3>
-              <div class="index-categories__wrap"><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Lorem ipsumm</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Sed ut perspiciatis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Unde omnis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Iste natus error</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Consectetur adipiscing elit  </a></div>
+              <h3 class="index-categories__single-title">Nachlazení</h3>
+              <div class="index-categories__wrap"><a class="index-categories__link" href="#">Lorem ipsumm</a><a class="index-categories__link" href="#">Sed ut perspiciatis</a><a class="index-categories__link" href="#">Unde omnis</a><a class="index-categories__link" href="#">Iste natus error</a><a class="index-categories__link" href="#">Consectetur adipiscing elit</a></div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 index-categories__single-wrap">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 index-categories__single-wrap">
             <div class="index-categories__single"><img class="lazy index-categories__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#" title="#">
-              <h3 class="index-categories__single-title">Hudební nosiče</h3>
-              <div class="index-categories__wrap"><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Lorem ipsumm</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Sed ut perspiciatis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Unde omnis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Iste natus error</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Consectetur adipiscing elit</a></div>
+              <h3 class="index-categories__single-title">Léčba kašle</h3>
+              <div class="index-categories__wrap"><a class="index-categories__link" href="#">Lorem ipsumm</a><a class="index-categories__link" href="#">Sed ut perspiciatis</a><a class="index-categories__link" href="#">Unde omnis</a><a class="index-categories__link" href="#">Iste natus error</a><a class="index-categories__link" href="#">Consectetur adipiscing elit</a></div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 index-categories__single-wrap">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 index-categories__single-wrap">
             <div class="index-categories__single"><img class="lazy index-categories__img" src="img/placeholder-280x280.png" data-src="img/product-thumb-medium.jpg" alt="#" title="#">
-              <h3 class="index-categories__single-title">Hudební nosiče</h3>
-              <div class="index-categories__wrap"><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Lorem ipsumm</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Sed ut perspiciatis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Unde omnis</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Iste natus error</a><a class="index-categories__link" href="#"><span class="caret-icon right index-categories__caret"></span> Consectetur adipiscing elit</a></div>
+              <h3 class="index-categories__single-title">Pohyb</h3>
+              <div class="index-categories__wrap"><a class="index-categories__link" href="#">Lorem ipsumm</a><a class="index-categories__link" href="#">Sed ut perspiciatis</a><a class="index-categories__link" href="#">Unde omnis</a><a class="index-categories__link" href="#">Iste natus error</a><a class="index-categories__link" href="#">Consectetur adipiscing elit</a></div>
             </div>
           </div>
         </div>
@@ -646,11 +628,11 @@
         </div>
         <div class="tab-content">
           <div class="tab-pane fade show active" id="1-index" role="tabpanel" aria-labelledby="1-index-tab">           
-            <div class="swiper-container-5-products-wrap">    
-              <div class="swiper-container-5-products">
+            <div class="swiper-container-4-products-wrap">    
+              <div class="swiper-container-4-products">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -659,10 +641,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -671,25 +650,41 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -698,10 +693,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -710,25 +702,41 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -737,10 +745,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -749,25 +754,41 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -776,10 +797,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -788,25 +806,41 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -815,10 +849,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -827,25 +858,41 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -854,10 +901,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -866,25 +910,41 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -893,10 +953,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -905,25 +962,41 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
-                  <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
-                      <div class="single-product-cell__top">
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="single-product-cell"><a class="single-product-cell__top" href="#">
                         <div class="product-tags">
                           <div class="product-tags__single">
                             <div class="product-tags__text new">Novinka</div>
@@ -932,10 +1005,7 @@
                             <div class="product-tags__text top">Nejprodávanější</div>
                           </div>
                           <div class="product-tags__single">
-                            <div class="product-tags__text recommended">Náš tip</div>
-                          </div>
-                          <div class="product-tags__single">
-                            <div class="product-tags__text free-shipping">Doprava zdarma</div>
+                            <div class="product-tags__text recommended">Doporučené</div>
                           </div>
                         </div>
                         <div class="product-tags--right">
@@ -944,33 +1014,49 @@
                           </div>
                         </div>
                         <div class="single-product-cell__img-container">
-                          <div class="single-product-cell__img-wrap"><img class="swiper-lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"></div>
+                          <div class="single-product-cell__img-wrap"><img class="lazy single-product-cell__img" src="img/placeholder-200x200.png" data-src="img/product-thumb-medium.jpg" alt="#"><span class="lazy single-product-cell__preloader"></span></div>
                         </div>
-                        <h4 class="single-product-cell__title"> AVENE Hydrance opt. riche 40ml hydratační krém</h4>
-                      </div>
+                        <h4 class="single-product-cell__title">AVENE Hydrance opt. riche 40ml hydratační krém</h4><span class="single-product-cell__tag">Léčivý přípravek</span></a>
                       <div class="single-product-cell__bottom">
                         <div class="single-product-cell__price-wrap">
                           <div class="single-product-cell__price">
-                            <div class="single-product-cell__price-old">1 099 Kč </div>
+                            <div class="single-product-cell__price-old">1 099 Kč</div>
                             <div class="single-product-cell__price-main">899 Kč</div>
                           </div>
-                        </div>
-                        <div class="single-product-cell__delivery-wrap">
                           <div class="single-product-cell__delivery">
-                            <p class="single-product-cell__delivery-text"><span>Skladem více jak</span> 5 kusů</p>
+                            <p class="single-product-cell__delivery-text">Skladem</p>
                           </div>
                         </div>
-                      </div></a></div>
+                        <div class="single-product-cell__buy-wrap">
+                          <form class="single-product-cell__form" method="POST">
+                            <div class="single-product-cell__qty">
+                              <div class="number-stepper number-stepper--small">
+                                <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="">
+                                <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
+                                <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
+                              </div>
+                            </div>
+                            <div class="single-product-cell__buy">
+                              <button class="btn single-product-cell__btn" type="submit" name="buy-button"><span class="cart-icon single-product-cell__btn-icon"></span> Do košíku</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="single-product-cell__info-hide"> 
+                          <p class="single-product-cell__info-hide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="swiper-pagination swiper-pagination-white"></div>
-              <div class="swiper-button-prev swiper-button-prev--5"></div>
-              <div class="swiper-button-next swiper-button-next--5"></div>
+              <div class="swiper-button-prev swiper-button-prev--4"></div>
+              <div class="swiper-button-next swiper-button-next--4"></div>
             </div>
           </div>
           <div class="tab-pane fade" id="2-index" role="tabpanel" aria-labelledby="2-index-tab">   
-            <div class="swiper-container-5-products-wrap">    
-              <div class="swiper-container-5-products">
+            <div class="swiper-container-4-products-wrap">    
+              <div class="swiper-container-4-products">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
                       <div class="single-product-cell__top">
@@ -1287,13 +1373,13 @@
                 </div>
               </div>
               <div class="swiper-pagination swiper-pagination-white"></div>
-              <div class="swiper-button-prev swiper-button-prev--5"></div>
-              <div class="swiper-button-next swiper-button-next--5"></div>
+              <div class="swiper-button-prev swiper-button-prev--4"></div>
+              <div class="swiper-button-next swiper-button-next--4"></div>
             </div>
           </div>
           <div class="tab-pane fade" id="3-index" role="tabpanel" aria-labelledby="3-index-tab">   
-            <div class="swiper-container-5-products-wrap">    
-              <div class="swiper-container-5-products">
+            <div class="swiper-container-4-products-wrap">    
+              <div class="swiper-container-4-products">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
                       <div class="single-product-cell__top">
@@ -1610,13 +1696,13 @@
                 </div>
               </div>
               <div class="swiper-pagination swiper-pagination-white"></div>
-              <div class="swiper-button-prev swiper-button-prev--5"></div>
-              <div class="swiper-button-next swiper-button-next--5"></div>
+              <div class="swiper-button-prev swiper-button-prev--4"></div>
+              <div class="swiper-button-next swiper-button-next--4"></div>
             </div>
           </div>
           <div class="tab-pane fade" id="4-index" role="tabpanel" aria-labelledby="4-index-tab">   
-            <div class="swiper-container-5-products-wrap">    
-              <div class="swiper-container-5-products">
+            <div class="swiper-container-4-products-wrap">    
+              <div class="swiper-container-4-products">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide"><a class="single-product-cell single-product-cell--small" href="#">
                       <div class="single-product-cell__top">
@@ -1933,8 +2019,8 @@
                 </div>
               </div>
               <div class="swiper-pagination swiper-pagination-white"></div>
-              <div class="swiper-button-prev swiper-button-prev--5"></div>
-              <div class="swiper-button-next swiper-button-next--5"></div>
+              <div class="swiper-button-prev swiper-button-prev--4"></div>
+              <div class="swiper-button-next swiper-button-next--4"></div>
             </div>
           </div>
         </div>
@@ -1945,34 +2031,28 @@
         <div class="logos__swiper"> 
           <div class="logos__swiper-wrap">
             <div class="swiper-wrapper">
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cambridge-audio.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/audio-technika.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/advance-acoustic.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cabasse.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/klipsch.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/magnat.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/onkyo.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/pro-ject.jpg">
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-              </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/wharfedale.jpg">
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-              </div>
-              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/yamaha.jpg">
+              <div class="swiper-slide logos__swiper-slide"><img class="swiper-lazy" data-src="img/logos/cemio.jpg">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               </div>
             </div>
@@ -1982,36 +2062,9 @@
         </div>
       </div>
     </section>
-    <section class="index-cta">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 index-cta__column">
-            <div class="index-cta__single post__image-container"><img class="lazy post__featured-image" src="img/lazy/lazy-index-cta-poradna.jpg" data-src="img/index-cta-poradna.jpg" alt="#" title="#">
-              <div class="index-cta__textfield">
-                <h4 class="index-cta__subtitle">Potřebujete poradit s výběrem nového zařízení nebo máte jiné dotazy?</h4>
-                <h3 class="index-cta__title">Rádi Vám pomůžeme v naší online poradně.</h3><a class="btn btn-ghost-color index-cta__btn" href="#">Přejít do poradny</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 index-cta__column">
-            <div class="index-cta__single index-cta__single--small post__image-container"><img class="lazy post__featured-image" src="img/lazy/lazy-index-cta-prodejna.jpg" data-src="img/index-cta-prodejna.jpg" alt="#" title="#">
-              <div class="index-cta__textfield">
-                <h3 class="index-cta__title">Kamenná prodejna</h3>
-                <div class="index-cta__text-wrap">
-                  <p class="index-cta__text">Sdružení House Of Music</p>
-                  <p class="index-cta__text">Podpuklí 288</p>
-                  <p class="index-cta__text">Frýdek-Místek</p>
-                  <p class="index-cta__text">73801</p>
-                </div><a class="btn btn-ghost-color index-cta__btn" href="#">Přejít do poradny</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="news-bottom">
       <div class="container">
-        <h2 class="news-bottom__title">Nejnovější aktuality</h2>
+        <h2 class="news-bottom__title">Aktuality</h2>
         <div class="row">
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"><a class="news-single" href="#">
               <div class="post__image-container news-single__img-wrap"><img class="lazy news-single__thumbnail post__featured-image" src="img/lazy/lazy-news-thumb-small.jpg" data-src="img/news-thumb-small.jpg" alt="#" title="#">
@@ -2036,6 +2089,35 @@
               </div></a></div>
         </div>
         <div class="news-bottom__btn-wrap"> <a class="btn btn-ghost" href="#">Starší aktuality</a></div>
+      </div>
+    </section>
+    <section class="index-cta">
+      <div class="container">
+        <div class="index-cta__wrap">
+          <div class="index-cta__img"></div>
+          <div class="index-cta__content">
+            <h4 class="index-cta__title"></h4>
+            <div class="index-cta__col">
+              <div class="index-cta__single">
+                <p class="index-cta__text">Hlučín (Lékárna u Hradeb) </p><a class="index-cta__link" href="#">www.lekarnauhradeb.cz</a>
+              </div>
+              <div class="index-cta__single">
+                <p class="index-cta__text">Hlučín (Lékárna Rovniny)</p><a class="index-cta__link" href="#">www.lekarna-rovniny.cz</a>
+              </div>
+              <div class="index-cta__single">
+                <p class="index-cta__text">Rýmařov (Lékárna Avion)</p><a class="index-cta__link" href="#">www.lekarna-avion.cz</a>
+              </div>
+            </div>
+            <div class="index-cta__col">
+              <div class="index-cta__single">
+                <p class="index-cta__text">Vrbno pod Pradědem (Lékárna Magnus)</p><a class="index-cta__link" href="#">www.lekarna-magnus.cz</a>
+              </div>
+              <div class="index-cta__single">
+                <p class="index-cta__text">Český Těšín (Lékárna Silesia)</p><a class="index-cta__link" href="#">www.lekarna-tesin.cz</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section><a class="scroll-to-top" href="#anchor-navbar-top"><span class="caret-icon top"></span></a>
     <footer>

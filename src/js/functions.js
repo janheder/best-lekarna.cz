@@ -375,10 +375,12 @@ var carousel_logos = new Swiper('.logos__swiper-wrap', {
 //SWIPER 4 PRODUCTS
 var carousel_4_products = new Swiper('.swiper-container-4-products', {
   lazy: true,
-  spaceBetween: 1,
+  spaceBetween: -1,
   slidesPerView: 4,
   grabCursor: true,
   zoom: false,
+  observer: true,
+  observeParents: true,
   pagination: {
     el: '.swiper-pagination--4',
     clickable: true,
@@ -389,20 +391,16 @@ var carousel_4_products = new Swiper('.swiper-container-4-products', {
   },
   breakpoints: {
   1200: {
-    slidesPerView: 4,
-    spaceBetween: 20,
+    slidesPerView: 4
   },
   991: {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 3
   },
   500: {
-    slidesPerView: 3,
-    spaceBetween: 10,
+    slidesPerView: 3
   },
   320: {
-    slidesPerView: 1,
-    spaceBetween: 10,
+    slidesPerView: 1
   }
 }
 });

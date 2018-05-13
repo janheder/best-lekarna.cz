@@ -26,24 +26,20 @@ html(lang=lang)
         include _css-include.pug  
     body
         include _nav.pug
-        section.hero.post__image-container
-            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-bg-hero.jpg" data-src=URLbase+"img/bg-hero.jpg" alt="#" title="#")
+        section.hero
             .container.hero__container
                 .hero__swiper
                     .hero__swiper-wrap
                         .swiper-wrapper.hero__swiper-wrapper
 
-                            .swiper-slide.hero__swiper-slide(data-slide="0")
+                            .swiper-slide.hero__swiper-slide.post__image-container(data-slide="0")
                                 .hero__content
-                                    .hero__title 1 CA Aeromax 6 + Yamaha A-S301
-                                    .hero__text Aeromax6+Yas301
-                                    .hero__price-old 44 980 Kč
-                                    .hero__price 31 780 Kč
+                                    .hero__title Lorem ipsum dolor sit amet dolor sit amet
                                     .hero__btn
-                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
+                                        a.btn.btn-white(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
+
                                 .hero__image
-                                    .hero__sale-tag -30%
-                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
+                                    img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/product-thumb-medium.jpg")
                                     .swiper-lazy-preloader.swiper-lazy-preloader-white
 
                             .swiper-slide.hero__swiper-slide(data-slide="1")
@@ -89,15 +85,6 @@ html(lang=lang)
                     .swiper-button-prev.swiper-button-prev--hero
                     .swiper-button-next.swiper-button-next--hero 
 
-                    .hero__swiper-tabs
-                        .hero__tab-single.active(id="slide1" data-slide-nav="0")
-                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
-                        .hero__tab-single(id="slide2" data-slide-nav="1")
-                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
-                        .hero__tab-single(id="slide3" data-slide-nav="2")
-                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
-                        .hero__tab-single(id="slide4" data-slide-nav="3")
-                            p.hero__tab-single-text CA Aeromax 6 + Yamaha A-S301 an lorem ipsum dolor
 
         section.benefits
             .container.benefits__container
@@ -105,22 +92,22 @@ html(lang=lang)
                     .benefits__single
                         .benefits__img-wrap
                             img.benefits__img(src=URLbase+"images/benefits-delivery.svg")
-                        p.benefits__text Doprava zdarma nad 5000 Kč
+                        p.benefits__text Široký sortiment léků
 
                     .benefits__single
                         .benefits__img-wrap
                             img.benefits__img(src=URLbase+"images/benefits-stock.svg")
-                        p.benefits__text 5727 produktů skladem
+                        p.benefits__text Zákaznícka karta
 
                     .benefits__single
                         .benefits__img-wrap
                             img.benefits__img(src=URLbase+"images/benefits-gift.svg")
-                        p.benefits__text Dárek k objednávce nad 6000 Kč
+                        p.benefits__text Odborné poradenství
 
                     .benefits__single
                         .benefits__img-wrap
                             img.benefits__img(src=URLbase+"images/benefits-marker.svg")
-                        p.benefits__text 1400 výdejních míst po celé ČR
+                        p.benefits__text Garance spokojenosti
 
 
         include _index-categories.pug
@@ -140,32 +127,32 @@ html(lang=lang)
 
                 .tab-content
                     .tab-pane.fade.show.active(id="1-index" role="tabpanel" aria-labelledby="1-index-tab")            
-                        .swiper-container-5-products-wrap     
-                            .swiper-container-5-products
+                        .swiper-container-4-products-wrap     
+                            .swiper-container-4-products
                                 .swiper-wrapper
                                     .swiper-slide
-                                        include _single-product-cell-small.pug
+                                        include _single-product-cell.pug
                                     .swiper-slide
-                                        include _single-product-cell-small.pug
+                                        include _single-product-cell.pug
                                     .swiper-slide
-                                        include _single-product-cell-small.pug
+                                        include _single-product-cell.pug
                                     .swiper-slide
-                                        include _single-product-cell-small.pug         
+                                        include _single-product-cell.pug        
                                     .swiper-slide
-                                        include _single-product-cell-small.pug
+                                        include _single-product-cell.pug
                                     .swiper-slide
-                                        include _single-product-cell-small.pug
+                                        include _single-product-cell.pug
                                     .swiper-slide
-                                        include _single-product-cell-small.pug
+                                        include _single-product-cell.pug
                                     .swiper-slide
-                                        include _single-product-cell-small.pug
+                                        include _single-product-cell.pug
                             .swiper-pagination.swiper-pagination-white
-                            .swiper-button-prev.swiper-button-prev--5
-                            .swiper-button-next.swiper-button-next--5
+                            .swiper-button-prev.swiper-button-prev--4
+                            .swiper-button-next.swiper-button-next--4
 
                     .tab-pane.fade(id="2-index" role="tabpanel" aria-labelledby="2-index-tab")    
-                        .swiper-container-5-products-wrap     
-                            .swiper-container-5-products
+                        .swiper-container-4-products-wrap     
+                            .swiper-container-4-products
                                 .swiper-wrapper
                                     .swiper-slide
                                         include _single-product-cell-small.pug
@@ -184,12 +171,12 @@ html(lang=lang)
                                     .swiper-slide
                                         include _single-product-cell-small.pug
                             .swiper-pagination.swiper-pagination-white
-                            .swiper-button-prev.swiper-button-prev--5
-                            .swiper-button-next.swiper-button-next--5
+                            .swiper-button-prev.swiper-button-prev--4
+                            .swiper-button-next.swiper-button-next--4
 
                     .tab-pane.fade(id="3-index" role="tabpanel" aria-labelledby="3-index-tab")    
-                        .swiper-container-5-products-wrap     
-                            .swiper-container-5-products
+                        .swiper-container-4-products-wrap     
+                            .swiper-container-4-products
                                 .swiper-wrapper
                                     .swiper-slide
                                         include _single-product-cell-small.pug
@@ -208,12 +195,12 @@ html(lang=lang)
                                     .swiper-slide
                                         include _single-product-cell-small.pug
                             .swiper-pagination.swiper-pagination-white
-                            .swiper-button-prev.swiper-button-prev--5
-                            .swiper-button-next.swiper-button-next--5
+                            .swiper-button-prev.swiper-button-prev--4
+                            .swiper-button-next.swiper-button-next--4
 
                     .tab-pane.fade(id="4-index" role="tabpanel" aria-labelledby="4-index-tab")    
-                        .swiper-container-5-products-wrap     
-                            .swiper-container-5-products
+                        .swiper-container-4-products-wrap     
+                            .swiper-container-4-products
                                 .swiper-wrapper
                                     .swiper-slide
                                         include _single-product-cell-small.pug
@@ -232,8 +219,8 @@ html(lang=lang)
                                     .swiper-slide
                                         include _single-product-cell-small.pug
                             .swiper-pagination.swiper-pagination-white
-                            .swiper-button-prev.swiper-button-prev--5
-                            .swiper-button-next.swiper-button-next--5
+                            .swiper-button-prev.swiper-button-prev--4
+                            .swiper-button-next.swiper-button-next--4
 
         section.logos
             .container.logos__container
@@ -241,63 +228,61 @@ html(lang=lang)
                     .logos__swiper-wrap
                         .swiper-wrapper
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/cambridge-audio.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/audio-technika.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/advance-acoustic.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/cabasse.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/klipsch.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/magnat.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/onkyo.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
                             .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/pro-ject.jpg")
-                                .swiper-lazy-preloader.swiper-lazy-preloader-white
-                            .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/wharfedale.jpg")
-                                .swiper-lazy-preloader.swiper-lazy-preloader-white
-                            .swiper-slide.logos__swiper-slide
-                                img.swiper-lazy(data-src=URLbase+"img/logos/yamaha.jpg")
+                                img.swiper-lazy(data-src=URLbase+"img/logos/cemio.jpg")
                                 .swiper-lazy-preloader.swiper-lazy-preloader-white
 
                     .swiper-button-prev.swiper-button-prev--logos
                     .swiper-button-next.swiper-button-next--logos
 
+        include _news-section.pug
+
         section.index-cta
             .container
-                .row
-                    .col-12.col-sm-12.col-md-8.col-lg-8.col-xl-8.index-cta__column
-                        .index-cta__single.post__image-container
-                            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-index-cta-poradna.jpg" data-src=URLbase+"img/index-cta-poradna.jpg" alt="#" title="#")
-                            .index-cta__textfield
-                                h4.index-cta__subtitle Potřebujete poradit s výběrem nového zařízení nebo máte jiné dotazy?
-                                h3.index-cta__title Rádi Vám pomůžeme v naší online poradně.
-                                a.btn.btn-ghost-color.index-cta__btn(href="#") Přejít do poradny
-                    .col-12.col-sm-12.col-md-4.col-lg-4.col-xl-4.index-cta__column
-                        .index-cta__single.index-cta__single--small.post__image-container
-                            img.lazy.post__featured-image(src=URLbase+"img/lazy/lazy-index-cta-prodejna.jpg" data-src=URLbase+"img/index-cta-prodejna.jpg" alt="#" title="#")
-                            .index-cta__textfield
-                                h3.index-cta__title Kamenná prodejna
-                                .index-cta__text-wrap
-                                    p.index-cta__text Sdružení House Of Music
-                                    p.index-cta__text Podpuklí 288
-                                    p.index-cta__text Frýdek-Místek
-                                    p.index-cta__text 73801
-                                a.btn.btn-ghost-color.index-cta__btn(href="#") Přejít do poradny
+                .index-cta__wrap
+                    .index-cta__img
+                    .index-cta__content
+                        h4.index-cta__title
 
+                        .index-cta__col
+                            .index-cta__single
+                                p.index-cta__text Hlučín (Lékárna u Hradeb) 
+                                a.index-cta__link(href="#") www.lekarnauhradeb.cz
+                            .index-cta__single
+                                p.index-cta__text Hlučín (Lékárna Rovniny)
+                                a.index-cta__link(href="#") www.lekarna-rovniny.cz
+                            .index-cta__single
+                                p.index-cta__text Rýmařov (Lékárna Avion)
+                                a.index-cta__link(href="#") www.lekarna-avion.cz
 
-        include _news-section.pug
+                        .index-cta__col
+                            .index-cta__single
+                                p.index-cta__text Vrbno pod Pradědem (Lékárna Magnus)
+                                a.index-cta__link(href="#") www.lekarna-magnus.cz
+                            .index-cta__single
+                                p.index-cta__text Český Těšín (Lékárna Silesia)
+                                a.index-cta__link(href="#") www.lekarna-tesin.cz
+   
         
         include _footer.pug
 

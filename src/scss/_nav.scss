@@ -35,6 +35,7 @@
     font-size: 1.3rem;
     font-weight: 400;
     padding: 0 1rem;
+    cursor: pointer;
 
     &:hover, &:active, &:focus{
         color: $brand-primary;
@@ -816,7 +817,7 @@
         height: 100%;
         margin: 0;
         order: 2;
-        width: 56px;
+        width: 52px;
         display: block;
     }
     .navbar-user__dropdown-toggle{

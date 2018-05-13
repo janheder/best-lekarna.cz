@@ -93,7 +93,7 @@
       <nav class="navbar navbar-top" id="anchor-navbar-top">
         <div class="container">
           <div class="navbar-top__left"><a class="navbar-top__link" href="#">O nás</a><a class="navbar-top__link" href="#">Obchodní podmínky</a><a class="navbar-top__link" href="#">Kontakty</a></div>
-          <div class="navbar-top__right"><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
+          <div class="navbar-top__right"><a class="navbar-top__link" data-toggle="modal" data-target="#modal-login"><span class="navbar-top__icon"><span class="fas fa-user"></span></span> Přihlášení</a><a class="navbar-top__link" href="#"><span class="navbar-top__icon"><span class="fas fa-plus-circle"></span></span> Registrace</a>
             <div class="dropdown navbar-top__dropdown">
               <div class="dropdown-toggle navbar-top__dropdown-toggle" id="userDropdown_top" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="navbar-top__icon"><span class="fas fa-user"></span></span>
                 <div class="navbar-top__text-wrap">
@@ -137,24 +137,25 @@
               </div>
             </div>
           </div>
-          <div class="navbar-user">
-            <div class="dropdown navbar-user__dropdown">
-              <div class="dropdown-toggle navbar-user__dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-icon navbar-user__icon"></span>
-                <div class="navbar-user__text-wrap">
-                  <p class="navbar-user__text">Petroslav Novakovič</p>
-                </div><span class="caret-icon navbar-user__caret"></span>
-              </div>
-              <div class="dropdown-menu dropdown-menu-left navbar-user__dropdown-menu" aria-labelledby="userDropdown"><a class="dropdown-item navbar-user__item" href="#">Detail účtu</a><a class="dropdown-item navbar-user__item" href="#">Historie objednávek</a><a class="dropdown-item navbar-user__item" href="#">Odhlásit</a></div>
-            </div>
-          </div>
-          <!-- Přihlášený uživatel
+          <!--
           .navbar-user
-          	a.navbar-user__link(href="#")
-          		span.user-icon.white.navbar-user__icon
-          		.navbar-user__text-wrap
-          			p.navbar-user__text Můj účet
+          	.dropdown.navbar-user__dropdown
+          		.dropdown-toggle.navbar-user__dropdown-toggle(id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+          			span.user-icon.navbar-user__icon
+          			.navbar-user__text-wrap
+          				p.navbar-user__text Petroslav Novakovič
+          			span.caret-icon.navbar-user__caret
+          		.dropdown-menu.dropdown-menu-left.navbar-user__dropdown-menu(aria-labelledby="userDropdown")
+          			a.dropdown-item.navbar-user__item(href="#") Detail účtu
+          			a.dropdown-item.navbar-user__item(href="#") Historie objednávek
+          			a.dropdown-item.navbar-user__item(href="#") Odhlásit
+          			
           
           -->
+          <div class="navbar-user"><a class="navbar-user__link" data-toggle="modal" data-target="#modal-login"><span class="user-icon navbar-user__icon"></span>
+              <div class="navbar-user__text-wrap">
+                <p class="navbar-user__text">Můj účet</p>
+              </div></a></div>
           <div class="navbar-contact"><span class="icon-phone navbar-contact__icon"></span>
             <div class="navbar-contact__text"><span class="navbar-contact__phone">+420 844 111 152</span><span class="navbar-contact__open">PO - PÁ 7:00 - 18:00				</span></div>
           </div>
@@ -548,50 +549,56 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+    <div class="modal fade" id="modal-recommend" tabindex="-1" role="dialog" aria-labelledby="modal-recommend" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-login-heading">Přihlášení</h5>
+            <h5 class="modal-title" id="modal-recommend-heading">Doporučit produkt známému</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
           </div>
           <div class="modal-body">
-            <form class="login-form page-message__login-form" method="post" action="" name="login_form"></form>
-            <div class="form-group">
-              <label for="login_form_username">Uživatelské jméno</label>
-              <input class="form-control" type="text" name="login_form_username" id="login_form_username" required autocomplete="username">
-            </div>
-            <div class="form-group">
-              <label for="login_form_password">Heslo</label>
-              <input class="form-control" type="password" name="login_form_password" id="login_form_password" required autocomplete="password">
-            </div>
-            <div class="form-group">
-              <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
-            </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+            <form method="post" action="" name="recommend_form">
+              <div class="form-group">
+                <label for="recommend_form_name">Vaše jméno</label>
+                <input class="form-control" type="text" name="recommend_form_name" id="recommend_form_name" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="recommend_form_email">Email známého</label>
+                <input class="form-control" type="email" name="recommend_form_email" id="recommend_form_email" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <button class="form-control btn" type="submit" name="recommend_form_submit" id="recommend_form_submit">Odeslat zprávu</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+    <div class="modal fade" id="modal-question" tabindex="-1" role="dialog" aria-labelledby="modal-question" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modal-login-heading">Přihlášení</h5>
+            <h5 class="modal-title" id="modal-question-heading">Dotaz na produkt</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
           </div>
           <div class="modal-body">
-            <form class="login-form page-message__login-form" method="post" action="" name="login_form"></form>
-            <div class="form-group">
-              <label for="login_form_username">Uživatelské jméno</label>
-              <input class="form-control" type="text" name="login_form_username" id="login_form_username" required autocomplete="username">
-            </div>
-            <div class="form-group">
-              <label for="login_form_password">Heslo</label>
-              <input class="form-control" type="password" name="login_form_password" id="login_form_password" required autocomplete="password">
-            </div>
-            <div class="form-group">
-              <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
-            </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+            <form method="post" action="" name="question_form">
+              <div class="form-group">
+                <label for="question_form_name">Vaše jméno</label>
+                <input class="form-control" type="text" name="question_form_name" id="question_form_name" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="question_form_email">Váš email</label>
+                <input class="form-control" type="email" name="question_form_email" id="question_form_email" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="question_form_email">Váš dotaz</label>
+                <textarea class="form-control" rows="4" name="question_form_text" id="question_form_text" required></textarea>
+              </div>
+              <div class="form-group">
+                <button class="form-control btn" type="submit" name="question_form_submit" id="question_form_submit">Odeslat dotaz</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -795,7 +802,7 @@
                 </form>
                 <div class="product-detail-main__free-delivery">
                   <div class="product-detail-main__free-delivery-wrap">
-                    <div class="product-detail-main__free-delivery-img"><span class="delivery-icon"></span></div>
+                    <div class="product-detail-main__free-delivery-img"><span class="delivery-icon white"></span></div>
                     <div class="product-detail-main__free-delivery-text-wrap">
                       <p class="product-detail-main__free-delivery-text">Při nákupu nad 1 500 Kč doprava zdarma</p>
                     </div>
@@ -1537,7 +1544,7 @@
     </main>
     <section class="news-bottom">
       <div class="container">
-        <h2 class="news-bottom__title">Nejnovější aktuality</h2>
+        <h2 class="news-bottom__title">Aktuality</h2>
         <div class="row">
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"><a class="news-single" href="#">
               <div class="post__image-container news-single__img-wrap"><img class="lazy news-single__thumbnail post__featured-image" src="img/lazy/lazy-news-thumb-small.jpg" data-src="img/news-thumb-small.jpg" alt="#" title="#">

@@ -51,6 +51,9 @@
         .single-product-cell-small{
             max-width: 20%;
         } 
+        .swiper-slide .single-product-cell{
+            max-width: 100%;
+        } 
     }
     @media screen and (max-width:991px){
         .product-grid{
@@ -59,7 +62,7 @@
     }
 
     @media (min-width:768px) and (max-width:991px){
-        & .single-product-cell{
+        .single-product-cell{
             max-width: 33.333%;
             width: 100%;
 
@@ -80,8 +83,11 @@
                 }
             }
         }
-        & .single-product-cell-small{
+        .single-product-cell-small{
             max-width: 25%;
+        } 
+        .swiper-slide .single-product-cell{
+            max-width: 100%;
         } 
     }
 
@@ -110,6 +116,9 @@
         .single-product-cell-small{
             max-width: 50%;
         } 
+        .swiper-slide .single-product-cell{
+            max-width: 100%;
+        } 
     }
 /*} *//*no grid @support*/
 
@@ -117,7 +126,7 @@
     PRODUCT SWIPER
 \*------------------------------------*/
 .swiper-wrapper{
-    padding: 20px 0px;
+    padding: 0px 0px;
 
     & figcaption{
         display: none;
@@ -128,7 +137,7 @@
     height:100%;
     position:relative;
     overflow: hidden;
-    border: 1px solid $border-grey;
+    border: 0px solid $border-grey;
     background: $border-grey;
 
     & .swiper-slide {

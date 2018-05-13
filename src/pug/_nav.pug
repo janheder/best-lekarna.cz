@@ -6,7 +6,7 @@ header
 				a.navbar-top__link(href="#") Obchodní podmínky
 				a.navbar-top__link(href="#") Kontakty
 			.navbar-top__right
-				a.navbar-top__link(href="#") #[span.navbar-top__icon #[span.fas.fa-user]] Přihlášení
+				a.navbar-top__link(data-toggle="modal" data-target="#modal-login") #[span.navbar-top__icon #[span.fas.fa-user]] Přihlášení
 				a.navbar-top__link(href="#") #[span.navbar-top__icon #[span.fas.fa-plus-circle]] Registrace
 
 				.dropdown.navbar-top__dropdown
@@ -74,25 +74,25 @@ header
 							a.navbar-search-responsive__single(href="#") Consectetur adipiscing elit
 							a.navbar-search-responsive__single(href="#") Do eiusmod
 
-			
-			.navbar-user
-				.dropdown.navbar-user__dropdown
-					.dropdown-toggle.navbar-user__dropdown-toggle(id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
-						span.user-icon.navbar-user__icon
-						.navbar-user__text-wrap
-							p.navbar-user__text Petroslav Novakovič
-						span.caret-icon.navbar-user__caret
-					.dropdown-menu.dropdown-menu-left.navbar-user__dropdown-menu(aria-labelledby="userDropdown")
-						a.dropdown-item.navbar-user__item(href="#") Detail účtu
-						a.dropdown-item.navbar-user__item(href="#") Historie objednávek
-						a.dropdown-item.navbar-user__item(href="#") Odhlásit
-						
-			// Přihlášený uživatel
+			//
 				.navbar-user
-					a.navbar-user__link(href="#")
-						span.user-icon.white.navbar-user__icon
-						.navbar-user__text-wrap
-							p.navbar-user__text Můj účet
+					.dropdown.navbar-user__dropdown
+						.dropdown-toggle.navbar-user__dropdown-toggle(id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+							span.user-icon.navbar-user__icon
+							.navbar-user__text-wrap
+								p.navbar-user__text Petroslav Novakovič
+							span.caret-icon.navbar-user__caret
+						.dropdown-menu.dropdown-menu-left.navbar-user__dropdown-menu(aria-labelledby="userDropdown")
+							a.dropdown-item.navbar-user__item(href="#") Detail účtu
+							a.dropdown-item.navbar-user__item(href="#") Historie objednávek
+							a.dropdown-item.navbar-user__item(href="#") Odhlásit
+							
+
+			.navbar-user
+				a.navbar-user__link(data-toggle="modal" data-target="#modal-login")
+					span.user-icon.navbar-user__icon
+					.navbar-user__text-wrap
+						p.navbar-user__text Můj účet
 
 			.navbar-contact
 				span.icon-phone.navbar-contact__icon

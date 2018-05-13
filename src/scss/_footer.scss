@@ -46,6 +46,7 @@ footer{
     position: relative;
     margin-top: 0;
     width: 500px;
+    max-width: 100%;
 }
 .footer-bar__email-form form{
     position: relative;
@@ -146,6 +147,9 @@ footer{
         height: 42px;
         width: 42px;
     }  
+    .footer-contacts__h3{
+        font-size: 2rem;
+    }
 }
 
 /* ========================================================================== */
@@ -166,10 +170,13 @@ footer{
     @include flexbox();
     @include flex-direction(column);
     @include justify-content(center);
+    padding: 10px 0;
+
+    &:last-child{
+        @include align-items(flex-end);
+    }
 }
-.footer-logos__col:last-child{
-    @include align-items(flex-end);
-}
+
 .footer-logos__h4{
     font-size: 1.6rem;
     font-weight: 500;
@@ -197,6 +204,17 @@ footer{
 }
 .footer-logos__link{
     padding: 0 1.5rem;
+}
+@media screen and (max-width:991px){
+    .footer-logos__container{
+        @include flex-wrap(wrap);
+    }
+    .footer-logos__col{
+
+        &:last-child{
+            @include align-items(center);
+        }
+    }
 }
 
 /* ========================================================================== */
@@ -288,7 +306,7 @@ footer{
         border-right: 0;
         border-bottom: 1px solid $white-transparent;
         @include align-items(center);
-        padding: 10px 30px;
+        padding: 10px 0px;
 
         &:first-child{
             @include justify-content(center);     
