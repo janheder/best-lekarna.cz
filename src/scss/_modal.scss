@@ -5,7 +5,6 @@
     @include align-items(center);
     margin: 0 auto;
     padding: 10px;
-
 }
 .modal-content{
     border-radius: $border-radius-primary;
@@ -30,6 +29,11 @@
 
         &:hover, &:active, &:focus{
             @include rotate(90);
+            border: 2px solid $bg-red;
+
+            .cross-icon::before, .cross-icon::after{
+                background: $bg-red;
+            }
         }
     }
     .cross-icon {
@@ -74,6 +78,9 @@
 @media (min-width: 576px){
     .modal-dialog {
         max-width: 800px;
+    }
+    #modal-login .modal-dialog{
+        max-width: 600px;
     }
 }
 @media (max-width: 575px){

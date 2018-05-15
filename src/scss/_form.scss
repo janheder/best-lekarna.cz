@@ -263,14 +263,10 @@ input[type=number]::-webkit-outer-spin-button {
 \*------------------------------------*/
 
 .register-form, .login-form{
-    /*& h3{
-        padding-bottom: 1.5rem;
-        border-bottom: 2px solid $dark-grey;
-        margin: 0;
-        margin-bottom: 2.5rem;
-        display: none;
-        font-size: 2.25rem;
-    }*/
+    h3{
+
+        font-size: 2.5rem;
+    }
     & button{
         width: 100%;
     }
