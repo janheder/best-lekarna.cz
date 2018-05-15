@@ -23,7 +23,18 @@
     .close{
         margin: 0 0 0 auto;
         height: 100%;
-        padding: 10px;
+        padding: 8px;
+        border: 2px solid $bg-dark;
+        border-radius: $border-radius-round;
+        @include transition(0.3s ease all);
+
+        &:hover, &:active, &:focus{
+            @include rotate(90);
+        }
+    }
+    .cross-icon {
+        height: 14px;
+        width: 14px;
     }
 }
 .modal-header.post__image-container{

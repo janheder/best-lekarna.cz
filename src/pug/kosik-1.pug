@@ -30,13 +30,17 @@ html(lang=lang)
             .container.page-heading--cart__container
                 .page-heading--cart__wrap
                     a.page-heading--cart__single.active(href="#")
-                        p.page-heading--cart__title 1. Nákupní košík
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 1] Nákupní košík
                     a.page-heading--cart__single(href="#")
-                        p.page-heading--cart__title 2. Osobní údaje
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 2] Osobní údaje
                     a.page-heading--cart__single(href="#")
-                        p.page-heading--cart__title 3. Souhrn objednávky
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 3] Souhrn objednávky
                     a.page-heading--cart__single(href="#")
-                        p.page-heading--cart__title 4. Dokončení objednávky
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 4] Dokončení objednávky
 
         section.page-heading.page-heading--cart-responsive
             a.page-heading--cart__control(href="#")
@@ -81,7 +85,7 @@ html(lang=lang)
                                 .cart-item-single__qty-wrap 
                                     .cart-item-single__qty
                                         .number-stepper.number-stepper--small
-                                            input.number-stepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty" id="")
+                                            input.number-stepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty")
                                             .number-stepper__btn-up
                                                 span.number-stepper__icon-up
                                             .number-stepper__btn-down
@@ -112,7 +116,7 @@ html(lang=lang)
                                 .cart-item-single__qty-wrap 
                                     .cart-item-single__qty
                                         .number-stepper.number-stepper--small
-                                            input.number-stepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty" id="")
+                                            input.number-stepper__input(type="number" min="1" max="99" value="1" name="cart-item-single-qty")
                                             .number-stepper__btn-up
                                                 span.number-stepper__icon-up
                                             .number-stepper__btn-down
@@ -299,21 +303,21 @@ html(lang=lang)
                             h3.cart-shipping-option__title Doprava DPD
                             .form-check
                                 label.form-check__label
-                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-1-alt" required)
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="dpd-1" required)
                                     | DPD dobírka
                                     span.form-check__price 79 Kč
                                     span.form-check__box.radio
                                     
                             .form-check
                                 label.form-check__label
-                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-2-alt" required)
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="dpd-2" required)
                                     | DPD platba předem převodem
                                     span.form-check__price 79 Kč
                                     span.form-check__box.radio
                                     
                             .form-check
                                 label.form-check__label
-                                    input.form-check__input(type="radio" name="cart_form_shipping" id="cp-3-alt" required)
+                                    input.form-check__input(type="radio" name="cart_form_shipping" id="dpd-3" required)
                                     | DPD Benefit-plus program 
                                     span.form-check__price 79 Kč
                                     span.form-check__box.radio

@@ -64,18 +64,19 @@
             <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
           </div>
           <div class="modal-body">
-            <form class="login-form page-message__login-form" method="post" action="" name="login_form"></form>
-            <div class="form-group">
-              <label for="login_form_username">Uživatelské jméno</label>
-              <input class="form-control" type="text" name="login_form_username" id="login_form_username" required autocomplete="username">
-            </div>
-            <div class="form-group">
-              <label for="login_form_password">Heslo</label>
-              <input class="form-control" type="password" name="login_form_password" id="login_form_password" required autocomplete="password">
-            </div>
-            <div class="form-group">
-              <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
-            </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+            <form class="login-form page-message__login-form" method="post" action="" name="login_form">
+              <div class="form-group">
+                <label for="modal-login_form_username">Uživatelské jméno</label>
+                <input class="form-control" type="text" name="modal-login_form_username" id="modal-login_form_username" required autocomplete="username">
+              </div>
+              <div class="form-group">
+                <label for="modal-login_form_password">Heslo</label>
+                <input class="form-control" type="password" name="modal-login_form_password" id="modal-login_form_password" required autocomplete="password">
+              </div>
+              <div class="form-group">
+                <button class="form-control btn" type="submit" name="modal-login_form_submit" id="modal-login_form_submit">Přihlásit se</button>
+              </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+            </form>
           </div>
         </div>
       </div>
@@ -158,7 +159,7 @@
               </div></a>
             <div class="navbar-cart__dropdown">
               <div class="navbar-cart__dropdown-inner"><a class="navbar-cart__dropdown-item navbar-cart-item" href="#">
-                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/placeholder-60x60.png" alt="#" title="#"></div>
+                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
                   <div class="navbar-cart-item__text-wrap">
                     <h5 class="navbar-cart-item__title">AVENE Hydrance opt. riche 40ml hydratační krém</h5>
                     <p class="navbar-cart-item__text">3 kusy</p>
@@ -167,7 +168,7 @@
                       <div class="navbar-cart-item__price-main">899 Kč</div>
                     </div>
                   </div></a><a class="navbar-cart__dropdown-item navbar-cart-item" href="#">
-                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/placeholder-60x60.png" alt="#" title="#"></div>
+                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
                   <div class="navbar-cart-item__text-wrap">
                     <h5 class="navbar-cart-item__title">AVENE Hydrance opt. riche 40ml hydratační krém</h5>
                     <p class="navbar-cart-item__text">3 kusy</p>
@@ -176,7 +177,7 @@
                       <div class="navbar-cart-item__price-main">899 Kč</div>
                     </div>
                   </div></a><a class="navbar-cart__dropdown-item navbar-cart-item" href="#">
-                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/placeholder-60x60.png" alt="#" title="#"></div>
+                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
                   <div class="navbar-cart-item__text-wrap">
                     <h5 class="navbar-cart-item__title">AVENE Hydrance opt. riche 40ml hydratační krém</h5>
                     <p class="navbar-cart-item__text">3 kusy</p>
@@ -505,62 +506,57 @@
     </header>
     <section class="hero">
       <div class="container hero__container">
-        <div class="hero__swiper">
-          <div class="hero__swiper-wrap">
-            <div class="swiper-wrapper hero__swiper-wrapper">
-              <div class="swiper-slide hero__swiper-slide post__image-container" data-slide="0">
-                <div class="hero__content">
-                  <div class="hero__title">Lorem ipsum dolor sit amet dolor sit amet</div>
-                  <div class="hero__btn"><a class="btn btn-white" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right white"></span></a></div>
+        <div class="row hero__row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 hero__col">
+            <div class="hero__swiper">
+              <div class="hero__swiper-wrap">
+                <div class="swiper-wrapper hero__swiper-wrapper">
+                  <div class="swiper-slide hero__swiper-slide post__image-container" data-slide="0">
+                    <div class="hero__content">
+                      <div class="hero__title">Lorem ipsum dolor sit amet dolor sit amet</div>
+                      <div class="hero__btn"><a class="btn btn-white" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right"></span></a></div>
+                    </div>
+                    <div class="hero__image"><img class="swiper-lazy hero__img post__featured-image" src="img/news-archive-thumb-large.jpg">
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide hero__swiper-slide post__image-container" data-slide="1">
+                    <div class="hero__content">
+                      <div class="hero__title">Lorem ipsum dolor sit amet dolor sit amet</div>
+                      <div class="hero__btn"><a class="btn btn-white" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right"></span></a></div>
+                    </div>
+                    <div class="hero__image"><img class="swiper-lazy hero__img post__featured-image" src="img/news-archive-thumb-large.jpg">
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide hero__swiper-slide post__image-container" data-slide="2">
+                    <div class="hero__content">
+                      <div class="hero__title">Lorem ipsum dolor sit amet dolor sit amet</div>
+                      <div class="hero__btn"><a class="btn btn-white" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right"></span></a></div>
+                    </div>
+                    <div class="hero__image"><img class="swiper-lazy hero__img post__featured-image" src="img/news-archive-thumb-large.jpg">
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide hero__swiper-slide post__image-container" data-slide="3">
+                    <div class="hero__content">
+                      <div class="hero__title">Lorem ipsum dolor sit amet dolor sit amet</div>
+                      <div class="hero__btn"><a class="btn btn-white" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right"></span></a></div>
+                    </div>
+                    <div class="hero__image"><img class="swiper-lazy hero__img post__featured-image" src="img/news-archive-thumb-large.jpg">
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="hero__image"><img class="swiper-lazy hero__img post__featured-image" src="img/product-thumb-medium.jpg">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
+                <div class="swiper-pagination swiper-pagination-white swiper-pagination--hero"></div>
               </div>
-              <div class="swiper-slide hero__swiper-slide" data-slide="1">
-                <div class="hero__content">
-                  <div class="hero__title">2 CA Aeromax 6 + Yamaha A-S301</div>
-                  <div class="hero__text">Aeromax6+Yas301</div>
-                  <div class="hero__price-old">44 980 Kč</div>
-                  <div class="hero__price">31 780 Kč</div>
-                  <div class="hero__btn"><a class="btn" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right white"></span></a></div>
-                </div>
-                <div class="hero__image">
-                  <div class="hero__sale-tag">-30%</div><img class="swiper-lazy hero__img" src="img/product-thumb-medium.jpg">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-              </div>
-              <div class="swiper-slide hero__swiper-slide" data-slide="2">
-                <div class="hero__content">
-                  <div class="hero__title">3 CA Aeromax 6 + Yamaha A-S301</div>
-                  <div class="hero__text">Aeromax6+Yas301</div>
-                  <div class="hero__price-old">44 980 Kč</div>
-                  <div class="hero__price">31 780 Kč</div>
-                  <div class="hero__btn"><a class="btn" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right white"></span></a></div>
-                </div>
-                <div class="hero__image">
-                  <div class="hero__sale-tag">-30%</div><img class="swiper-lazy hero__img" src="img/product-thumb-medium.jpg">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-              </div>
-              <div class="swiper-slide hero__swiper-slide" data-slide="3">
-                <div class="hero__content">
-                  <div class="hero__title">4 CA Aeromax 6 + Yamaha A-S301</div>
-                  <div class="hero__text">Aeromax6+Yas301</div>
-                  <div class="hero__price-old">44 980 Kč</div>
-                  <div class="hero__price">31 780 Kč</div>
-                  <div class="hero__btn"><a class="btn" href="#">Zobrazit nabídku <span class="btn__icon arrow-icon right white"></span></a></div>
-                </div>
-                <div class="hero__image">
-                  <div class="hero__sale-tag">-30%</div><img class="swiper-lazy hero__img" src="img/product-thumb-medium.jpg">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-              </div>
+              <div class="swiper-button-prev swiper-button-prev--hero"></div>
+              <div class="swiper-button-next swiper-button-next--hero"> </div>
             </div>
-            <div class="swiper-pagination swiper-pagination-white swiper-pagination--hero"></div>
           </div>
-          <div class="swiper-button-prev swiper-button-prev--hero"></div>
-          <div class="swiper-button-next swiper-button-next--hero"> </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 hero__col"><a class="hero__single" href="#">
+              <div class="hero__single-wrap post__image-container"><img class="swiper-lazy hero__img post__featured-image" src="img/page-contact-thumb-large.jpg"></div></a><a class="hero__single" href="#">
+              <div class="hero__single-wrap post__image-container"><img class="swiper-lazy hero__img post__featured-image" src="img/user-thumb-large.jpg"></div></a></div>
         </div>
       </div>
     </section>
@@ -2093,10 +2089,9 @@
     </section>
     <section class="index-cta">
       <div class="container">
-        <div class="index-cta__wrap">
-          <div class="index-cta__img"></div>
+        <div class="index-cta__wrap"><img class="index-cta__img" src="img/index-cta.jpg">
           <div class="index-cta__content">
-            <h4 class="index-cta__title"></h4>
+            <h4 class="index-cta__title">Síť lékáren</h4>
             <div class="index-cta__col">
               <div class="index-cta__single">
                 <p class="index-cta__text">Hlučín (Lékárna u Hradeb) </p><a class="index-cta__link" href="#">www.lekarnauhradeb.cz</a>

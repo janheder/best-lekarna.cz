@@ -64,18 +64,19 @@
             <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="cross-icon"></span></button>
           </div>
           <div class="modal-body">
-            <form class="login-form page-message__login-form" method="post" action="" name="login_form"></form>
-            <div class="form-group">
-              <label for="login_form_username">Uživatelské jméno</label>
-              <input class="form-control" type="text" name="login_form_username" id="login_form_username" required autocomplete="username">
-            </div>
-            <div class="form-group">
-              <label for="login_form_password">Heslo</label>
-              <input class="form-control" type="password" name="login_form_password" id="login_form_password" required autocomplete="password">
-            </div>
-            <div class="form-group">
-              <button class="form-control btn" type="submit" name="login_form_submit" id="login_form_submit">Přihlásit se</button>
-            </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+            <form class="login-form page-message__login-form" method="post" action="" name="login_form">
+              <div class="form-group">
+                <label for="modal-login_form_username">Uživatelské jméno</label>
+                <input class="form-control" type="text" name="modal-login_form_username" id="modal-login_form_username" required autocomplete="username">
+              </div>
+              <div class="form-group">
+                <label for="modal-login_form_password">Heslo</label>
+                <input class="form-control" type="password" name="modal-login_form_password" id="modal-login_form_password" required autocomplete="password">
+              </div>
+              <div class="form-group">
+                <button class="form-control btn" type="submit" name="modal-login_form_submit" id="modal-login_form_submit">Přihlásit se</button>
+              </div><a class="form-link__forgotten-pass" href="#">Zapomenuté heslo?</a>
+            </form>
           </div>
         </div>
       </div>
@@ -158,7 +159,7 @@
               </div></a>
             <div class="navbar-cart__dropdown">
               <div class="navbar-cart__dropdown-inner"><a class="navbar-cart__dropdown-item navbar-cart-item" href="#">
-                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/placeholder-60x60.png" alt="#" title="#"></div>
+                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
                   <div class="navbar-cart-item__text-wrap">
                     <h5 class="navbar-cart-item__title">AVENE Hydrance opt. riche 40ml hydratační krém</h5>
                     <p class="navbar-cart-item__text">3 kusy</p>
@@ -167,7 +168,7 @@
                       <div class="navbar-cart-item__price-main">899 Kč</div>
                     </div>
                   </div></a><a class="navbar-cart__dropdown-item navbar-cart-item" href="#">
-                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/placeholder-60x60.png" alt="#" title="#"></div>
+                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
                   <div class="navbar-cart-item__text-wrap">
                     <h5 class="navbar-cart-item__title">AVENE Hydrance opt. riche 40ml hydratační krém</h5>
                     <p class="navbar-cart-item__text">3 kusy</p>
@@ -176,7 +177,7 @@
                       <div class="navbar-cart-item__price-main">899 Kč</div>
                     </div>
                   </div></a><a class="navbar-cart__dropdown-item navbar-cart-item" href="#">
-                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/placeholder-60x60.png" alt="#" title="#"></div>
+                  <div class="navbar-cart-item__img-wrap"><img class="navbar-cart-item__img" src="img/placeholder-60x60.png" data-src="img/product-thumb-small.jpg" alt="#" title="#"></div>
                   <div class="navbar-cart-item__text-wrap">
                     <h5 class="navbar-cart-item__title">AVENE Hydrance opt. riche 40ml hydratační krém</h5>
                     <p class="navbar-cart-item__text">3 kusy</p>
@@ -506,10 +507,18 @@
     <section class="page-heading page-heading--cart">
       <div class="container page-heading--cart__container">
         <div class="page-heading--cart__wrap"><a class="page-heading--cart__single active" href="#">
-            <p class="page-heading--cart__title">1. Nákupní košík</p></a><a class="page-heading--cart__single" href="#">
-            <p class="page-heading--cart__title">2. Osobní údaje</p></a><a class="page-heading--cart__single" href="#">
-            <p class="page-heading--cart__title">3. Souhrn objednávky</p></a><a class="page-heading--cart__single" href="#">
-            <p class="page-heading--cart__title">4. Dokončení objednávky</p></a></div>
+            <div class="page-heading--cart__single-wrap">
+              <p class="page-heading--cart__title"><span class="page-heading--cart__number">1</span> Nákupní košík</p>
+            </div></a><a class="page-heading--cart__single" href="#">
+            <div class="page-heading--cart__single-wrap">
+              <p class="page-heading--cart__title"><span class="page-heading--cart__number">2</span> Osobní údaje</p>
+            </div></a><a class="page-heading--cart__single" href="#">
+            <div class="page-heading--cart__single-wrap">
+              <p class="page-heading--cart__title"><span class="page-heading--cart__number">3</span> Souhrn objednávky</p>
+            </div></a><a class="page-heading--cart__single" href="#">
+            <div class="page-heading--cart__single-wrap">
+              <p class="page-heading--cart__title"><span class="page-heading--cart__number">4</span> Dokončení objednávky</p>
+            </div></a></div>
       </div>
     </section>
     <section class="page-heading page-heading--cart-responsive"><a class="page-heading--cart__control" href="#"><span class="caret-icon left disabled"></span></a>
@@ -555,7 +564,7 @@
                 <div class="cart-item-single__qty-wrap"> 
                   <div class="cart-item-single__qty">
                     <div class="number-stepper number-stepper--small">
-                      <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty" id="">
+                      <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty">
                       <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
                       <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
                     </div>
@@ -585,7 +594,7 @@
                 <div class="cart-item-single__qty-wrap"> 
                   <div class="cart-item-single__qty">
                     <div class="number-stepper number-stepper--small">
-                      <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty" id="">
+                      <input class="number-stepper__input" type="number" min="1" max="99" value="1" name="cart-item-single-qty">
                       <div class="number-stepper__btn-up"><span class="number-stepper__icon-up"></span></div>
                       <div class="number-stepper__btn-down"><span class="number-stepper__icon-down"></span></div>
                     </div>
@@ -732,17 +741,17 @@
               <h3 class="cart-shipping-option__title">Doprava DPD</h3>
               <div class="form-check">
                 <label class="form-check__label">
-                  <input class="form-check__input" type="radio" name="cart_form_shipping" id="cp-1-alt" required>DPD dobírka<span class="form-check__price">79 Kč</span><span class="form-check__box radio"></span>
+                  <input class="form-check__input" type="radio" name="cart_form_shipping" id="dpd-1" required>DPD dobírka<span class="form-check__price">79 Kč</span><span class="form-check__box radio"></span>
                 </label>
               </div>
               <div class="form-check">
                 <label class="form-check__label">
-                  <input class="form-check__input" type="radio" name="cart_form_shipping" id="cp-2-alt" required>DPD platba předem převodem<span class="form-check__price">79 Kč</span><span class="form-check__box radio"></span>
+                  <input class="form-check__input" type="radio" name="cart_form_shipping" id="dpd-2" required>DPD platba předem převodem<span class="form-check__price">79 Kč</span><span class="form-check__box radio"></span>
                 </label>
               </div>
               <div class="form-check">
                 <label class="form-check__label">
-                  <input class="form-check__input" type="radio" name="cart_form_shipping" id="cp-3-alt" required>DPD Benefit-plus program <span class="form-check__price">79 Kč</span><span class="form-check__box radio"></span>
+                  <input class="form-check__input" type="radio" name="cart_form_shipping" id="dpd-3" required>DPD Benefit-plus program <span class="form-check__price">79 Kč</span><span class="form-check__box radio"></span>
                 </label>
               </div>
             </div>

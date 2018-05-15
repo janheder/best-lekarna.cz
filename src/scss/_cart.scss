@@ -16,32 +16,77 @@
 .page-heading--cart__single{
 	text-align: center;
 	width: 25%;
-	border-bottom: 2px solid $dark-grey;
-	opacity: 0.5;
+	opacity: 1;
 	@include transition(0.2s ease opacity);
+	position: relative;
+	z-index: 1;
+	padding: 3rem 0;
+	opacity: 1;
 
+	&::after{
+		content: "";
+		background: $text-grey;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		height: 1px;
+		top: 50%;
+		z-index: -1;
+		opacity: 1;
+	}
 	&:hover, &:active, &:focus{
 		text-decoration: none;
 		opacity: 1;
+
 	}
 	&.pass{
 		opacity: 1;
+		.page-heading--cart__title{
+			color: $bg-dark;
+		}
+		.page-heading--cart__number{
+			background: $bg-dark;
+		}
 	}
 	&.active{
 		opacity: 1;
-		border-bottom: 2px solid $brand-primary;
 
-		& .page-heading--cart__title{
-			color: $brand-primary;
+		& .page-heading--cart__number{
+			background: $brand-primary;
 		}
 	}
+}
+.page-heading--cart__single-wrap{
+	@include flexbox();
+	@include flex-direction(row);
+	@include align-items(center);
+	@include justify-content(center);	
 }
 .page-heading--cart__title{
 	font-weight: 500;
 	font-size: 1.6rem;
-	color: $dark-grey;
+	color: $text-grey;
 	margin: 0;
-	padding: 3rem 0;
+	@include flexbox();
+	@include flex-direction(row);
+	@include align-items(center);
+	@include justify-content(center);
+	padding: 0 3rem;
+	background: $bg-light;
+}
+.page-heading--cart__number{
+	background: $text-grey;
+	color: $text-white;
+	height: 32px;
+	width: 32px;
+	@include flexbox();
+	@include flex-direction(row);
+	@include align-items(center);
+	@include justify-content(center);
+	border-radius: $border-radius-round;
+	margin-right: 10px;
+	font-size: 1.5rem;
+	font-weight: 400;
 }
 .page-heading--cart-responsive{
 	display: none;
@@ -642,6 +687,7 @@
 	margin-top: 2rem;
 	@include flexbox();
 	@include flex-direction(row);
+	@include flex-wrap(wrap);
 	border: 1px solid $border-primary;
 	border-radius: $border-radius-primary;
 	padding: 1rem 1.5rem;
@@ -802,4 +848,8 @@
 	margin-bottom: 0;
 	border-radius: $border-radius-primary;
 	width: 100%;
+}
+.cart-terms-link{
+	display: block;
+	margin-bottom: 4rem;
 }

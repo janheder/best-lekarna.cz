@@ -396,8 +396,8 @@ var carousel_4_products = new Swiper('.swiper-container-4-products', {
   991: {
     slidesPerView: 3
   },
-  500: {
-    slidesPerView: 3
+  768: {
+    slidesPerView: 2
   },
   320: {
     slidesPerView: 1

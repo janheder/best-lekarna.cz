@@ -30,13 +30,17 @@ html(lang=lang)
             .container.page-heading--cart__container
                 .page-heading--cart__wrap
                     a.page-heading--cart__single.pass(href="#")
-                        p.page-heading--cart__title 1. Nákupní košík
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 1] Nákupní košík
                     a.page-heading--cart__single.active(href="#")
-                        p.page-heading--cart__title 2. Osobní údaje
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 2] Osobní údaje
                     a.page-heading--cart__single(href="#")
-                        p.page-heading--cart__title 3. Souhrn objednávky
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 3] Souhrn objednávky
                     a.page-heading--cart__single(href="#")
-                        p.page-heading--cart__title 4. Dokončení objednávky
+                        .page-heading--cart__single-wrap
+                            p.page-heading--cart__title #[span.page-heading--cart__number 4] Dokončení objednávky
 
         section.page-heading.page-heading--cart-responsive
             a.page-heading--cart__control(href="/kosik.html?krok=1")
@@ -180,6 +184,10 @@ html(lang=lang)
                                                         option(value="cz") Česká republika
                                                         option(value="sk") Slovensko
 
+
+                                            a.cart-terms-link(href="#") Beru na vědomí zpracování osobních údajů
+
+
                                             .form-group
                                                 .form-check
                                                     label.form-check__label.cart-register-toggler
@@ -195,7 +203,12 @@ html(lang=lang)
                                                     label(for="register_form_register_password") Heslo
                                                     span(id="show_password_toggler" data-toggle="tooltip" data-placement="top" title="Zobrazit/Skrýt heslo") #[span.fa.fa-eye]
                                                     input.form-control(type="password" name="register_form_register_password" id="register_form_register_password" autocomplete="off")
-
+                                                .form-group
+                                                    .form-check
+                                                        label.form-check__label
+                                                            input.form-check__input(type="checkbox" name="register_form_register_terms")
+                                                            | Souhlasím se #[a.form-check__link(href="#") zpracováním osobních údajů]
+                                                            span.form-check__box.checkbox
 
                                         .form-group
                                             .form-check
@@ -204,7 +217,6 @@ html(lang=lang)
                                                     | Zasílat novinky a propagační materiály na email
                                                     span.form-check__box.checkbox
 
-                                        a(href="#") Informace o zpracování osobních údajů
                              
 
                                         button.d-none(type="submit" id="register_form_submit") Souhrn objednávky

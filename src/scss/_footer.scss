@@ -6,6 +6,11 @@ footer{
         padding-bottom: 3rem;
     }
 }
+@media screen and (max-width:991px){
+    footer{
+        padding: 0;
+    }
+}
 
 /***** FOOTER BAR *****/
 .footer-bar{
@@ -66,7 +71,7 @@ footer{
     bottom: 0px;
     width: auto;
     min-height: 0;
-    line-height: 1;
+    line-height: 1.5;
     padding: 0.5rem 2.5rem;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;

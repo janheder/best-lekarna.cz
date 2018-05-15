@@ -28,62 +28,71 @@ html(lang=lang)
         include _nav.pug
         section.hero
             .container.hero__container
-                .hero__swiper
-                    .hero__swiper-wrap
-                        .swiper-wrapper.hero__swiper-wrapper
+                .row.hero__row
+                    .col-12.col-sm-12.col-md-12.col-lg-8.col-xl-8.hero__col
+                        .hero__swiper
+                            .hero__swiper-wrap
+                                .swiper-wrapper.hero__swiper-wrapper
 
-                            .swiper-slide.hero__swiper-slide.post__image-container(data-slide="0")
-                                .hero__content
-                                    .hero__title Lorem ipsum dolor sit amet dolor sit amet
-                                    .hero__btn
-                                        a.btn.btn-white(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
+                                    .swiper-slide.hero__swiper-slide.post__image-container(data-slide="0")
+                                        .hero__content
+                                            .hero__title Lorem ipsum dolor sit amet dolor sit amet
+                                            .hero__btn
+                                                a.btn.btn-white(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right]
 
-                                .hero__image
-                                    img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/product-thumb-medium.jpg")
-                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                        .hero__image
+                                            img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/news-archive-thumb-large.jpg")
+                                            .swiper-lazy-preloader.swiper-lazy-preloader-white
 
-                            .swiper-slide.hero__swiper-slide(data-slide="1")
-                                .hero__content
-                                    .hero__title 2 CA Aeromax 6 + Yamaha A-S301
-                                    .hero__text Aeromax6+Yas301
-                                    .hero__price-old 44 980 Kč
-                                    .hero__price 31 780 Kč
-                                    .hero__btn
-                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
-                                .hero__image
-                                    .hero__sale-tag -30%
-                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
-                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
 
-                            .swiper-slide.hero__swiper-slide(data-slide="2")
-                                .hero__content
-                                    .hero__title 3 CA Aeromax 6 + Yamaha A-S301
-                                    .hero__text Aeromax6+Yas301
-                                    .hero__price-old 44 980 Kč
-                                    .hero__price 31 780 Kč
-                                    .hero__btn
-                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
-                                .hero__image
-                                    .hero__sale-tag -30%
-                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
-                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                    .swiper-slide.hero__swiper-slide.post__image-container(data-slide="1")
+                                        .hero__content
+                                            .hero__title Lorem ipsum dolor sit amet dolor sit amet
+                                            .hero__btn
+                                                a.btn.btn-white(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right]
 
-                            .swiper-slide.hero__swiper-slide(data-slide="3")
-                                .hero__content
-                                    .hero__title 4 CA Aeromax 6 + Yamaha A-S301
-                                    .hero__text Aeromax6+Yas301
-                                    .hero__price-old 44 980 Kč
-                                    .hero__price 31 780 Kč
-                                    .hero__btn
-                                        a.btn(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right.white]
-                                .hero__image
-                                    .hero__sale-tag -30%
-                                    img.swiper-lazy.hero__img(src=URLbase+"img/product-thumb-medium.jpg")
-                                    .swiper-lazy-preloader.swiper-lazy-preloader-white
+                                        .hero__image
+                                            img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/news-archive-thumb-large.jpg")
+                                            .swiper-lazy-preloader.swiper-lazy-preloader-white
 
-                        .swiper-pagination.swiper-pagination-white.swiper-pagination--hero
-                    .swiper-button-prev.swiper-button-prev--hero
-                    .swiper-button-next.swiper-button-next--hero 
+
+                                    .swiper-slide.hero__swiper-slide.post__image-container(data-slide="2")
+                                        .hero__content
+                                            .hero__title Lorem ipsum dolor sit amet dolor sit amet
+                                            .hero__btn
+                                                a.btn.btn-white(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right]
+
+                                        .hero__image
+                                            img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/news-archive-thumb-large.jpg")
+                                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+
+                                    .swiper-slide.hero__swiper-slide.post__image-container(data-slide="3")
+                                        .hero__content
+                                            .hero__title Lorem ipsum dolor sit amet dolor sit amet
+                                            .hero__btn
+                                                a.btn.btn-white(href="#") Zobrazit nabídku #[span.btn__icon.arrow-icon.right]
+
+                                        .hero__image
+                                            img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/news-archive-thumb-large.jpg")
+                                            .swiper-lazy-preloader.swiper-lazy-preloader-white
+
+
+                                .swiper-pagination.swiper-pagination-white.swiper-pagination--hero
+                            .swiper-button-prev.swiper-button-prev--hero
+                            .swiper-button-next.swiper-button-next--hero 
+
+
+
+                    .col-12.col-sm-12.col-md-12.col-lg-4.col-xl-4.hero__col
+
+                        a.hero__single(href="#")
+                            .hero__single-wrap.post__image-container
+                                img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/page-contact-thumb-large.jpg")
+
+                        a.hero__single(href="#")
+                            .hero__single-wrap.post__image-container
+                                img.swiper-lazy.hero__img.post__featured-image(src=URLbase+"img/user-thumb-large.jpg")
 
 
         section.benefits
@@ -260,9 +269,12 @@ html(lang=lang)
         section.index-cta
             .container
                 .index-cta__wrap
-                    .index-cta__img
+
+                    img.index-cta__img(src=URLbase+"img/index-cta.jpg")
+
                     .index-cta__content
-                        h4.index-cta__title
+
+                        h4.index-cta__title Síť lékáren
 
                         .index-cta__col
                             .index-cta__single

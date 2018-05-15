@@ -75,3 +75,7 @@ width: 100%;
 .swiper-button-prev--product{
     @include transform(translateX(10px) rotate(180deg)); 
 }
+
+.swiper-container-4-products-wrap{
+    position: relative;
+}

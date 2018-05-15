@@ -87,6 +87,7 @@
 }
 .hero__swiper{
     position: relative;
+    height: 380px;
 }
 .swiper-pagination--hero{
     display: none;
@@ -123,6 +124,41 @@
 .hero__tab-single.active .hero__tab-single-text{
     color: $brand-primary;
 }
+.swiper-button-prev--hero{
+    right: 25px;
+    left: auto;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    top: auto;
+    border-radius: $border-radius-primary;
+    @include transform(translateX(-100%) rotate(180deg));
+}
+.swiper-button-next--hero{
+    right: 15px;
+    left: auto;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    top: auto;
+    border-radius: $border-radius-primary;
+    @include transform(translateX(0%));
+}
+.hero__single{
+    height: 50%;
+    display: block;
+
+    &:first-child{
+        padding-bottom: 10px;
+    }
+    &:last-child{
+        padding-top: 10px;
+    }
+}
+.hero__single-wrap{
+    display: block;  
+    height: 100%;
+}
 
 @media screen and (max-width:991px){
     .hero {
@@ -143,17 +179,20 @@
     }
 }
 @media screen and (max-width:768px){
+    .hero__swiper{
+        height: 320px;
+    }
     .hero__swiper-tabs{
         display: none;
     }
 }
 @media screen and (max-width:600px){
-    .hero__content, .hero__image{
-        padding: 20px;
-        padding-bottom: 40px;
+    .hero__swiper{
+        height: 300px;
     }
-    .hero__contant{
-        padding-right: 0px;   
+    .hero__content{
+        padding: 20px;
+        max-width: 100%;
     }
     .hero__title{
         font-size: 3rem;
@@ -172,11 +211,8 @@
         @include flexbox();
         @include flex-direction(column);
     }
-    .hero__content, .hero__image{
-        padding: 20px;
-        @include flex-basis(100%);
-        display: block;
-        height: auto;
+    .hero__swiper{
+        height: 260px;
     }
     .hero__contant{
         padding-right: 0px;   
@@ -208,6 +244,7 @@
     background: $bg-light;
     border-radius: $border-radius-primary;
     @include flexbox();
+    @include flex-wrap(wrap);
     padding: 3rem 0;
 }
 .benefits__single{
@@ -255,7 +292,7 @@
         @include flex-grow(1);
         @include flex-basis(auto);
         margin: 10px 0;
-        @include justify-content(flex-start);
+        @include justify-content(center);
 
         &:nth-child(2n+2){
             border-right: none;  
@@ -361,6 +398,7 @@
 
 .index-products{
     padding-bottom: 6rem; 
+    position: relative;
 }
 @media screen and (max-width:991px){
     .index-products{
@@ -421,47 +459,67 @@
 
 .index-cta{
     background: $bg-white;
-    padding: 8rem 0;
+    padding: 4rem 0 0 0;
 }
-.index-cta__column{
-    padding-bottom: 20px;
-}
-.index-cta__single{
-    padding: 4rem 0;
-    height: 100%;
+.index-cta__wrap{
     @include flexbox();
     @include flex-direction(row);
     @include align-items(center);
+    background: #f6f6f6;
+    position: relative;
+
+    &::before{
+        content: "";
+        background: $bg-white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 16px;
+    }
 }
-.index-cta__textfield{
-    background: $black-transparent-50;
-    padding: 3rem;
-    width: 460px;
-    max-width: 100%;
-    border-top-right-radius: $border-radius-primary;
-    border-bottom-right-radius: $border-radius-primary;
-}
-.index-cta__subtitle, .index-cta__title{
-    font-family: $font-family-secondary;
-    color: $text-white;
-    font-size: 2.4rem;
+.index-cta__img{
+    max-height: 440px;
+    z-index: 2;
 }
 .index-cta__title{
     font-weight: 700;
-    margin: 2rem 0;
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 500;
+    width: 100%;
+    padding: 0 2rem 1rem 2rem;
 }
-.index-cta__text-wrap{
-    margin-bottom: 2rem;
+.index-cta__content{
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include flex-grow(1);
+    @include flex-wrap(wrap);
+    padding: 2rem 0;
+}
+.index-cta__col{
+    padding-bottom: 0px;
+    @include flex-grow(1);
+}
+.index-cta__single{
+    padding: 1.5rem 2rem;
+    height: 100%;
 }
 .index-cta__text{
-    font-size: 1.6rem;
-    color: $text-white;
+    font-size: 1.5rem;
+    color: $text-primary;
     line-height: 3rem;
     margin: 0;
+    display: block;
 }
-.index-cta__single--small{
-    .index-cta__textfield{
-        width: 260px;
+.index-cta__link{
+    display: block;
+    font-size: 1.5rem;
+}
+@media screen and (max-width: 700px){
+    .index-cta{
+        display: none;
     }
 }
 

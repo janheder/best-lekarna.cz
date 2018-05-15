@@ -9,17 +9,17 @@
 
             .modal-body
                 form(method="post" action="" class="login-form page-message__login-form" name="login_form")
-                .form-group
-                    label(for="login_form_username") Uživatelské jméno
-                    input.form-control(type="text" name="login_form_username" id="login_form_username" required autocomplete="username")
+                    .form-group
+                        label(for="modal-login_form_username") Uživatelské jméno
+                        input.form-control(type="text" name="modal-login_form_username" id="modal-login_form_username" required autocomplete="username")
 
-                .form-group
-                    label(for="login_form_password") Heslo
-                    input.form-control(type="password" name="login_form_password" id="login_form_password" required autocomplete="password")
+                    .form-group
+                        label(for="modal-login_form_password") Heslo
+                        input.form-control(type="password" name="modal-login_form_password" id="modal-login_form_password" required autocomplete="password")
 
-                .form-group
-                    button.form-control.btn(type="submit" name="login_form_submit" id="login_form_submit") Přihlásit se
-                    
-                a.form-link__forgotten-pass(href="#") Zapomenuté heslo?
+                    .form-group
+                        button.form-control.btn(type="submit" name="modal-login_form_submit" id="modal-login_form_submit") Přihlásit se
+                        
+                    a.form-link__forgotten-pass(href="#") Zapomenuté heslo?
 
 

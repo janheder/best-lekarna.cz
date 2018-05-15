@@ -24,6 +24,7 @@
     &.error{
         border-color: $red-main;
         box-shadow: none;
+        width: 100%;
     }
     &.valid{
         border-color: $green-main;
@@ -40,7 +41,7 @@ select.form-control:not([size]):not([multiple]) {
     height: 4.6rem;
 }
 .form-control:focus{
-    background: $bg-light;
+    background: $bg-white;
 }
 .form-group{
     font-weight: 400;
@@ -103,6 +104,7 @@ select.form-control:not([size]):not([multiple]) {
     z-index: 1;
     @include flexbox();
     @include flex-direction(row);
+    @include flex-wrap(wrap);
     margin: 0;
     border-radius: $border-radius-primary;
     line-height: 1.5;
@@ -116,6 +118,9 @@ select.form-control:not([size]):not([multiple]) {
             opacity: 0.8;
         }
     }
+}
+.form-check__link{
+    padding: 0 5px;
 }
 .form-check__box{
     background: transparent;
