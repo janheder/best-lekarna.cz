@@ -16,7 +16,7 @@
         text-decoration: none;
 
         .news-single__thumbnail{
-            @include transform(scale(1.1));
+            @include transform(scale(1.05));
         }
     }
 }
@@ -29,7 +29,7 @@
 }
 .news-single__thumbnail{
     z-index: 0;
-    @include transition(0.3s ease all);
+    @include transition(0.5s ease all);
 }
 .news-single__date{
     position: absolute;

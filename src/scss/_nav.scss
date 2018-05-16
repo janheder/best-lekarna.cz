@@ -105,6 +105,10 @@
     color: #222;
     @include justify-content(flex-start);
     padding: 1rem 2rem;
+    
+    &:focus, &:hover {
+        background-color: $bg-light;
+    }
 }
 
 /* ========================================================================== */

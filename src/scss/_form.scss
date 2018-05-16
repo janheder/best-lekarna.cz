@@ -55,10 +55,15 @@ select.form-control:not([size]):not([multiple]) {
     border: 0;
     }
     span.error{
-        color: $red-main;
+        color: $text-red;
         font-size: 13px;
         order: 1;
         margin: 0;
+        width: 100%;
+        display: block;
+        background: rgba(195, 31, 37, 0.1);
+        margin-top: 0px;
+        padding: 2px 8px;
     }
     label{
         width: 100%;
