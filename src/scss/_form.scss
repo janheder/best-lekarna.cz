@@ -123,6 +123,9 @@ select.form-control:not([size]):not([multiple]) {
             opacity: 0.8;
         }
     }
+    a{
+        padding: 0 5px;
+    }
 }
 .form-check__link{
     padding: 0 5px;
