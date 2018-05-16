@@ -64,8 +64,8 @@ footer{
     border: 1px solid $border-primary;
 }
 .footer-bar__btn{
+    height: 5rem;
     position: absolute;
-    height: auto;
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -75,6 +75,19 @@ footer{
     padding: 0.5rem 2.5rem;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+.footer-bar__label{
+    border: 0;
+    padding: 0;
+    padding-left: 2.25rem;
+    min-height: 0;
+}
+.footer-bar__label a{
+    padding: 0 5px;
+}
+.footer-bar__label .form-check__box{
+    left: 0;
+    top: 3px;
 }
 .footer-bar__notice, .footer-bar__notice a{
     margin: 0;
