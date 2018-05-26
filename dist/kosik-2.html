@@ -662,7 +662,7 @@
                             <option value="sk">Slovensko</option>
                           </select>
                         </div>
-                      </div><a class="cart-terms-link" href="#">Beru na vědomí zpracování osobních údajů</a>
+                      </div><a class="cart-terms-link" href="#">Vložením údajů beru na vědomí zpracování osobních údajů</a>
                       <div class="form-group">
                         <div class="form-check">
                           <label class="form-check__label cart-register-toggler">
@@ -691,7 +691,7 @@
                     <div class="form-group">
                       <div class="form-check">
                         <label class="form-check__label">
-                          <input class="form-check__input" type="checkbox" name="register_form_email_marketing">Zasílat novinky a propagační materiály na email<span class="form-check__box checkbox"></span>
+                          <input class="form-check__input" type="checkbox" name="register_form_email_marketing" checked><span class="form-check__inline">Chci odebírat newsletter a souhlasím se <a class="form-check__link" href="#">zpracováním osobních údajů</a> za účelem zasílání informací o novinkách a slevách.</span><span class="form-check__box checkbox"></span>
                         </label>
                       </div>
                     </div>
@@ -862,7 +862,7 @@
                 <button class="btn form-control footer-bar__btn" type="submit" name="email-sub-button" id="email-sub-button">Odebírat</button>
                 <div class="form-check">
                   <label class="form-check__label footer-bar__label">
-                    <input class="form-check__input" type="checkbox" name="email_check" required>Souhlasím se <a href="#">zpracovaním osobních údajů</a><span class="form-check__box checkbox"></span>
+                    <input class="form-check__input" type="checkbox" name="email_check" required><span class="form-check__inline">Souhlasím se <a href="#">zpracovaním osobních údajů</a></span><span class="form-check__box checkbox"></span>
                   </label>
                 </div>
               </form>
@@ -1043,8 +1043,8 @@
                       minlength: 5
                   },
                   
-                  register_form_terms: {
-                     required: false
+                  register_form_register_terms: {
+                     required: true
                   }
                   },
               messages: {
@@ -1106,6 +1106,8 @@
                       required: "Prosím zadejte heslo", 
                       minlength: "Prosím zadejte heslo alespoň 5 znaků dlouhé"
                   },
+                  //osobni udaje
+                  register_form_register_terms: "Musíte souhlasit se zpracováním osobních údajů"
       
               },
               submitHandler: function(form) {

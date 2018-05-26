@@ -185,7 +185,7 @@ html(lang=lang)
                                                         option(value="sk") Slovensko
 
 
-                                            a.cart-terms-link(href="#") Beru na vědomí zpracování osobních údajů
+                                            a.cart-terms-link(href="#") Vložením údajů beru na vědomí zpracování osobních údajů
 
 
                                             .form-group
@@ -213,8 +213,8 @@ html(lang=lang)
                                         .form-group
                                             .form-check
                                                 label.form-check__label
-                                                    input.form-check__input(type="checkbox" name="register_form_email_marketing")
-                                                    | Zasílat novinky a propagační materiály na email
+                                                    input.form-check__input(type="checkbox" name="register_form_email_marketing" checked)
+                                                    span.form-check__inline Chci odebírat newsletter a souhlasím se #[a.form-check__link(href="#") zpracováním osobních údajů] za účelem zasílání informací o novinkách a slevách.
                                                     span.form-check__box.checkbox
 
                              
@@ -387,8 +387,8 @@ html(lang=lang)
                             minlength: 5
                         },
                         
-                        register_form_terms: {
-                           required: false
+                        register_form_register_terms: {
+                           required: true
                         }
                         },
                     messages: {
@@ -450,6 +450,8 @@ html(lang=lang)
                             required: "Prosím zadejte heslo", 
                             minlength: "Prosím zadejte heslo alespoň 5 znaků dlouhé"
                         },
+                        //osobni udaje
+                        register_form_register_terms: "Musíte souhlasit se zpracováním osobních údajů"
 
                     },
                     submitHandler: function(form) {

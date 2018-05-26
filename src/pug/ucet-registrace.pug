@@ -181,14 +181,14 @@ html(lang=lang)
                                     .form-check
                                         label.form-check__label
                                             input.form-check__input(type="checkbox" name="register_form_email_marketing")
-                                            | Zasílat novinky a propagační materiály na email
+                                            span.form-check__inline Chci odebírat newsletter a souhlasím se #[a(href="#") zpracováním osobních údajů] za účelem zasílání informací o novinkách a slevách.
                                             span.form-check__box.checkbox
 
                                 .form-group
                                     .form-check
                                         label.form-check__label
-                                            input.form-check__input(type="checkbox" name="register_form_terms")
-                                            | Souhlasím se zpracováním osobních údajů
+                                            input.form-check__input(type="checkbox" name="register_form_terms" required)
+                                            span.form-check__inline Souhlasím se #[a(href="#") zpracováním osobních údajů] za účelem registrace
                                             span.form-check__box.checkbox
 
                                 .form-group
@@ -277,7 +277,7 @@ html(lang=lang)
                         },
                         
                         register_form_terms: {
-                           required: false
+                           required: true
                         }
                         },
                     messages: {
