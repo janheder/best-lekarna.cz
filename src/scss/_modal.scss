@@ -23,6 +23,8 @@
         margin: 0 0 0 auto;
         height: 100%;
         padding: 8px;
+        height: 34px;
+        width: 34px;
         border: 2px solid $bg-dark;
         border-radius: $border-radius-round;
         @include transition(0.3s ease all);
@@ -66,12 +68,14 @@
     }
 }
 .modal-footer{
+    display: block;
     @include justify-content(flex-start);
     padding: 20px;
 
     & .btn:last-child{
         margin-left: auto;
         margin-right: 0;
+        float: right;
     }
 }
 

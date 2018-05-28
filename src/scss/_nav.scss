@@ -1058,7 +1058,7 @@
     height: 100%;
     /* text-transform: uppercase; */
     @include flexbox();
-    @include flex-direction(column);
+    @include flex-direction(row);
     @include align-items(center);
     @include justify-content(center);
     cursor: pointer;
@@ -1166,6 +1166,9 @@
         @include flexbox();
         @include flex-direction(row);
         position: relative;
+    }
+    .nav-item__row{
+        width: 100%;
     }
     .dropdown-column{
         @include flexbox();

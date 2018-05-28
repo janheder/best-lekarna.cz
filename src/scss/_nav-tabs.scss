@@ -11,6 +11,7 @@
 
         .nav-link{
             min-height: 56px;
+            height: 100%;
             @include flexbox();
             @include align-items(center);
             @include flex-direction(row);

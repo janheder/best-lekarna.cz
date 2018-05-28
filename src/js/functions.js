@@ -94,10 +94,11 @@ if (styletotest in document.body.style){
 else {
     $('.post__image-container').each(function () {
         var $container = $(this),
-        imgUrl = $container.find('img').attr('data-src');
+        imgUrl = $container.find('img').attr('src');
         if (imgUrl) {
-            $(this).css('backgroundImage', 'url(' + imgUrl + ')')
+            $(this).css('backgroundImage', 'url(' + imgUrl + ')');
             $('.post__featured-image').css('display','none');
+            $(this).css('background-size','cover');
         }  
     });
 }
