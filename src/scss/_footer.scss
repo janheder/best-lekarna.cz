@@ -91,6 +91,14 @@ footer{
     margin-top: 5px;
     font-size: 1.4rem;
 }
+@media screen and (max-width:768px){
+    .footer-bar__email-form .form-check{
+        text-align: center;
+    }
+    .footer-bar__label{
+        display: inline-flex;
+    } 
+}
 
 /* ========================================================================== */
 /* FOOTER CONTACTS */
@@ -401,6 +409,7 @@ footer{
     font-size: 13px;
     color: $text-primary;
     margin: 0;
+    width: 100%;
 }
 .copyright__farm-link{
     font-size: 13px;

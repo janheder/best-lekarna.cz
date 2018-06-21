@@ -23,7 +23,8 @@
         padding: 0 20px !important;
         
         &:first-child{
-            order: 2;
+            order: 0;
+            padding-top: 20px;
         }
         &:nth-child(2){
             order: 1;
@@ -126,6 +127,7 @@
     position: absolute;        
     @include center(both);
     cursor: zoom-in;
+    max-height: 100%;
 }
 .swiper-pagination--product .swiper-pagination-bullet-active{
     background: $brand-primary;
