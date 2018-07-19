@@ -288,22 +288,75 @@ $(function () {
  // NUMBER SPINNER 
  // ============================================================================
 
-
 $(function(){
-    $(".number-stepper__btn-up").click(function(){
-        var SpinnerInput = $(this).closest('.number-stepper').find('.number-stepper__input');
-        if ($(SpinnerInput).val() < 99){
-            $(SpinnerInput).val( Number($(SpinnerInput).val()) + 1 );
-        }
-    });
-    $(".number-stepper__btn-down").click(function(){
-        var SpinnerInput = $(this).closest('.number-stepper').find('.number-stepper__input');
-        if ($(SpinnerInput).val() > 1){
-            $(SpinnerInput).val( Number($(SpinnerInput).val()) - 1 );
-        }
-    });
-});
+    $(".number-stepper").each(function(){
+   
+        var SpinnerInput = $(this).find(".number-stepper__input");
+        var ButtonUp = $(this).find(".number-stepper__btn-up");
+        var ButtonDown = $(this).find(".number-stepper__btn-down");
 
+        if ($(".cart-item-single__sum")[0]){
+            var SinglePrice = $(this).closest(".cart-item-single__inner").find(".cart-item-single__sum span");
+            var BasePrice = $(SinglePrice).text().replace(/ /g,'') / SpinnerInput.val();
+
+            var SumAllPriceDPH = $(this).closest("form").find(".cart-price-overview__price-small .cart-price-overview__number");
+            var SumAllPrice = $(this).closest("form").find(".cart-price-overview__price .cart-price-overview__number");
+            var SumAllPriceResponsive = $(".cart-price-overview-responsive__price span");
+
+            var CartNumber = $(".navbar-cart__icon-number");
+        }
+
+        $(ButtonUp).click(function(){
+            if ($(SpinnerInput).val() < 99){
+                $(SpinnerInput).val( Number($(SpinnerInput).val()) + 1 );
+
+                if ($(".cart-item-single__sum")[0]){
+                    ChangePrice();
+                }
+            }
+            
+        });
+        
+        $(ButtonDown).click(function(){
+            if ($(SpinnerInput).val() > 1){
+                $(SpinnerInput).val( Number($(SpinnerInput).val()) - 1 );
+
+                if ($(".cart-item-single__sum")[0]){
+                    ChangePrice();
+                }
+            }
+        });
+
+        function ChangePrice(){
+            if ($(".cart-item-single__sum")[0]){
+                var SumPrice = BasePrice * $(SpinnerInput).val();
+                $(SinglePrice).text(SumPrice);
+
+                var BigPrice = 0;
+
+                $(".cart-item-single__sum span").each(function(){
+                    BigPrice +=  parseInt($(this).text().trim().replace(/ /g,''));
+                    
+                });
+                $(SumAllPriceDPH).text(parseInt(BigPrice*0.79));
+                $(SumAllPrice).text(BigPrice);
+                $(SumAllPriceResponsive).text(BigPrice);
+
+
+                var CartSum = 0;
+
+                $(".number-stepper__input").each(function(){
+                    CartSum +=  parseInt($(this).val());
+                    
+                });
+                $(CartNumber).text(CartSum);
+          
+            }
+        }
+
+    });
+
+});
 
 // =============================================================================
 // MODAL AUTO DISPLAY
