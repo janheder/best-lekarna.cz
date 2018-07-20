@@ -297,7 +297,8 @@ $(function(){
 
         if ($(".cart-item-single__sum")[0]){
             var SinglePrice = $(this).closest(".cart-item-single__inner").find(".cart-item-single__sum span");
-            var BasePrice = $(SinglePrice).text().replace(/ /g,'') / SpinnerInput.val();
+            var BasePriceSub = parseFloat($(SinglePrice).text().replace(/\,/g,'.')).toFixed(2);
+            var BasePrice = BasePriceSub / SpinnerInput.val();
 
             var SumAllPriceDPH = $(this).closest("form").find(".cart-price-overview__price-small .cart-price-overview__number");
             var SumAllPrice = $(this).closest("form").find(".cart-price-overview__price .cart-price-overview__number");
@@ -314,7 +315,6 @@ $(function(){
                     ChangePrice();
                 }
             }
-            
         });
         
         $(ButtonDown).click(function(){
@@ -327,26 +327,35 @@ $(function(){
             }
         });
 
+        $(SpinnerInput).keyup(function(){
+                if ($(".cart-item-single__sum")[0]){
+                    ChangePrice();
+                }
+        });     
+
         function ChangePrice(){
             if ($(".cart-item-single__sum")[0]){
                 var SumPrice = BasePrice * $(SpinnerInput).val();
-                $(SinglePrice).text(SumPrice);
-
+           
+                $(SinglePrice).text(SumPrice.toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+                
                 var BigPrice = 0;
 
                 $(".cart-item-single__sum span").each(function(){
-                    BigPrice +=  parseInt($(this).text().trim().replace(/ /g,''));
-                    
+                    BigPrice +=  parseFloat($(this).text().replace(/\,/g , "."));
                 });
-                $(SumAllPriceDPH).text(parseInt(BigPrice*0.79));
-                $(SumAllPrice).text(BigPrice);
+                
+
+                
+                $(SumAllPriceDPH).text(parseFloat(BigPrice*0.79).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+                $(SumAllPrice).text(parseFloat(BigPrice).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
                 $(SumAllPriceResponsive).text(BigPrice);
 
 
                 var CartSum = 0;
 
                 $(".number-stepper__input").each(function(){
-                    CartSum +=  parseInt($(this).val());
+                    CartSum +=  parseFloat($(this).val());
                     
                 });
                 $(CartNumber).text(CartSum);
