@@ -13,6 +13,7 @@
     @include justify-content(space-between);
     color: $dark-grey;
     text-align: left;
+    height: 100%;
 
     &:hover, &:active, &:focus{
         z-index: 7;
