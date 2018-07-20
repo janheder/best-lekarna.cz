@@ -344,13 +344,13 @@ $(function(){
                 $(".cart-item-single__sum span").each(function(){
                     BigPrice +=  parseFloat($(this).text().replace(/\,/g , "."));
                 });
-                
 
+                if ($(".cart-price-overview__price-small .cart-price-overview__number")[0]){
+                    $(SumAllPriceDPH).text(parseFloat(BigPrice*0.79).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+                }
                 
-                $(SumAllPriceDPH).text(parseFloat(BigPrice*0.79).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
                 $(SumAllPrice).text(parseFloat(BigPrice).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
                 $(SumAllPriceResponsive).text(BigPrice);
-
 
                 var CartSum = 0;
 
