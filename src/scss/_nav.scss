@@ -1495,3 +1495,20 @@ nav.navbar.scroll{
 #dark-overlay-cart{
     display: none;
 }
+
+/*
+.nav-item__link{
+    display: none;
+}
+.nav-item__link--desktop{
+    @include flexbox();
+}
+@media screen and (max-width:991px){
+    .nav-item__link{
+        @include flexbox();
+    }
+    .nav-item__link--desktop{
+        display: none;
+    }
+}
+*/

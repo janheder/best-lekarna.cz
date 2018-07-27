@@ -181,27 +181,27 @@ $("#search-toggler-responsive").click(function() {
 // =============================================================================
 
 $('.billing-address-toggler input').click(function() {
-$('.register-form-billing__wrap').slideToggle("slow");
-$('.register-form-billing__wrap input:not(#register_form_billing_name, #register_form_billing_dic), .register-form-billing__wrap select').each(function(){
-    if(!$(this).prop('required')){
-        $(this).prop('required',true);
-    }
-    else {
-    $(this).prop('required',false);
-    }
-});
+    $('.register-form-billing__wrap').slideToggle("slow");
+    $('.register-form-billing__wrap input:not(#register_form_billing_name, #register_form_billing_dic), .register-form-billing__wrap select').each(function(){
+        if(!$(this).prop('required')){
+            $(this).prop('required',true);
+        }
+        else {
+        $(this).prop('required',false);
+        }
+    });
 });
 
 $('.shipping-address-toggler input').click(function() {
-$('.register-form-shipping__wrap').slideToggle("slow");
-$('.register-form-shipping__wrap input:not(#register_form_shipping_company), .register-form-shipping__wrap select').each(function(){
-    if(!$(this).prop('required')){
-        $(this).prop('required',true);
-    }
-    else {
-    $(this).prop('required',false);
-    }
-});
+    $('.register-form-shipping__wrap').slideToggle("slow");
+    $('.register-form-shipping__wrap input:not(#register_form_shipping_company), .register-form-shipping__wrap select').each(function(){
+        if(!$(this).prop('required')){
+            $(this).prop('required',true);
+        }
+        else {
+        $(this).prop('required',false);
+        }
+    });
 });
 
 $('#show_password_toggler').click(function() {
@@ -305,6 +305,47 @@ $(function(){
             var SumAllPriceResponsive = $(".cart-price-overview-responsive__price span");
 
             var CartNumber = $(".navbar-cart__icon-number");
+
+
+            
+            var DeliveryPrice = $(".cart-shipping-option .form-check__input:checked ~ .form-check__price");
+
+            var SumAllPriceDefault = 0;
+
+            $(".cart-item-single__sum span").each(function(){
+                SumAllPriceDefault +=  parseFloat($(this).text().replace(/\,/g , "."));
+            });
+
+            if ($('.cart-shipping-option .form-check__input').is(':checked')){
+                var DeliveryPriceClean = parseFloat($(DeliveryPrice).text().replace(/\,/g,'.').replace(' Kč','')); 
+                
+                $(SumAllPrice).text(parseFloat(SumAllPriceDefault+DeliveryPriceClean).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+                $(SumAllPriceResponsive).text(parseFloat(SumAllPriceDefault+DeliveryPriceClean).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+
+                if ($(".cart-price-overview__price-small .cart-price-overview__number")[0]){
+                    $(SumAllPriceDPH).text(parseFloat((SumAllPriceDefault+DeliveryPriceClean)*0.79).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+
+                }
+            }
+            else{var DeliveryPriceClean = 0;}
+
+            $(".cart-shipping-option .form-check__input").click(function(){
+                var DeliveryPrice = $(".cart-shipping-option .form-check__input:checked ~ .form-check__price");
+                var DeliveryPriceClean = parseFloat($(DeliveryPrice).text().replace(/\,/g,'.').replace(' Kč',''));
+             
+
+                $(SumAllPrice).text(parseFloat(SumAllPriceDefault+DeliveryPriceClean).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+                $(SumAllPriceResponsive).text(parseFloat(SumAllPriceDefault+DeliveryPriceClean).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+   
+                if ($(".cart-price-overview__price-small .cart-price-overview__number")[0]){
+                    $(SumAllPriceDPH).text(parseFloat((SumAllPriceDefault+DeliveryPriceClean)*0.79).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
+
+                }
+
+            });
+
+
+
         }
 
         $(ButtonUp).click(function(){
@@ -345,12 +386,26 @@ $(function(){
                     BigPrice +=  parseFloat($(this).text().replace(/\,/g , "."));
                 });
 
+                if ($('.cart-shipping-option .form-check__input').is(':checked')){
+                    var DeliveryPrice = $(".cart-shipping-option .form-check__input:checked ~ .form-check__price");
+                    var DeliveryPriceClean = parseFloat($(DeliveryPrice).text().replace(/\,/g,'.').replace(' Kč',''));
+                }
+                else{var DeliveryPriceClean = 0;}
+
+                $(".cart-shipping-option .form-check__input").click(function(){
+                    var DeliveryPrice = $(".cart-shipping-option .form-check__input:checked ~ .form-check__price");
+                    var DeliveryPriceClean = parseFloat($(DeliveryPrice).text().replace(/\,/g,'.').replace(' Kč',''));
+                });
+    
+
+                BigPrice += DeliveryPriceClean;
+
                 if ($(".cart-price-overview__price-small .cart-price-overview__number")[0]){
                     $(SumAllPriceDPH).text(parseFloat(BigPrice*0.79).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
                 }
                 
                 $(SumAllPrice).text(parseFloat(BigPrice).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
-                $(SumAllPriceResponsive).text(BigPrice);
+                $(SumAllPriceResponsive).text(parseFloat(BigPrice).toFixed(2).replace(/[.,]00$/, "").replace(/\./g, ','));
 
                 var CartSum = 0;
 
